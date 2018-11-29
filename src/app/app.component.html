@@ -1,21 +1,69 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<div (resized)="onResized($event)" class="example-container" [class.example-is-mobile]="mobileQuery.matches" >
+  <mat-toolbar color="primary"  class="example-toolbar" *ngIf="!mobileQuery.matches">
+      <mat-toolbar-row>
+          <span><img src="https://eidlab-identity-federation-playground.openses.org/eidlab-content/images/toolbar_logo.png" alt="Identity Federation Playground / eIdLab.ch" /></span>
+          &nbsp;&nbsp;&nbsp;
+          <button mat-stroked-button *ngIf="globals.selectedLanguageId == 'de'" (click)="selectedToolbarTabId='tab01'; sidenavLeftPanel.close(); selectedMainContentId ='XXX'; changeSelection()" >Übersicht</button>
+          &nbsp;&nbsp;&nbsp;
+          <button mat-stroked-button *ngIf="globals.selectedLanguageId == 'de'" (click)="selectedToolbarTabId='tab02'; selectedMainContentId ='XXX'; changeSelection()" >Theorie</button>
+          &nbsp;&nbsp;&nbsp;
+          <button mat-stroked-button *ngIf="globals.selectedLanguageId == 'de'" (click)="selectedToolbarTabId='tab03'; selectedMainContentId ='XXX'; changeSelection()" >Labor</button>
+          <!-- This fills the remaining space of the current row -->
+        <span class="example-spacer"></span>
+        <span (click)="selectedToolbarTabId='tab04'; changeSelection()">
+            <button mat-icon-button [matMenuTriggerFor]="languagemenu"><mat-icon>public</mat-icon></button>
+            <mat-menu #languagemenu="matMenu">
+                <button mat-menu-item (click)="selectedLanguageId='de'; changeSelection()">Deutsch</button>
+                <button mat-menu-item (click)="selectedLanguageId='en'; changeSelection()">English</button>
+            </mat-menu>
+          </span>
+          &nbsp;
+          <span (click)="selectedToolbarTabId='tab05'; changeSelection()" >
+              <button mat-icon-button [matMenuTriggerFor]="communitymenu"><mat-icon>people</mat-icon></button>
+              <mat-menu #communitymenu="matMenu">
+                  <!-- <button mat-menu-item><a target= "_blank" href="./homelogin">Loginpage</a></button> -->
+                  <!-- <button mat-menu-item><a target= "_blank" href="https://github.com/openses">GitHub openses</a></button> -->
+                  <button mat-menu-item (click)="loadHomeLoginUrl()">Loginpage</button>
+                  <button mat-menu-item (click)="loadGitHubUrl()">GitHub openses</button>
+              </mat-menu>
+          </span>
+        </mat-toolbar-row>
+  </mat-toolbar>
+  <mat-sidenav-container class="example-sidenav-container" >
+      <mat-sidenav #sidenavLeftPanel [mode]="mobileQuery.matches ? 'over' : 'side'"
+      [fixedInViewport]="mobileQuery.matches" fixedTopGap="40"
+      [opened]="mobileQuery.matches ? 'false' : 'true' && globals.selectedToolbarTabId !== 'tab01'"  [style.marginTop.px]="mobileQuery.matches ? 80 : 0">
+      <span *ngIf="globals.selectedLanguageId == 'de'">
+          <mat-expansion-panel [expanded]='false'>
+              <mat-expansion-panel-header>
+              <mat-panel-title>
+              <button mat-button (click)="selectedMainContentId ='T1'; changeSelection()">
+              T1 Digitale Identitäten
+              </button><br>
+              </mat-panel-title><mat-panel-description></mat-panel-description>
+              </ mat-expansion-panel-header>
+              <button mat-button (click)="selectedMainContentId ='T1.1'; changeSelection()">
+                  T1.1 -> iFrame bundesrat
+              </button><br>
+              <button mat-button (click)="selectedMainContentId ='T1.2'; changeSelection()">
+                  T1.2 -> iFrame Wikipedia
+              </button><br>
+              <button mat-button (click)="selectedMainContentId ='T1.3'; changeSelection()">
+                  T1.3 -> iFrame FIDES
+              </button><br>
+              <button mat-button (click)="selectedMainContentId ='T1.4'; changeSelection()">
+                  T1.4 -> iFrame Switch
+              </button><br>
+              <button mat-button (click)="selectedMainContentId ='T1.5'; changeSelection()">
+                  T1.5 -> iFrame eCH
+              </button><br>
+              <button mat-button (click)="selectedMainContentId ='T1.6'; changeSelection()">
+                  T1.6 -> iFrame swissID
+              </button><br>
+              </mat-expansion-panel>
+      </span>
+    </mat-sidenav>
 
+  </mat-sidenav-container>
+</div>
 <router-outlet></router-outlet>
