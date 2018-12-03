@@ -5,6 +5,7 @@ import { ResizedEvent } from 'angular-resize-event/resized-event';
 import {MediaMatcher, BreakpointObserver, BreakpointState, Breakpoints} from '@angular/cdk/layout';
 import {formatDate } from '@angular/common';
 import {Globals} from './globals';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-root',
@@ -27,11 +28,13 @@ export class AppComponent implements OnInit, OnDestroy {
   public selectedLanguageId: any;
   public selectedCommunityId: any;
   public selectedMainContentId: any;
+  cookieValue = 'UNKNOWN';
+  cookieCheck = false;
 
 
 
   // tslint:disable-next-line:max-line-length
-  constructor(public breakpointObserver: BreakpointObserver, changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, public globals: Globals, public sanitizer: DomSanitizer) {
+  constructor(public breakpointObserver: BreakpointObserver, changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, public globals: Globals, public sanitizer: DomSanitizer, private cookieService: CookieService) {
     this.mobileQuery = media.matchMedia('(max-width: 620px)');
     this._mobileQueryListener = () => { changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener); };
@@ -78,6 +81,28 @@ export class AppComponent implements OnInit, OnDestroy {
 
     private loadGitHubUrl() {
       window.location.href = 'https://github.com/openses';
+    }
+
+    private checkCookie (cookieName) {
+      this.cookieCheck = this.cookieService.check(cookieName);
+    }
+
+    private setCookie (cookieName, cookieValue) {
+      this.cookieService.set(cookieName, cookieValue);
+    }
+
+    private getCookie (cookieName) {
+      this.cookieValue = this.cookieService.get(cookieName);
+    }
+
+    private deleteCookie (cookieName) {
+      this.cookieService.delete(cookieName);
+    }
+
+    private deleteAllCookies () {
+      this.cookieService.deleteAll('/', 'www.facebook.com');
+      this.cookieService.deleteAll('/', 'localhost');
+      console.log('deleteAllCookies');
     }
 
   ngOnInit() {

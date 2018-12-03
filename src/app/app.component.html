@@ -3,11 +3,11 @@
       <mat-toolbar-row>
           <span><img src="https://eidlab-identity-federation-playground.openses.org/eidlab-content/images/toolbar_logo.png" alt="Identity Federation Playground / eIdLab.ch" /></span>
           &nbsp;&nbsp;&nbsp;
-          <button mat-stroked-button *ngIf="globals.selectedLanguageId == 'de'" (click)="selectedToolbarTabId='tab01'; sidenavLeftPanel.close(); selectedMainContentId ='XXX'; changeSelection()" >Übersicht</button>
+          <button mat-stroked-button *ngIf="globals.selectedLanguageId == 'de'" (click)="selectedToolbarTabId='tab01'; sidenavLeftPanel.close(); selectedMainContentId ='XXX'; changeSelection()" >About</button>
           &nbsp;&nbsp;&nbsp;
-          <button mat-stroked-button *ngIf="globals.selectedLanguageId == 'de'" (click)="selectedToolbarTabId='tab02'; selectedMainContentId ='XXX'; changeSelection()" >Theorie</button>
+          <button mat-stroked-button *ngIf="globals.selectedLanguageId == 'de'" (click)="selectedToolbarTabId='tab02'; selectedMainContentId ='XXX'; changeSelection()" >KnowHow</button>
           &nbsp;&nbsp;&nbsp;
-          <button mat-stroked-button *ngIf="globals.selectedLanguageId == 'de'" (click)="selectedToolbarTabId='tab03'; selectedMainContentId ='XXX'; changeSelection()" >Labor</button>
+          <button mat-stroked-button *ngIf="globals.selectedLanguageId == 'de'" (click)="selectedToolbarTabId='tab03'; selectedMainContentId ='XXX'; changeSelection()" >Explore</button>
           <!-- This fills the remaining space of the current row -->
         <span class="example-spacer"></span>
         <span (click)="selectedToolbarTabId='tab04'; changeSelection()">
@@ -21,8 +21,6 @@
           <span (click)="selectedToolbarTabId='tab05'; changeSelection()" >
               <button mat-icon-button [matMenuTriggerFor]="communitymenu"><mat-icon>people</mat-icon></button>
               <mat-menu #communitymenu="matMenu">
-                  <!-- <button mat-menu-item><a target= "_blank" href="./homelogin">Loginpage</a></button> -->
-                  <!-- <button mat-menu-item><a target= "_blank" href="https://github.com/openses">GitHub openses</a></button> -->
                   <button mat-menu-item (click)="loadHomeLoginUrl()">Loginpage</button>
                   <button mat-menu-item (click)="loadGitHubUrl()">GitHub openses</button>
               </mat-menu>
@@ -30,40 +28,216 @@
         </mat-toolbar-row>
   </mat-toolbar>
   <mat-sidenav-container class="example-sidenav-container" >
-      <mat-sidenav #sidenavLeftPanel [mode]="mobileQuery.matches ? 'over' : 'side'"
+    <mat-sidenav #sidenavLeftPanel [mode]="mobileQuery.matches ? 'over' : 'side'"
       [fixedInViewport]="mobileQuery.matches" fixedTopGap="40"
       [opened]="mobileQuery.matches ? 'false' : 'true' && globals.selectedToolbarTabId !== 'tab01'"  [style.marginTop.px]="mobileQuery.matches ? 80 : 0">
       <span *ngIf="globals.selectedLanguageId == 'de'">
+        <span *ngIf="selectedToolbarTabId == 'tab02'">
           <mat-expansion-panel [expanded]='false'>
               <mat-expansion-panel-header>
               <mat-panel-title>
-              <button mat-button (click)="selectedMainContentId ='T1'; changeSelection()">
+              <button mat-button (click)="selectedMainContentId ='T1_de'; changeSelection()">
               T1 Digitale Identitäten
+              </button>
+              </mat-panel-title><mat-panel-description></mat-panel-description>
+              </ mat-expansion-panel-header>
+              <button mat-button (click)="selectedMainContentId ='T1.1_de'; changeSelection()">
+                  T1.1 -> iFrame bundesrat
+              </button><br>
+              <button mat-button (click)="selectedMainContentId ='T1.2_de'; changeSelection()">
+                  T1.2 -> iFrame Wikipedia
+              </button><br>
+              <button mat-button (click)="selectedMainContentId ='T1.3_de'; changeSelection()">
+                  T1.3 -> iFrame FIDES
+              </button><br>
+              <button mat-button (click)="selectedMainContentId ='T1.4_de'; changeSelection()">
+                  T1.4 -> iFrame Switch
+              </button><br>
+              <button mat-button (click)="selectedMainContentId ='T1.5_de'; changeSelection()">
+                  T1.5 -> iFrame eCH
+              </button><br>
+              <button mat-button (click)="selectedMainContentId ='T1.6_de'; changeSelection()">
+                  T1.6 -> iFrame swissID
+              </button><br>
+          </mat-expansion-panel>
+          <mat-expansion-panel [expanded]='false'>
+            <mat-expansion-panel-header>
+            <mat-panel-title>
+            <button mat-button (click)="selectedMainContentId ='T2_de'; changeSelection()">
+            T1 Standards
+            </button>
+            </mat-panel-title><mat-panel-description></mat-panel-description>
+            </ mat-expansion-panel-header>
+            <button mat-button (click)="selectedMainContentId ='T2.1_de'; changeSelection()">
+                T2.1 eGovernment eCH
+            </button><br>
+            <button mat-button (click)="selectedMainContentId ='T2.2_de'; changeSelection()">
+                T2.2 OAuth 2.0 Autorisierung
+            </button><br>
+            <button mat-button (click)="selectedMainContentId ='T2.3_de'; changeSelection()">
+                T2.3 OpenID Connect Authentifizierung
+            </button><br>
+            <button mat-button (click)="selectedMainContentId ='T2.4_de'; changeSelection()">
+                T2.4 REST API Schnittstellen
+            </button><br>
+            <button mat-button (click)="selectedMainContentId ='T2.5_de'; changeSelection()">
+                T2.5 JSON Datenformat
+            </button><br>
+            <button mat-button (click)="selectedMainContentId ='T2.6_de'; changeSelection()">
+                T2.6 Kodierung
+            </button><br>
+            <button mat-button (click)="selectedMainContentId ='T2.6.1_de'; changeSelection()">
+                &nbsp;&nbsp;&nbsp;T2.6.1 Hashing
+            </button><br>
+            <button mat-button (click)="selectedMainContentId ='T2.6.2_de'; changeSelection()">
+                &nbsp;&nbsp;&nbsp;T2.6.2 Verschlüsselung
+            </button><br>
+            <button mat-button (click)="selectedMainContentId ='T2.6.3_de'; changeSelection()">
+                &nbsp;&nbsp;&nbsp;T2.6.3 Signierung
+            </button><br>
+          </mat-expansion-panel>
+        </span>
+        <span *ngIf="selectedToolbarTabId == 'tab03'">
+            <mat-expansion-panel [expanded]='false'>
+                <mat-expansion-panel-header>
+                <mat-panel-title>
+                <button mat-button (click)="selectedMainContentId ='P1_de'; changeSelection()">
+                P1 Tools
+                </button>
+                </mat-panel-title><mat-panel-description></mat-panel-description>
+                </ mat-expansion-panel-header>
+                <button mat-button (click)="selectedMainContentId ='P1.1_de'; changeSelection()">
+                    P1.1 Chrome Browser DevTools
+                </button><br>
+                <button mat-button (click)="selectedMainContentId ='P1.1_de'; changeSelection()">
+                    P1.2 Chrome Browser EditThisCookie
+                </button><br>
+                <button mat-button (click)="selectedMainContentId ='P1.1_de'; changeSelection()">
+                    P1.3 Insomnia REST Client
+                </button><br>
+            </mat-expansion-panel>
+            <mat-expansion-panel [expanded]='false'>
+              <mat-expansion-panel-header>
+              <mat-panel-title>
+              <button mat-button (click)="selectedMainContentId ='P2_de'; changeSelection()">
+              P2 OpenID Connect Simulation
               </button><br>
               </mat-panel-title><mat-panel-description></mat-panel-description>
               </ mat-expansion-panel-header>
-              <button mat-button (click)="selectedMainContentId ='T1.1'; changeSelection()">
-                  T1.1 -> iFrame bundesrat
+              <button mat-button (click)="selectedMainContentId ='P2.1_de'; changeSelection()">
+                  P2.1 Vollständiger Login Flow
               </button><br>
-              <button mat-button (click)="selectedMainContentId ='T1.2'; changeSelection()">
-                  T1.2 -> iFrame Wikipedia
+              <button mat-button (click)="selectedMainContentId ='P2.2_de'; changeSelection()">
+                  P2.2 Login Flow Teilschritte
               </button><br>
-              <button mat-button (click)="selectedMainContentId ='T1.3'; changeSelection()">
-                  T1.3 -> iFrame FIDES
+            </mat-expansion-panel>
+            <mat-expansion-panel [expanded]='false'>
+            <mat-expansion-panel-header>
+            <mat-panel-title>
+            <button mat-button (click)="selectedMainContentId ='P3_de'; changeSelection()">
+            P3 Facebook
+            </button><br>
+            </mat-panel-title><mat-panel-description></mat-panel-description>
+            </ mat-expansion-panel-header>
+            <button mat-button (click)="selectedMainContentId ='P3.1_de'; changeSelection()">
+                P3.1 Vollständiger Login Flow
+            </button><br>
+            <button mat-button (click)="selectedMainContentId ='P3.2_de'; changeSelection()">
+                P3.2 Login Flow Teilschritte
+            </button><br>
+            </mat-expansion-panel>
+            <mat-expansion-panel [expanded]='false'>
+                <mat-expansion-panel-header>
+                <mat-panel-title>
+                <button mat-button (click)="selectedMainContentId ='P4_de'; changeSelection()">
+                P4 google
+                </button><br>
+                </mat-panel-title><mat-panel-description></mat-panel-description>
+                </ mat-expansion-panel-header>
+                <button mat-button (click)="selectedMainContentId ='P4.1_de'; changeSelection()">
+                  P4.1 Vollständiger Login Flow
               </button><br>
-              <button mat-button (click)="selectedMainContentId ='T1.4'; changeSelection()">
-                  T1.4 -> iFrame Switch
+              <button mat-button (click)="selectedMainContentId ='P4.2_de'; changeSelection()">
+                  P4.2 Login Flow Teilschritte
               </button><br>
-              <button mat-button (click)="selectedMainContentId ='T1.5'; changeSelection()">
-                  T1.5 -> iFrame eCH
+            </mat-expansion-panel>
+            <mat-expansion-panel [expanded]='false'>
+              <mat-expansion-panel-header>
+              <mat-panel-title>
+              <button mat-button (click)="selectedMainContentId ='P5_de'; changeSelection()">
+              P5 SWITCH edu-ID
               </button><br>
-              <button mat-button (click)="selectedMainContentId ='T1.6'; changeSelection()">
-                  T1.6 -> iFrame swissID
-              </button><br>
-              </mat-expansion-panel>
+              </mat-panel-title><mat-panel-description></mat-panel-description>
+              </ mat-expansion-panel-header>
+              <button mat-button (click)="selectedMainContentId ='P5.1_de'; changeSelection()">
+                P5.1 Vollständiger Login Flow
+            </button><br>
+            <button mat-button (click)="selectedMainContentId ='P5.2_de'; changeSelection()">
+                P5.2 Login Flow Teilschritte
+            </button><br>
+            </mat-expansion-panel>
+            <mat-expansion-panel [expanded]='false'>
+            <mat-expansion-panel-header>
+            <mat-panel-title>
+            <button mat-button (click)="selectedMainContentId ='P6_de'; changeSelection()">
+            P6 swissID
+            </button><br>
+            </mat-panel-title><mat-panel-description></mat-panel-description>
+            </ mat-expansion-panel-header>
+            <button mat-button (click)="selectedMainContentId ='P6.1_de'; changeSelection()">
+              P6.1 Vollständiger Login Flow
+          </button><br>
+          <button mat-button (click)="selectedMainContentId ='P6.2_de'; changeSelection()">
+              P6.2 Login Flow Teilschritte
+          </button><br>
+            </mat-expansion-panel>
+        </span>
       </span>
     </mat-sidenav>
-
+    <mat-sidenav-content [style.marginTop.px]="mobileQuery.matches ? 110 : 0">
+      <span *ngIf="globals.selectedLanguageId == 'de'">
+        <span *ngIf="selectedToolbarTabId == 'tab01'">
+          Slider:<br>
+          - Ziele<br>
+          - RLP Bezug<br>
+          - Recherche Informatik Lehrbücher<br>
+          - https://www.aphorismen.de/zitat/27424 -> Man kann einen Menschen nichts lehren; man kann ihm nur helfen, es in sich selbst zu finden.
+        </span>
+        <span *ngIf="globals.selectedMainContentId == 'T2.2_de'">
+            https://www.researchgate.net/publication/313065292_OAuth_und_OpenID_Connect_-_Erfahrungen_und_Konzepte<br>
+            https://oauth.net/2/
+        </span>
+        <span *ngIf="globals.selectedMainContentId == 'T2.3_de'">
+            https://openid.net/connect/
+        </span>
+        <span *ngIf="globals.selectedMainContentId == 'T2.4_de'">
+            https://www.cloudcomputing-insider.de/was-ist-eine-rest-api-a-611116/
+        </span>
+        <span *ngIf="globals.selectedMainContentId == 'T2.6_de'">
+            https://php-de.github.io/jumpto/hash-etc/
+        </span>
+        <span *ngIf="globals.selectedMainContentId == 'P3_de'">
+          Facebook Login: Übersicht
+        </span>
+        <span *ngIf="globals.selectedMainContentId == 'P3.1_de'">
+          Buttons einfügen: Cookie testen, Cookie löschen<br>
+          Links einfügen: Anmelden bei Facebook<br>
+          Anzeige einfügen: Facebook Anmeldestatus<br>
+          https://developers.facebook.com/docs/facebook-login/manually-build-a-login-flow<br>
+          https://developers.facebook.com/apps/1198455663664253/settings/basic/<br>
+          https://developers.facebook.com/apps/1198455663664253/fb-login/settings/<br>
+          https://www.facebook.com/v3.2/dialog/oauth?client_id=1198455663664253<br>
+          &response_type=token&redirect_uri=https://www.facebook.com/connect/login_success.html&state="123"<br>
+          https://www.facebook.com/v3.2/dialog/oauth?client_id=1198455663664253&response_type=token<br>
+          &redirect_uri=http://localhost:4200/ -> hier Angular Route /contentselect analog zu openses /tabselect erstellen<br>
+          und als redirect verwenden -> parser / cookie etc Funktionalität implementieren<br>
+          &state="123"<br>
+          <a href="https://www.facebook.com/v3.2/dialog/oauth?client_id=1198455663664253&response_type=token&redirect_uri=https://www.facebook.com/connect/login_success.html&state='123'">Bei Facebook anmelden remote</a><br>
+          <a href="https://www.facebook.com/v3.2/dialog/oauth?client_id=1198455663664253&response_type=token&redirect_uri=http://localhost:4200&state='123'">Bei Facebook anmelden local</a><br>
+          <button mat-stroked-button (click)="deleteAllCookies()" >Alle Cookies löschen</button>
+        </span>
+      </span>
+    </mat-sidenav-content>
   </mat-sidenav-container>
 </div>
 <router-outlet></router-outlet>
