@@ -7,6 +7,7 @@ import {formatDate } from '@angular/common';
 import {Globals} from './globals';
 import { CookieService } from 'ngx-cookie-service';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',

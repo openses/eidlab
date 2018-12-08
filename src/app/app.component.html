@@ -234,8 +234,20 @@
           &state="123"<br>
           <a href="https://www.facebook.com/v3.2/dialog/oauth?client_id=1198455663664253&response_type=token&redirect_uri=https://www.facebook.com/connect/login_success.html&state='123'">Bei Facebook anmelden remote</a><br>
           <a href="https://www.facebook.com/v3.2/dialog/oauth?client_id=1198455663664253&response_type=token&redirect_uri=http://localhost:4200&state='123'">Bei Facebook anmelden local</a><br>
+          <a href="http://localhost:3000/">Bei Facebook anmelden local via API</a><br> -> Script und PopUp Fenster einbauen -> Callback mit Ng Route und URL Parameter
+
           <button mat-stroked-button (click)="deleteAllCookies()" >Alle Cookies löschen</button>
+          <p style="text-align:center" >
+            Test iframe
+            <iframe [src]='sanitizer.bypassSecurityTrustResourceUrl("http://localhost:3000/")' frameBorder="0"></iframe>
+            <!-- <iframe *ngIf="globals.selectedTab !== 'Tab01'" [src]='sanitizer.bypassSecurityTrustResourceUrl(globals.myhtmlpath + globals.selectedLanguage + "/" + globals.myhtmlfile)' [width]="mobileQuery.matches ? width : width_max" [height]="mobileQuery.matches ? height - 140 : height - 40" frameBorder="0"></iframe> -->
+          </p>
         </span>
+
+
+
+
+
       </span>
     </mat-sidenav-content>
   </mat-sidenav-container>

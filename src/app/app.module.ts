@@ -9,6 +9,7 @@ import { AngularResizedEventModule } from 'angular-resize-event';
 import { Globals } from './globals';
 import { CookieService } from 'ngx-cookie-service';
 
+
 @NgModule({
   declarations: [
     AppComponent
