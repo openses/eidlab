@@ -3,11 +3,11 @@
       <mat-toolbar-row>
           <span><img src="https://eidlab-identity-federation-playground.openses.org/eidlab-content/images/toolbar_logo.png" alt="Identity Federation Playground / eIdLab.ch" /></span>
           &nbsp;&nbsp;&nbsp;
-          <button mat-stroked-button *ngIf="globals.selectedLanguageId == 'de'" (click)="selectedToolbarTabId='tab01'; sidenavLeftPanel.close(); selectedMainContentId ='XXX'; changeSelection()" >About</button>
+          <button mat-stroked-button *ngIf="globals.selectedLanguageId == 'de'" (click)="selectedToolbarTabId='tab01'; sidenavLeftPanel.close(); selectedMainContentId ='XXX'; changeSelection()" >Lehrplanziele</button>
           &nbsp;&nbsp;&nbsp;
-          <button mat-stroked-button *ngIf="globals.selectedLanguageId == 'de'" (click)="selectedToolbarTabId='tab02'; selectedMainContentId ='XXX'; changeSelection()" >KnowHow</button>
+          <button mat-stroked-button *ngIf="globals.selectedLanguageId == 'de'" (click)="selectedToolbarTabId='tab02'; selectedMainContentId ='XXX'; changeSelection()" >Lehrplanbezug</button>
           &nbsp;&nbsp;&nbsp;
-          <button mat-stroked-button *ngIf="globals.selectedLanguageId == 'de'" (click)="selectedToolbarTabId='tab03'; selectedMainContentId ='XXX'; changeSelection()" >Explore</button>
+          <button mat-stroked-button *ngIf="globals.selectedLanguageId == 'de'" (click)="selectedToolbarTabId='tab03'; selectedMainContentId ='XXX'; changeSelection()" >Lehrplanumsetzung</button>
           <!-- This fills the remaining space of the current row -->
         <span class="example-spacer"></span>
         <span (click)="selectedToolbarTabId='tab04'; changeSelection()">
@@ -33,38 +33,68 @@
       [opened]="mobileQuery.matches ? 'false' : 'true' && globals.selectedToolbarTabId !== 'tab01'"  [style.marginTop.px]="mobileQuery.matches ? 80 : 0">
       <span *ngIf="globals.selectedLanguageId == 'de'">
         <span *ngIf="selectedToolbarTabId == 'tab02'">
-          <mat-expansion-panel [expanded]='false'>
-              <mat-expansion-panel-header>
-              <mat-panel-title>
-              <button mat-button (click)="selectedMainContentId ='T1_de'; changeSelection()">
-              T1 Digitale Identitäten
-              </button>
-              </mat-panel-title><mat-panel-description></mat-panel-description>
-              </ mat-expansion-panel-header>
-              <button mat-button (click)="selectedMainContentId ='T1.1_de'; changeSelection()">
-                  T1.1 -> iFrame bundesrat
-              </button><br>
-              <button mat-button (click)="selectedMainContentId ='T1.2_de'; changeSelection()">
-                  T1.2 -> iFrame Wikipedia
-              </button><br>
-              <button mat-button (click)="selectedMainContentId ='T1.3_de'; changeSelection()">
-                  T1.3 -> iFrame FIDES
-              </button><br>
-              <button mat-button (click)="selectedMainContentId ='T1.4_de'; changeSelection()">
-                  T1.4 -> iFrame Switch
-              </button><br>
-              <button mat-button (click)="selectedMainContentId ='T1.5_de'; changeSelection()">
-                  T1.5 -> iFrame eCH
-              </button><br>
-              <button mat-button (click)="selectedMainContentId ='T1.6_de'; changeSelection()">
-                  T1.6 -> iFrame swissID
-              </button><br>
-          </mat-expansion-panel>
+
+            <mat-expansion-panel [expanded]='false'>
+                <mat-expansion-panel-header>
+                <mat-panel-title>
+                <button mat-button (click)="selectedMainContentId ='T1_de'; changeSelection()">
+                B1 Lebens- und Berufsweltperspektiven
+                </button>
+                </mat-panel-title><mat-panel-description></mat-panel-description>
+                </ mat-expansion-panel-header>
+                <mat-expansion-panel [expanded]='false'>
+                    <mat-expansion-panel-header>
+                    <mat-panel-title>
+                    <button mat-button (click)="selectedMainContentId ='T1_de'; changeSelection()">
+                        B1.1 Anwendungsfälle aus Freizeit und Schule
+                    </button>
+                    </mat-panel-title><mat-panel-description></mat-panel-description>
+                    </ mat-expansion-panel-header>
+                    <button mat-button (click)="selectedMainContentId ='T1.1_de'; changeSelection()">
+                        B1.1.1 Social Media Logins
+                    </button><br>
+                    <button mat-button (click)="selectedMainContentId ='T1.1_de'; changeSelection()">
+                        B1.1.2 Schulumgebung Logins
+                    </button>
+                </mat-expansion-panel>
+                <mat-expansion-panel [expanded]='false'>
+                    <mat-expansion-panel-header>
+                    <mat-panel-title>
+                    <button mat-button (click)="selectedMainContentId ='T1_de'; changeSelection()">
+                        B1.2 Anforderungen an die Anwendungsfälle
+                    </button>
+                    </mat-panel-title><mat-panel-description></mat-panel-description>
+                    </ mat-expansion-panel-header>
+                    <button mat-button (click)="selectedMainContentId ='T1.1_de'; changeSelection()">
+                        B1.2.1 Hohe Sicherheit und Transparenz
+                    </button><br>
+                    <button mat-button (click)="selectedMainContentId ='T1.1_de'; changeSelection()">
+                        B1.2.2 Einfache Handhabung
+                    </button>
+                </mat-expansion-panel>
+                <mat-expansion-panel [expanded]='false'>
+                    <mat-expansion-panel-header>
+                    <mat-panel-title>
+                    <button mat-button (click)="selectedMainContentId ='T1_de'; changeSelection()">
+                        B1.3 Lösungsmuster zu den Anforderungen
+                    </button>
+                    </mat-panel-title><mat-panel-description></mat-panel-description>
+                    </ mat-expansion-panel-header>
+                    <button mat-button (click)="selectedMainContentId ='T1.1_de'; changeSelection()">
+                        B1.3.1 Schlechte Lösungsmuster (Anti-Pattern)
+                    </button><br>
+                    <button mat-button (click)="selectedMainContentId ='T1.1_de'; changeSelection()">
+                        B1.3.2 Gute Lösungsmuster (Staandards)
+                    </button>
+                </mat-expansion-panel>
+
+            </mat-expansion-panel>
+
           <mat-expansion-panel [expanded]='false'>
             <mat-expansion-panel-header>
             <mat-panel-title>
             <button mat-button (click)="selectedMainContentId ='T2_de'; changeSelection()">
-            T1 Standards
+            T1 Standards zum Loginprozess
             </button>
             </mat-panel-title><mat-panel-description></mat-panel-description>
             </ mat-expansion-panel-header>
@@ -96,101 +126,147 @@
                 &nbsp;&nbsp;&nbsp;T2.6.3 Signierung
             </button><br>
           </mat-expansion-panel>
+
+          <mat-expansion-panel [expanded]='false'>
+              <mat-expansion-panel-header>
+              <mat-panel-title>
+              <button mat-button (click)="selectedMainContentId ='T1_de'; changeSelection()">
+              T1 Digitale Identitäten in der Schweiz
+              </button>
+              </mat-panel-title><mat-panel-description></mat-panel-description>
+              </ mat-expansion-panel-header>
+              <button mat-button (click)="selectedMainContentId ='T1.1_de'; changeSelection()">
+                  T1.1 -> iFrame bundesrat
+              </button><br>
+              <button mat-button (click)="selectedMainContentId ='T1.2_de'; changeSelection()">
+                  T1.2 -> iFrame Wikipedia
+              </button><br>
+              <button mat-button (click)="selectedMainContentId ='T1.3_de'; changeSelection()">
+                  T1.3 -> iFrame FIDES
+              </button><br>
+              <button mat-button (click)="selectedMainContentId ='T1.4_de'; changeSelection()">
+                  T1.4 -> iFrame Switch
+              </button><br>
+              <button mat-button (click)="selectedMainContentId ='T1.5_de'; changeSelection()">
+                  T1.5 -> iFrame eCH
+              </button><br>
+              <button mat-button (click)="selectedMainContentId ='T1.6_de'; changeSelection()">
+                  T1.6 -> iFrame swissID
+              </button><br>
+          </mat-expansion-panel>
+
         </span>
         <span *ngIf="selectedToolbarTabId == 'tab03'">
             <mat-expansion-panel [expanded]='false'>
                 <mat-expansion-panel-header>
                 <mat-panel-title>
                 <button mat-button (click)="selectedMainContentId ='P1_de'; changeSelection()">
-                P1 Tools
+                P1 Werkzeuge zum Entdecken und Be-greifen
                 </button>
                 </mat-panel-title><mat-panel-description></mat-panel-description>
                 </ mat-expansion-panel-header>
                 <button mat-button (click)="selectedMainContentId ='P1.1_de'; changeSelection()">
                     P1.1 Chrome Browser DevTools
                 </button><br>
-                <button mat-button (click)="selectedMainContentId ='P1.1_de'; changeSelection()">
-                    P1.2 Chrome Browser EditThisCookie
+                <button mat-button (click)="selectedMainContentId ='P1.2_de'; changeSelection()">
+                    P1.2 EditThisCookie
                 </button><br>
-                <button mat-button (click)="selectedMainContentId ='P1.1_de'; changeSelection()">
-                    P1.3 Insomnia REST Client
+                <button mat-button (click)="selectedMainContentId ='P1.3_de'; changeSelection()">
+                    P1.3 LocalStorage Manager
                 </button><br>
-            </mat-expansion-panel>
-            <mat-expansion-panel [expanded]='false'>
-              <mat-expansion-panel-header>
-              <mat-panel-title>
-              <button mat-button (click)="selectedMainContentId ='P2_de'; changeSelection()">
-              P2 OpenID Connect Simulation
-              </button><br>
-              </mat-panel-title><mat-panel-description></mat-panel-description>
-              </ mat-expansion-panel-header>
-              <button mat-button (click)="selectedMainContentId ='P2.1_de'; changeSelection()">
-                  P2.1 Vollständiger Login Flow
-              </button><br>
-              <button mat-button (click)="selectedMainContentId ='P2.2_de'; changeSelection()">
-                  P2.2 Login Flow Teilschritte
-              </button><br>
-            </mat-expansion-panel>
-            <mat-expansion-panel [expanded]='false'>
-            <mat-expansion-panel-header>
-            <mat-panel-title>
-            <button mat-button (click)="selectedMainContentId ='P3_de'; changeSelection()">
-            P3 Facebook
-            </button><br>
-            </mat-panel-title><mat-panel-description></mat-panel-description>
-            </ mat-expansion-panel-header>
-            <button mat-button (click)="selectedMainContentId ='P3.1_de'; changeSelection()">
-                P3.1 Vollständiger Login Flow
-            </button><br>
-            <button mat-button (click)="selectedMainContentId ='P3.2_de'; changeSelection()">
-                P3.2 Login Flow Teilschritte
-            </button><br>
+                <button mat-button (click)="selectedMainContentId ='P1.4_de'; changeSelection()">
+                    P1.4 Ghostery
+                </button><br>
+                <button mat-button (click)="selectedMainContentId ='P1.5_de'; changeSelection()">
+                    P1.5 Insomnia REST Client
+                </button><br>
             </mat-expansion-panel>
             <mat-expansion-panel [expanded]='false'>
                 <mat-expansion-panel-header>
                 <mat-panel-title>
-                <button mat-button (click)="selectedMainContentId ='P4_de'; changeSelection()">
-                P4 google
+                <button mat-button (click)="selectedMainContentId ='P2_de'; changeSelection()">
+                P2 Login-Prozesse analysieren und verstehen
                 </button><br>
                 </mat-panel-title><mat-panel-description></mat-panel-description>
                 </ mat-expansion-panel-header>
-                <button mat-button (click)="selectedMainContentId ='P4.1_de'; changeSelection()">
-                  P4.1 Vollständiger Login Flow
-              </button><br>
-              <button mat-button (click)="selectedMainContentId ='P4.2_de'; changeSelection()">
-                  P4.2 Login Flow Teilschritte
-              </button><br>
-            </mat-expansion-panel>
-            <mat-expansion-panel [expanded]='false'>
-              <mat-expansion-panel-header>
-              <mat-panel-title>
-              <button mat-button (click)="selectedMainContentId ='P5_de'; changeSelection()">
-              P5 SWITCH edu-ID
-              </button><br>
-              </mat-panel-title><mat-panel-description></mat-panel-description>
-              </ mat-expansion-panel-header>
-              <button mat-button (click)="selectedMainContentId ='P5.1_de'; changeSelection()">
-                P5.1 Vollständiger Login Flow
-            </button><br>
-            <button mat-button (click)="selectedMainContentId ='P5.2_de'; changeSelection()">
-                P5.2 Login Flow Teilschritte
-            </button><br>
-            </mat-expansion-panel>
-            <mat-expansion-panel [expanded]='false'>
-            <mat-expansion-panel-header>
-            <mat-panel-title>
-            <button mat-button (click)="selectedMainContentId ='P6_de'; changeSelection()">
-            P6 swissID
-            </button><br>
-            </mat-panel-title><mat-panel-description></mat-panel-description>
-            </ mat-expansion-panel-header>
-            <button mat-button (click)="selectedMainContentId ='P6.1_de'; changeSelection()">
-              P6.1 Vollständiger Login Flow
-          </button><br>
-          <button mat-button (click)="selectedMainContentId ='P6.2_de'; changeSelection()">
-              P6.2 Login Flow Teilschritte
-          </button><br>
-            </mat-expansion-panel>
+                <mat-expansion-panel [expanded]='false'>
+                    <mat-expansion-panel-header>
+                    <mat-panel-title>
+                    <button mat-button (click)="selectedMainContentId ='P2.1_de'; changeSelection()">
+                    P2.1 OpenID Connect Simulation
+                    </button><br>
+                    </mat-panel-title><mat-panel-description></mat-panel-description>
+                    </ mat-expansion-panel-header>
+                    <button mat-button (click)="selectedMainContentId ='P2.1.1_de'; changeSelection()">
+                        P2.1.1 Vollständiger Login Flow
+                    </button><br>
+                    <button mat-button (click)="selectedMainContentId ='P2.1.2_de'; changeSelection()">
+                        P2.1.2 Login Flow Teilschritte
+                    </button><br>
+                  </mat-expansion-panel>
+                  <mat-expansion-panel [expanded]='false'>
+                      <mat-expansion-panel-header>
+                      <mat-panel-title>
+                      <button mat-button (click)="selectedMainContentId ='P2.2_de'; changeSelection()">
+                      P2.2 Facebook Login
+                      </button><br>
+                      </mat-panel-title><mat-panel-description></mat-panel-description>
+                      </ mat-expansion-panel-header>
+                      <button mat-button (click)="selectedMainContentId ='P2.2.1_de'; changeSelection()">
+                          P2.2.1 Vollständiger Login Flow
+                      </button><br>
+                      <button mat-button (click)="selectedMainContentId ='P2.2.2_de'; changeSelection()">
+                          P2.2.2 Login Flow Teilschritte
+                      </button><br>
+                      </mat-expansion-panel>
+                      <mat-expansion-panel [expanded]='false'>
+                          <mat-expansion-panel-header>
+                          <mat-panel-title>
+                          <button mat-button (click)="selectedMainContentId ='P2.3_de'; changeSelection()">
+                          P2.3 google Login
+                          </button><br>
+                          </mat-panel-title><mat-panel-description></mat-panel-description>
+                          </ mat-expansion-panel-header>
+                          <button mat-button (click)="selectedMainContentId ='P4.1_de'; changeSelection()">
+                            P2.3.1 Vollständiger Login Flow
+                        </button><br>
+                        <button mat-button (click)="selectedMainContentId ='P4.2_de'; changeSelection()">
+                            P2.3.2 Login Flow Teilschritte
+                        </button><br>
+                      </mat-expansion-panel>
+                      <mat-expansion-panel [expanded]='false'>
+                          <mat-expansion-panel-header>
+                          <mat-panel-title>
+                          <button mat-button (click)="selectedMainContentId ='P2.4_de'; changeSelection()">
+                          P2.4 SWITCH edu-ID
+                          </button><br>
+                          </mat-panel-title><mat-panel-description></mat-panel-description>
+                          </ mat-expansion-panel-header>
+                          <button mat-button (click)="selectedMainContentId ='P2.4.1_de'; changeSelection()">
+                            P2.4.1 Vollständiger Login Flow
+                        </button><br>
+                        <button mat-button (click)="selectedMainContentId ='P2.4.2_de'; changeSelection()">
+                            P2.4.2 Login Flow Teilschritte
+                        </button><br>
+                        </mat-expansion-panel>
+                        <mat-expansion-panel [expanded]='false'>
+                            <mat-expansion-panel-header>
+                            <mat-panel-title>
+                            <button mat-button (click)="selectedMainContentId ='P2.5_de'; changeSelection()">
+                            P2.5 swissID
+                            </button><br>
+                            </mat-panel-title><mat-panel-description></mat-panel-description>
+                            </ mat-expansion-panel-header>
+                            <button mat-button (click)="selectedMainContentId ='P2.5.1_de'; changeSelection()">
+                              P2.5.1 Vollständiger Login Flow
+                          </button><br>
+                          <button mat-button (click)="selectedMainContentId ='P2.5.2_de'; changeSelection()">
+                              P2.5.2 Login Flow Teilschritte
+                          </button><br>
+                            </mat-expansion-panel>
+
+
+              </mat-expansion-panel>
         </span>
       </span>
     </mat-sidenav>
@@ -216,10 +292,10 @@
         <span *ngIf="globals.selectedMainContentId == 'T2.6_de'">
             https://php-de.github.io/jumpto/hash-etc/
         </span>
-        <span *ngIf="globals.selectedMainContentId == 'P3_de'">
+        <span *ngIf="globals.selectedMainContentId == 'P2.2_de'">
           Facebook Login: Übersicht
         </span>
-        <span *ngIf="globals.selectedMainContentId == 'P3.1_de'">
+        <span *ngIf="globals.selectedMainContentId == 'P2.2.1_de'">
           Buttons einfügen: Cookie testen, Cookie löschen<br>
           Links einfügen: Anmelden bei Facebook<br>
           Anzeige einfügen: Facebook Anmeldestatus<br>
