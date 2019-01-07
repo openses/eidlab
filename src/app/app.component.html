@@ -3,7 +3,8 @@
       <mat-toolbar-row>
           <span><img src="https://eidlab-identity-federation-playground.openses.org/eidlab-content/images/toolbar_logo.png" alt="Identity Federation Playground / eIdLab.ch" /></span>
           &nbsp;&nbsp;&nbsp;
-          <button mat-stroked-button *ngIf="globals.selectedLanguageId == 'de'" (click)="selectedToolbarTabId='tab01'; sidenavLeftPanel.close(); selectedMainContentId ='XXX'; changeSelection()" >Lehrplan Ziele</button>
+          <!-- <button mat-stroked-button *ngIf="globals.selectedLanguageId == 'de'" (click)="selectedToolbarTabId='tab01'; sidenavLeftPanel.close(); selectedMainContentId ='XXX'; changeSelection()" >Lehrplan Inspiration</button> -->
+          <button mat-stroked-button *ngIf="globals.selectedLanguageId == 'de'" (click)="selectedToolbarTabId='tab01'; selectedMainContentId ='XXX'; changeSelection()" >Lehrplan Inspiration</button>
           &nbsp;&nbsp;&nbsp;
           <button mat-stroked-button *ngIf="globals.selectedLanguageId == 'de'" (click)="selectedToolbarTabId='tab02'; selectedMainContentId ='XXX'; changeSelection()" >Lehrplan Bezug</button>
           &nbsp;&nbsp;&nbsp;
@@ -27,11 +28,26 @@
           </span>
         </mat-toolbar-row>
   </mat-toolbar>
-  <mat-sidenav-container class="example-sidenav-container" >
+  <mat-sidenav-container class="example-sidenav-container" [hasBackdrop]="false">
     <mat-sidenav #sidenavLeftPanel [mode]="mobileQuery.matches ? 'over' : 'side'"
       [fixedInViewport]="mobileQuery.matches" fixedTopGap="40"
-      [opened]="mobileQuery.matches ? 'false' : 'true' && globals.selectedToolbarTabId !== 'tab01'"  [style.marginTop.px]="mobileQuery.matches ? 80 : 0">
+      [opened]="mobileQuery.matches ? 'false' : 'true' && globals.selectedToolbarTabId !== 'tab00'"  [style.marginTop.px]="mobileQuery.matches ? 80 : 0">
+    <!-- <mat-sidenav #sidenavLeftPanel [mode]="mobileQuery.matches ? 'over' : 'side'"
+      [fixedInViewport]="mobileQuery.matches" fixedTopGap="40"
+      [opened]="mobileQuery.matches ? 'false' : 'true'"  [style.marginTop.px]="mobileQuery.matches ? 80 : 0"> -->
       <span *ngIf="globals.selectedLanguageId == 'de'">
+          <span *ngIf="selectedToolbarTabId == 'tab01'">
+              <button mat-button (click)="selectedMainContentId ='I1_de'; changeSelection()">I1 Projektidee</button><br>
+              <button mat-button (click)="selectedMainContentId ='I2_de'; changeSelection()">I2 Projektrahmen</button><br>
+              <button mat-button (click)="selectedMainContentId ='I3_de'; changeSelection()">I3 Lehrplanstichworte</button><br>
+              <button mat-button (click)="selectedMainContentId ='I4_de'; changeSelection()">I4 Spiralcurriculum</button><br>
+              <button mat-button (click)="selectedMainContentId ='I5_de'; changeSelection()">I5 Lehrpersonen Community
+               <!--  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+
+              </button><br>
+          </span>
         <span *ngIf="selectedToolbarTabId == 'tab02'">
           <mat-expansion-panel [expanded]='false'>
               <mat-expansion-panel-header><mat-panel-title>
@@ -51,7 +67,7 @@
             <mat-expansion-panel-header><mat-panel-title>
             <button mat-button (click)="selectedMainContentId ='B2_de'; changeSelection()">B2 Regeln und Standards in der Lernendenwelt</button>
             </mat-panel-title><mat-panel-description></mat-panel-description></ mat-expansion-panel-header>
-            <button mat-button (click)="selectedMainContentId ='B2.1_de'; changeSelection()">B2.1 Behörden/Gremien/Verbände (W3C,IEEE,eCH,SBBK..)</button><br>
+            <button mat-button (click)="selectedMainContentId ='B2.1_de'; changeSelection()">B2.1 Gremien/Verbände/Behörden (W3C,IEEE,eCH,SBBK..)</button><br>
             <button mat-button (click)="selectedMainContentId ='B2.2_de'; changeSelection()">B2.2 Protokolle/Modelle</button><br>
             <button mat-button (click)="selectedMainContentId ='B2.3_de'; changeSelection()">B2.3 OAuth 2.0 Autorisierung</button><br>
             <button mat-button (click)="selectedMainContentId ='B2.4_de'; changeSelection()">B2.4 OpenID Connect Authentifizierung</button><br>
@@ -111,13 +127,20 @@
     </mat-sidenav>
     <mat-sidenav-content [style.marginTop.px]="mobileQuery.matches ? 110 : 0">
       <span *ngIf="globals.selectedLanguageId == 'de'">
-        <span *ngIf="selectedToolbarTabId == 'tab01'">
+        <!-- <span *ngIf="selectedToolbarTabId == 'tab01'">
           Slider:<br>
           - Ziele<br>
           - RLP Bezug<br>
           - Recherche Informatik Lehrbücher<br>
           - https://www.aphorismen.de/zitat/27424 -> Man kann einen Menschen nichts lehren; man kann ihm nur helfen, es in sich selbst zu finden.
-        </span>
+        </span> -->
+        <span *ngIf="globals.selectedMainContentId == 'I1_de'">
+            Slider:<br>
+            - Ziele<br>
+            - RLP Bezug<br>
+            - Recherche Informatik Lehrbücher<br>
+            - https://www.aphorismen.de/zitat/27424 -> Man kann einen Menschen nichts lehren; man kann ihm nur helfen, es in sich selbst zu finden.
+          </span>
         <span *ngIf="globals.selectedMainContentId == 'B2.3_de'">
             https://www.researchgate.net/publication/313065292_OAuth_und_OpenID_Connect_-_Erfahrungen_und_Konzepte<br>
             https://oauth.net/2/
