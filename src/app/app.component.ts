@@ -36,7 +36,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
   // tslint:disable-next-line:max-line-length
   constructor(public breakpointObserver: BreakpointObserver, changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, public globals: Globals, public sanitizer: DomSanitizer, private cookieService: CookieService) {
-    this.mobileQuery = media.matchMedia('(max-width: 620px)');
+    this.mobileQuery = media.matchMedia('(max-width: 1060px)');
     this._mobileQueryListener = () => { changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener); };
     console.log(this.mobileQuery.matches ? 'mobileQuery: match' : 'mobileQuery:no match');
@@ -81,7 +81,7 @@ export class AppComponent implements OnInit, OnDestroy {
     }
 
     private loadGitHubUrl() {
-      window.location.href = 'https://github.com/openses';
+      window.location.href = 'https://github.com/openses/eidlab';
     }
 
     private checkCookie (cookieName) {

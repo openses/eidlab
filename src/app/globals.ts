@@ -8,5 +8,5 @@ export class Globals {
   selectedSidenavLeftPanelId: any = 'sidenavLeftPanel';
   selectedSidenavRightPanelId: any = 'XXX';
   selectedSidenavMainContentId: any = 'XXX';
-  selectedMainContentId: any = 'I1_de';
+  selectedMainContentId: any = 'Start';
 }
