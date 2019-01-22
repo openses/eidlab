@@ -29,6 +29,7 @@ export class AppComponent implements OnInit, OnDestroy {
   public selectedLanguageId: any;
   public selectedCommunityId: any;
   public selectedMainContentId: any;
+  public selectedWpPage: any;
   cookieValue = 'UNKNOWN';
   cookieCheck = false;
 
@@ -47,6 +48,7 @@ export class AppComponent implements OnInit, OnDestroy {
     this.selectedLanguageId = globals.selectedLanguageId;
     this.selectedCommunityId = globals.selectedCommunityId;
     this.selectedMainContentId = globals.selectedMainContentId;
+    this.selectedWpPage = globals.selectedWpPage;
   }
 
   onResized(event: ResizedEvent): void {
@@ -73,6 +75,8 @@ export class AppComponent implements OnInit, OnDestroy {
       console.log('selectedLanguageId: ' + this.globals.selectedLanguageId);
       this.globals.selectedCommunityId = this.selectedCommunityId;
       console.log('selectedCommunityId: ' + this.globals.selectedCommunityId);
+      this.globals.selectedWpPage = this.selectedWpPage;
+      console.log('selectedWpPage: ' + this.globals.selectedWpPage);
     }
 
 

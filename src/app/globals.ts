@@ -9,4 +9,6 @@ export class Globals {
   selectedSidenavRightPanelId: any = 'XXX';
   selectedSidenavMainContentId: any = 'XXX';
   selectedMainContentId: any = 'Start';
+  selectedWpPath: any = 'https://eidlab-identity-federation-playground.openses.org/eidlab-wp/';
+  selectedWpPage: any = 'testseite';
 }

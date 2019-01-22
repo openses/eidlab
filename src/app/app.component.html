@@ -6,7 +6,7 @@
           &nbsp;&nbsp;&nbsp;
           <button mat-stroked-button *ngIf="globals.selectedLanguageId == 'de'" (click)="selectedToolbarTabId='tab00'; sidenavLeftPanel.close(); selectedMainContentId ='Start'; changeSelection()" >Start</button>
           &nbsp;&nbsp;&nbsp;
-          <button mat-stroked-button *ngIf="globals.selectedLanguageId == 'de'" (click)="selectedToolbarTabId='tab01'; selectedMainContentId ='XXX'; changeSelection()" >Info zum Projekt</button>
+          <button mat-stroked-button *ngIf="globals.selectedLanguageId == 'de'" (click)="selectedToolbarTabId='tab01'; selectedWpPage ='info-zum-projekt-de'; changeSelection()" >Info zum Projekt</button>
           &nbsp;&nbsp;&nbsp;
           <button mat-stroked-button *ngIf="globals.selectedLanguageId == 'de'" (click)="selectedToolbarTabId='tab02'; selectedMainContentId ='XXX'; changeSelection()" >Bezug zu Lehrplänen</button>
           &nbsp;&nbsp;&nbsp;
@@ -38,17 +38,18 @@
     <!-- <mat-sidenav #sidenavLeftPanel [mode]="mobileQuery.matches ? 'over' : 'side'"
       [fixedInViewport]="mobileQuery.matches" fixedTopGap="40"
       [opened]="mobileQuery.matches ? 'false' : 'true' && globals.selectedToolbarTabId !== 'tab00'"  [style.marginTop.px]="mobileQuery.matches ? 80 : 0"> -->
-      <mat-sidenav #sidenavLeftPanel [fixedInViewport]='false' fixedTopGap="40" [opened]="mobileQuery.matches ? 'false' : 'true' && globals.selectedToolbarTabId !== 'tab00'" [style.marginTop.px]="mobileQuery.matches ? 60 : 0">
+      <mat-sidenav #sidenavLeftPanel class="md-sidenav" [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
+      fixedTopGap="40" [opened]="mobileQuery.matches ? 'false' : 'true' && globals.selectedToolbarTabId !== 'tab00'" [style.marginTop.px]="mobileQuery.matches ? 0 : 0">
       <span *ngIf="globals.selectedLanguageId == 'de'">
           <span *ngIf="selectedToolbarTabId == 'tab01'">
-              <br><div style="color: red; font-size:20pt"> Under Construction! </div>
+              <br><div style="color: red; font-size:20pt"> Under Construction!</div>
               <br>
               &nbsp;Info zum Projekt<br>
               <mat-expansion-panel [expanded]='false'>
                 <mat-expansion-panel-header><mat-panel-title>
-                  <button mat-button (click)="selectedMainContentId ='T1_de'; changeSelection()">I1 Inspiration durch Lehrpläne und Spiralcurriculum</button>
+                  <button mat-button (click)="selectedMainContentId ='I1_de'; changeSelection()">I1 Inspiration durch Lehrpläne und Spiralcurriculum</button>
                   </mat-panel-title><mat-panel-description></mat-panel-description></ mat-expansion-panel-header>
-                      <button mat-button (click)="selectedMainContentId ='I1.1_de'; changeSelection()">I1.1 Lehrplan21</button><br>
+                      <button mat-button (click)="selectedWpPage ='info-zum-projekt-de'; changeSelection()">I1.1 Lehrplan21</button><br>
                       <button mat-button (click)="selectedMainContentId ='I1.1.1_de'; changeSelection()">&nbsp;&nbsp;&nbsp;I1.1.1 Lebens- und Berufsweltperspektiven</button><br>
                       <button mat-button (click)="selectedMainContentId ='I1.1.2_de'; changeSelection()">&nbsp;&nbsp;&nbsp;I1.1.2 Selbständiges Entdecken und Be-greifen</button><br>
                       <button mat-button (click)="selectedMainContentId ='I1.1.3_de'; changeSelection()">&nbsp;&nbsp;&nbsp;I1.1.3 Systematisches Erwerben von Anwendungskompetenzen</button><br>
@@ -78,12 +79,12 @@
             </mat-expansion-panel>
           </span>
         <span *ngIf="selectedToolbarTabId == 'tab02'">
-            <br><div style="color: red; font-size:20pt"> Under Construction! </div>
+            <br><div style="color: red; font-size:20pt"> Under Construction!</div>
             <br>
             &nbsp;Bezug zu Lehrplänen<br>
           <mat-expansion-panel [expanded]='false'>
               <mat-expansion-panel-header><mat-panel-title>
-                <button mat-button (click)="selectedMainContentId ='T1_de'; changeSelection()">B1 Anwendungsbeispiele aus der Lernendenwelt</button>
+                <button mat-button (click)="selectedMainContentId ='T1_de'; changeSelection()">B1 Anwendungsbeispiele aus der Lernendenperspektive</button>
                 </mat-panel-title><mat-panel-description></mat-panel-description></ mat-expansion-panel-header>
                     <button mat-button (click)="selectedMainContentId ='B1.1_de'; changeSelection()">B1.1 Systemanmeldung/Login (Lehrplan21 MI.2.3.1.b)</button><br>
                     <button mat-button (click)="selectedMainContentId ='B1.1.1_de'; changeSelection()">&nbsp;&nbsp;&nbsp;B1.1.1 Beispiel Social Media Logins</button><br>
@@ -97,22 +98,22 @@
           </mat-expansion-panel>
           <mat-expansion-panel [expanded]='false'>
             <mat-expansion-panel-header><mat-panel-title>
-            <button mat-button (click)="selectedMainContentId ='B2_de'; changeSelection()">B2 Regeln und Standards in der Lernendenwelt</button>
+            <button mat-button (click)="selectedMainContentId ='B2_de'; changeSelection()">B2 Regeln und Standards aus der Berufsperspektive</button>
             </mat-panel-title><mat-panel-description></mat-panel-description></ mat-expansion-panel-header>
             <button mat-button (click)="selectedMainContentId ='B2.1_de'; changeSelection()">B2.1 Gremien/Verbände/Behörden (W3C,IEEE,eCH,SBBK..)</button><br>
             <button mat-button (click)="selectedMainContentId ='B2.2_de'; changeSelection()">B2.2 Protokolle/Modelle</button><br>
-            <button mat-button (click)="selectedMainContentId ='B2.3_de'; changeSelection()">B2.3 OAuth 2.0 Autorisierung</button><br>
-            <button mat-button (click)="selectedMainContentId ='B2.4_de'; changeSelection()">B2.4 OpenID Connect Authentifizierung</button><br>
-            <button mat-button (click)="selectedMainContentId ='B2.5_de'; changeSelection()">B2.5 REST API Schnittstellen</button><br>
+            <button mat-button (click)="selectedWpPage ='oauth-autorisierung'; changeSelection()">B2.3 OAuth 2.0 Autorisierung</button><br>
+            <button mat-button (click)="selectedWpPage ='openid-connect-authentifizierung'; changeSelection()">B2.4 OpenID Connect Authentifizierung</button><br>
+            <button mat-button (click)="selectedWpPage ='rest-api-schnittstellen'; changeSelection()">B2.5 REST API Schnittstellen</button><br>
             <button mat-button (click)="selectedMainContentId ='B2.6_de'; changeSelection()">B2.6 JSON Datenformat</button><br>
-            <button mat-button (click)="selectedMainContentId ='B2.7_de'; changeSelection()">B2.7 Kodierung</button><br>
+            <button mat-button (click)="selectedWpPage ='kodierung'; changeSelection()">B2.7 Kodierung</button><br>
             <button mat-button (click)="selectedMainContentId ='B2.7.1_de'; changeSelection()">&nbsp;&nbsp;&nbsp;B2.7.1 Hashing</button><br>
             <button mat-button (click)="selectedMainContentId ='B2.7.2_de'; changeSelection()">&nbsp;&nbsp;&nbsp;B2.7.2 Verschlüsselung</button><br>
             <button mat-button (click)="selectedMainContentId ='B2.7.3_de'; changeSelection()">&nbsp;&nbsp;&nbsp;B2.7.3 Signierung</button><br>
           </mat-expansion-panel>
           <mat-expansion-panel [expanded]='false'>
             <mat-expansion-panel-header><mat-panel-title>
-              <button mat-button (click)="selectedMainContentId ='B3_de'; changeSelection()">B3 Digitale Identitäten in der Lernendenwelt</button>
+              <button mat-button (click)="selectedMainContentId ='B3_de'; changeSelection()">B3 Digitale Identitäten in der Schweiz</button>
               </mat-panel-title><mat-panel-description></mat-panel-description></ mat-expansion-panel-header>
               <button mat-button (click)="selectedMainContentId ='B3.1_de'; changeSelection()">B3.1 -> iFrame bundesrat</button><br>
               <button mat-button (click)="selectedMainContentId ='B3.2_de'; changeSelection()">B3.2 -> iFrame Wikipedia</button><br>
@@ -146,7 +147,7 @@
                     <button mat-button (click)="selectedMainContentId ='U2.1.1_de'; changeSelection()">&nbsp;&nbsp;&nbsp;U2.1.1 Vollständiger Login Flow</button><br>
                     <button mat-button (click)="selectedMainContentId ='U2.1.2_de'; changeSelection()">&nbsp;&nbsp;&nbsp;U2.1.2 Login Flow Teilschritte</button><br>
                     <button mat-button (click)="selectedMainContentId ='U2.2_de'; changeSelection()">U2.2 Facebook Login</button><br>
-                    <button mat-button (click)="selectedMainContentId ='U2.2.1_de'; changeSelection()">&nbsp;&nbsp;&nbsp;U2.2.1 Vollständiger Login Flow</button><br>
+                    <button mat-button (click)="selectedWpPage ='facebook-full-loginflow-de'; changeSelection()">&nbsp;&nbsp;&nbsp;U2.2.1 Vollständiger Login Flow</button><br>
                     <button mat-button (click)="selectedMainContentId ='U2.2.2_de'; changeSelection()">&nbsp;&nbsp;&nbsp;U2.2.2 Login Flow Teilschritte</button><br>
                     <button mat-button (click)="selectedMainContentId ='U2.2_de'; changeSelection()">U2.2 google Login</button><br>
                     <button mat-button (click)="selectedMainContentId ='U2.2.1_de'; changeSelection()">&nbsp;&nbsp;&nbsp;U2.2.1 Vollständiger Login Flow</button><br>
@@ -167,7 +168,7 @@
             &nbsp;Info zum Projekt<br>
             <mat-expansion-panel [expanded]='false'>
               <mat-expansion-panel-header><mat-panel-title>
-                <button mat-button (click)="selectedMainContentId ='T1_de'; changeSelection()">I1 Inspiration durch Lehrpläne & Spiralcurriculum<mat-icon>keyboard_arrow_down</mat-icon></button>
+                <button mat-button (click)="sidenavLeftPanel.close(); selectedWpPage ='info-zum-projekt-de'; changeSelection()">I1 Inspiration durch Lehrpläne & Spiralcurriculum<mat-icon>keyboard_arrow_down</mat-icon></button>
                 </mat-panel-title><mat-panel-description></mat-panel-description></ mat-expansion-panel-header>
                     <button mat-button (click)="selectedMainContentId ='I1.1_de'; changeSelection()">I1.1 Lehrplan21</button><br>
                     <button mat-button (click)="selectedMainContentId ='I1.1.1_de'; changeSelection()">&nbsp;&nbsp;&nbsp;I1.1.1 Lebens- und Berufsweltperspektiven</button><br>
@@ -201,36 +202,36 @@
           &nbsp;Bezug zu Lehrplänen<br>
         <mat-expansion-panel [expanded]='false'>
             <mat-expansion-panel-header><mat-panel-title>
-              <button mat-button (click)="selectedMainContentId ='T1_de'; changeSelection()">B1 Anwendungsbeispiele aus der Lernendenwelt<mat-icon>keyboard_arrow_down</mat-icon></button>
+              <button mat-button (click)="selectedMainContentId ='T1_de'; changeSelection()">B1 Anwendungsbeispiele Lernendenperspektive<mat-icon>keyboard_arrow_down</mat-icon></button>
               </mat-panel-title><mat-panel-description></mat-panel-description></ mat-expansion-panel-header>
                   <button mat-button (click)="selectedMainContentId ='B1.1_de'; changeSelection()">B1.1 Systemanmeldung/Login (Lehrplan21 MI.2.3.1.b)</button><br>
                   <button mat-button (click)="selectedMainContentId ='B1.1.1_de'; changeSelection()">&nbsp;&nbsp;&nbsp;B1.1.1 Beispiel Social Media Logins</button><br>
                   <button mat-button (click)="selectedMainContentId ='B1.1.2_de'; changeSelection()">&nbsp;&nbsp;&nbsp;B1.1.2 Beispiel Schulumgebung Logins</button><br>
-                  <button mat-button (click)="selectedMainContentId ='B1.2_de'; changeSelection()">B1.2 Anforderungen an den Systemanmeldeprozess</button><br>
+                  <button mat-button (click)="selectedMainContentId ='B1.2_de'; changeSelection()">B1.2 Anforderungen Systemanmeldeprozess</button><br>
                   <button mat-button (click)="selectedMainContentId ='B1.2.1_de'; changeSelection()">&nbsp;&nbsp;&nbsp;B1.2.1 Hohe Sicherheit und Transparenz</button><br>
                   <button mat-button (click)="selectedMainContentId ='B1.2.2_de'; changeSelection()">&nbsp;&nbsp;&nbsp;B1.2.2 Einfache Handhabung</button><br>
-                  <button mat-button (click)="selectedMainContentId ='B1.3_de'; changeSelection()">B1.3 Lösungsmuster zum Systemanmeldeprozess</button><br>
+                  <button mat-button (click)="selectedMainContentId ='B1.3_de'; changeSelection()">B1.3 Lösungsmuster Systemanmeldeprozess</button><br>
                   <button mat-button (click)="selectedMainContentId ='B1.3.1_de'; changeSelection()">&nbsp;&nbsp;&nbsp;B1.3.1 Ungünstige Lösungsmuster (Anti-Pattern)</button><br>
                   <button mat-button (click)="selectedMainContentId ='B1.3.2_de'; changeSelection()">&nbsp;&nbsp;&nbsp;B1.3.2 Gute Lösungsmuster (Standards)</button>
         </mat-expansion-panel>
         <mat-expansion-panel [expanded]='false'>
           <mat-expansion-panel-header><mat-panel-title>
-          <button mat-button (click)="selectedMainContentId ='B2_de'; changeSelection()">B2 Regeln und Standards in der Lernendenwelt<mat-icon>keyboard_arrow_down</mat-icon></button>
+          <button mat-button (click)="selectedMainContentId ='B2_de'; changeSelection()">B2 Regeln und Standards Berufsperspektive<mat-icon>keyboard_arrow_down</mat-icon></button>
           </mat-panel-title><mat-panel-description></mat-panel-description></ mat-expansion-panel-header>
           <button mat-button (click)="selectedMainContentId ='B2.1_de'; changeSelection()">B2.1 Gremien/Verbände/Behörden <br>(W3C,IEEE,eCH,SBBK..)</button><br>
           <button mat-button (click)="selectedMainContentId ='B2.2_de'; changeSelection()">B2.2 Protokolle/Modelle</button><br>
-          <button mat-button (click)="selectedMainContentId ='B2.3_de'; changeSelection()">B2.3 OAuth 2.0 Autorisierung</button><br>
-          <button mat-button (click)="selectedMainContentId ='B2.4_de'; changeSelection()">B2.4 OpenID Connect Authentifizierung</button><br>
-          <button mat-button (click)="selectedMainContentId ='B2.5_de'; changeSelection()">B2.5 REST API Schnittstellen</button><br>
+          <button mat-button (click)="sidenavLeftPanel.close(); selectedWpPage ='oauth-autorisierung'; changeSelection()">B2.3 OAuth 2.0 Autorisierung</button><br>
+          <button mat-button (click)="sidenavLeftPanel.close(); selectedWpPage ='openid-connect-authentifizierung'; changeSelection()">B2.4 OpenID Connect Authentifizierung</button><br>
+          <button mat-button (click)="sidenavLeftPanel.close(); selectedWpPage ='rest-api-schnittstellen'; changeSelection()">B2.5 REST API Schnittstellen</button><br>
           <button mat-button (click)="selectedMainContentId ='B2.6_de'; changeSelection()">B2.6 JSON Datenformat</button><br>
-          <button mat-button (click)="selectedMainContentId ='B2.7_de'; changeSelection()">B2.7 Kodierung</button><br>
+          <button mat-button (click)="sidenavLeftPanel.close(); selectedWpPage ='kodierung'; changeSelection()">B2.7 Kodierung</button><br>
           <button mat-button (click)="selectedMainContentId ='B2.7.1_de'; changeSelection()">&nbsp;&nbsp;&nbsp;B2.7.1 Hashing</button><br>
           <button mat-button (click)="selectedMainContentId ='B2.7.2_de'; changeSelection()">&nbsp;&nbsp;&nbsp;B2.7.2 Verschlüsselung</button><br>
           <button mat-button (click)="selectedMainContentId ='B2.7.3_de'; changeSelection()">&nbsp;&nbsp;&nbsp;B2.7.3 Signierung</button><br>
         </mat-expansion-panel>
         <mat-expansion-panel [expanded]='false'>
           <mat-expansion-panel-header><mat-panel-title>
-            <button mat-button (click)="selectedMainContentId ='B3_de'; changeSelection()">B3 Digitale Identitäten in der Lernendenwelt<mat-icon>keyboard_arrow_down</mat-icon></button>
+            <button mat-button (click)="selectedMainContentId ='B3_de'; changeSelection()">B3 Digitale Identitäten Schweiz<mat-icon>keyboard_arrow_down</mat-icon></button>
             </mat-panel-title><mat-panel-description></mat-panel-description></ mat-expansion-panel-header>
             <button mat-button (click)="selectedMainContentId ='B3.1_de'; changeSelection()">B3.1 -> iFrame bundesrat</button><br>
             <button mat-button (click)="selectedMainContentId ='B3.2_de'; changeSelection()">B3.2 -> iFrame Wikipedia</button><br>
@@ -261,7 +262,7 @@
                 <button mat-button (click)="selectedMainContentId ='U2.1.1_de'; changeSelection()">&nbsp;&nbsp;&nbsp;U2.1.1 Vollständiger Login Flow</button><br>
                 <button mat-button (click)="selectedMainContentId ='U2.1.2_de'; changeSelection()">&nbsp;&nbsp;&nbsp;U2.1.2 Login Flow Teilschritte</button><br>
                 <button mat-button (click)="selectedMainContentId ='U2.2_de'; changeSelection()">U2.2 Facebook Login</button><br>
-                <button mat-button (click)="selectedMainContentId ='U2.2.1_de'; changeSelection()">&nbsp;&nbsp;&nbsp;U2.2.1 Vollständiger Login Flow</button><br>
+                <button mat-button (click)="sidenavLeftPanel.close(); selectedWpPage ='facebook-full-loginflow-de'; changeSelection()">&nbsp;&nbsp;&nbsp;U2.2.1 Vollständiger Login Flow</button><br>
                 <button mat-button (click)="selectedMainContentId ='U2.2.2_de'; changeSelection()">&nbsp;&nbsp;&nbsp;U2.2.2 Login Flow Teilschritte</button><br>
                 <button mat-button (click)="selectedMainContentId ='U2.2_de'; changeSelection()">U2.2 google Login</button><br>
                 <button mat-button (click)="selectedMainContentId ='U2.2.1_de'; changeSelection()">&nbsp;&nbsp;&nbsp;U2.2.1 Vollständiger Login Flow</button><br>
@@ -280,68 +281,11 @@
         </span>
       </span>
     </mat-sidenav>
-    <mat-sidenav-content [style.marginTop.px]="mobileQuery.matches ? 110 : 0">
+    <mat-sidenav-content fixedTopGap="40" [style.marginTop.px]="mobileQuery.matches ? 80 : 0">
       <span *ngIf="globals.selectedLanguageId == 'de'">
           <!-- <iframe *ngIf="selectedToolbarTabId == 'tab00'" [src]='sanitizer.bypassSecurityTrustResourceUrl(globals.myhtmlpath + globals.selectedLanguage + "/" + globals.myhtmlfile)' [width]="mobileQuery.matches ? 1 * width : 1 * width_max" [height]="mobileQuery.matches ? height - 220 : height - 100" frameBorder="0"></iframe> -->
-          <iframe *ngIf="selectedToolbarTabId == 'tab00'" [src]='sanitizer.bypassSecurityTrustResourceUrl("https://eidlab-identity-federation-playground.openses.org/index_iframe.html")' [width]="mobileQuery.matches ? 1 * width : 1 * 1200" [height]="mobileQuery.matches ? height - 220 : height - 100" frameBorder="0"></iframe>
-        <!-- <span *ngIf="selectedToolbarTabId == 'tab00'">
-          Slider:<br>
-          - Ziele<br>
-          - RLP Bezug<br>
-          - Recherche Informatik Lehrbücher<br>
-          - https://www.aphorismen.de/zitat/27424 -> Man kann einen Menschen nichts lehren; man kann ihm nur helfen, es in sich selbst zu finden.
-        </span> -->
-        <span *ngIf="globals.selectedMainContentId == 'I1_de'">
-            Slider:<br>
-            - Ziele<br>
-            - RLP Bezug<br>
-            - Recherche Informatik Lehrbücher<br>
-            - https://www.aphorismen.de/zitat/27424 -> Man kann einen Menschen nichts lehren; man kann ihm nur helfen, es in sich selbst zu finden.
-          </span>
-        <span *ngIf="globals.selectedMainContentId == 'B2.3_de'">
-            https://www.researchgate.net/publication/313065292_OAuth_und_OpenID_Connect_-_Erfahrungen_und_Konzepte<br>
-            https://oauth.net/2/
-        </span>
-        <span *ngIf="globals.selectedMainContentId == 'B2.4_de'">
-            https://openid.net/connect/
-        </span>
-        <span *ngIf="globals.selectedMainContentId == 'B2.5_de'">
-            https://www.cloudcomputing-insider.de/was-ist-eine-rest-api-a-611116/
-        </span>
-        <span *ngIf="globals.selectedMainContentId == 'B2.7_de'">
-            https://php-de.github.io/jumpto/hash-etc/
-        </span>
-        <span *ngIf="globals.selectedMainContentId == 'U2.2_de'">
-          Facebook Login: Übersicht
-        </span>
-        <span *ngIf="globals.selectedMainContentId == 'U2.2.1_de'">
-          Buttons einfügen: Cookie testen, Cookie löschen<br>
-          Links einfügen: Anmelden bei Facebook<br>
-          Anzeige einfügen: Facebook Anmeldestatus<br>
-          https://developers.facebook.com/docs/facebook-login/manually-build-a-login-flow<br>
-          https://developers.facebook.com/apps/1198455663664253/settings/basic/<br>
-          https://developers.facebook.com/apps/1198455663664253/fb-login/settings/<br>
-          https://www.facebook.com/v3.2/dialog/oauth?client_id=1198455663664253<br>
-          &response_type=token&redirect_uri=https://www.facebook.com/connect/login_success.html&state="123"<br>
-          https://www.facebook.com/v3.2/dialog/oauth?client_id=1198455663664253&response_type=token<br>
-          &redirect_uri=http://localhost:4200/ -> hier Angular Route /contentselect analog zu openses /tabselect erstellen<br>
-          und als redirect verwenden -> parser / cookie etc Funktionalität implementieren<br>
-          &state="123"<br>
-          <a href="https://www.facebook.com/v3.2/dialog/oauth?client_id=1198455663664253&response_type=token&redirect_uri=https://www.facebook.com/connect/login_success.html&state='123'">Bei Facebook anmelden remote</a><br>
-          <a href="https://www.facebook.com/v3.2/dialog/oauth?client_id=1198455663664253&response_type=token&redirect_uri=http://localhost:4200&state='123'">Bei Facebook anmelden local</a><br>
-          <a href="http://localhost:3000/">Bei Facebook anmelden local via API</a><br> -> Script und PopUp Fenster einbauen -> Callback mit Ng Route und URL Parameter
-
-          <button mat-stroked-button (click)="deleteAllCookies()" >Alle Cookies löschen</button>
-          <p style="text-align:center" >
-            Test iframe
-            <iframe [src]='sanitizer.bypassSecurityTrustResourceUrl("http://localhost:3000/")' frameBorder="0"></iframe>
-            <!-- <iframe *ngIf="globals.selectedTab !== 'Tab01'" [src]='sanitizer.bypassSecurityTrustResourceUrl(globals.myhtmlpath + globals.selectedLanguage + "/" + globals.myhtmlfile)' [width]="mobileQuery.matches ? width : width_max" [height]="mobileQuery.matches ? height - 140 : height - 40" frameBorder="0"></iframe> -->
-          </p>
-        </span>
-
-
-
-
+          <iframe *ngIf="selectedToolbarTabId == 'tab00'" [src]='sanitizer.bypassSecurityTrustResourceUrl("https://eidlab-identity-federation-playground.openses.org/index_iframe.html")' [width]="mobileQuery.matches ? 1 * width : 1 * 1200" [height]="mobileQuery.matches ? height - 130 : height - 90" frameBorder="0"></iframe>
+          <iframe *ngIf="selectedToolbarTabId !== 'tab00'" [src]='sanitizer.bypassSecurityTrustResourceUrl(globals.selectedWpPath + globals.selectedWpPage)' [width]="mobileQuery.matches ? 1 * width : 1 * 1200" [height]="mobileQuery.matches ? height - 90 : height - 90" frameBorder="0"></iframe>
 
       </span>
     </mat-sidenav-content>
