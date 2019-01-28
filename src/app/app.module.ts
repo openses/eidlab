@@ -8,11 +8,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AngularResizedEventModule } from 'angular-resize-event';
 import { Globals } from './globals';
 import { CookieService } from 'ngx-cookie-service';
+import { NotTab00IframeComponent } from './not-tab00-iframe/not-tab00-iframe.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NotTab00IframeComponent
   ],
   exports: [],
   imports: [
