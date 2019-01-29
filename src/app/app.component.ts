@@ -13,7 +13,7 @@ import { CookieService } from 'ngx-cookie-service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit, OnDestroy, AfterViewInit, AfterViewChecked {
+export class AppComponent implements OnInit, OnDestroy/* , AfterViewInit, AfterViewChecked */ {
   title = 'eIdLab.ch';
   width: number;
   height: number;
@@ -34,37 +34,37 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit, AfterView
   cookieCheck = false;
   public varIsLoading: any;
     @ViewChild('iframe_not_tab00') iframe_not_tab00: ElementRef;
-      ngAfterViewInit() {
+      /* ngAfterViewInit() {
         console.log('Test2 iframe_not_tab00');
         // this.textarea.nativeElement.focus()
         // this.varIsLoading = this.iframe_not_tab00.nativeElement.isLoading();
         // console.log('varIsLoading: '  + this.varIsLoading);
-      }
-      ngAfterViewChecked() {
+      } */
+      /* ngAfterViewChecked() {
         console.log('Test3 NotTab00IframeComponent');
         // this.globals.isLoading = 'false';
-      /* console.log(this.globals.isLoading);
+      console.log(this.globals.isLoading);
       console.log('Start Time Out 5000');
       setTimeout(() => {
         console.log('End Time Out 5000');
         this.globals.isLoading = 'false';
         console.log(this.globals.isLoading);
-        }, 5000); */
+        }, 5000);
         console.log('Start Time Out ngAfterViewChecked');
-        /* setTimeout(() => {
+        setTimeout(() => {
           console.log('View is fully loaded');
           console.log(this.iframe_not_tab00.nativeElement.offsetHeight);
           this.globals.isLoading = 'false';
-        }, 0); */
-        /* this.breakpointObserver
+        }, 0);
+        this.breakpointObserver
       .observe([Breakpoints.Small, Breakpoints.HandsetPortrait])
       .subscribe((state: BreakpointState) => {
         this.stateVar = JSON.stringify(state);
         console.log('BreakpointState: ' + this.stateVar);
       }
-      ); */
+      );
       console.log('Stop Time Out ngAfterViewChecked');
-      }
+      } */
 
 
   // tslint:disable-next-line:max-line-length
@@ -110,15 +110,37 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit, AfterView
       console.log('selectedCommunityId: ' + this.globals.selectedCommunityId);
       this.globals.selectedWpPage = this.selectedWpPage;
       console.log('selectedWpPage: ' + this.globals.selectedWpPage);
-      console.log('selectedWpPath: ' + this.globals.selectedWpPath);
       this.globals.isLoading = 'true';
       console.log('this.globals.isLoading: ' + this.globals.isLoading);
-      console.log('Start Time Out 5000');
+      console.log('Start Time Out 10000');
       setTimeout(() => {
-        console.log('End Time Out 5000');
-        this.globals.isLoading = 'false';
-        console.log('this.globals.isLoading: ' + this.globals.isLoading);
-        }, 5000);
+        console.log('End Time Out 10000 / 1');
+        console.log(this.iframe_not_tab00.nativeElement.offsetHeight);
+        console.log(this.iframe_not_tab00.nativeElement.src);
+       this.globals.isLoading = 'false';
+       // console.log('setTimeout 1000 /  1');
+        // console.log('this.globals.isLoading: ' + this.globals.isLoading);
+        /* setTimeout(() => {
+          console.log('End Time Out 1000 / 2');
+          console.log(this.iframe_not_tab00.nativeElement.offsetHeight);
+          setTimeout(() => {
+            console.log('End Time Out 1000 / 3');
+            setTimeout(() => {
+              console.log('End Time Out 1000 / 4');
+              setTimeout(() => {
+                console.log('End Time Out 1000 / 5');
+                setTimeout(() => {
+                  console.log('End Time Out 1000 / 6');
+                    setTimeout(() => {
+                      this.globals.isLoading = 'false';
+                      console.log('End Time Out 1000 / 7');
+                      }, 1000);
+                  }, 1000);
+                }, 1000);
+              }, 1000);
+            }, 1000);
+          }, 1000);*/
+        }, 10000);
     }
 
     private iframeLoadCheck(event) {
