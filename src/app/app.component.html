@@ -274,23 +274,23 @@
                 <button mat-button (click)="selectedMainContentId ='U2.2.1_de'; changeSelection()">&nbsp;&nbsp;&nbsp;U2.2.1 Vollständiger Login Flow</button><br>
                 <button mat-button (click)="selectedMainContentId ='U2.2.2_de'; changeSelection()">&nbsp;&nbsp;&nbsp;U2.2.2 Login Flow Teilschritte</button><br>
           </mat-expansion-panel>
-
-
-
-
         </span>
       </span>
     </mat-sidenav>
     <mat-sidenav-content fixedTopGap="40" [style.marginTop.px]="mobileQuery.matches ? 80 : 0">
       <span *ngIf="globals.selectedLanguageId == 'de'">
           <!-- <iframe *ngIf="selectedToolbarTabId == 'tab00'" [src]='sanitizer.bypassSecurityTrustResourceUrl(globals.myhtmlpath + globals.selectedLanguage + "/" + globals.myhtmlfile)' [width]="mobileQuery.matches ? 1 * width : 1 * width_max" [height]="mobileQuery.matches ? height - 220 : height - 100" frameBorder="0"></iframe> -->
-
-          <span *ngIf="globals.isLoading=='true'">...is loading...<br><!-- <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> --></span>
+          <span *ngIf="globals.isLoading=='5s_left'">...is loading...<br><!-- <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> --></span>
+          <span *ngIf="globals.isLoading=='4s_left'">...is loading...4 sec  left ...<br></span>
+          <span *ngIf="globals.isLoading=='3s_left'">...is loading...3 sec  left ...<br></span>
+          <span *ngIf="globals.isLoading=='2s_left'">...is loading...2 sec  left ...<br></span>
+          <span *ngIf="globals.isLoading=='1s_left'">...is loading...1 sec  left ...<br></span>
           <!-- <span *ngIf="globals.isLoading=='true'">...is loading...<br><br></span> -->
-          <iframe *ngIf="selectedToolbarTabId == 'tab00'"   [src]='sanitizer.bypassSecurityTrustResourceUrl("https://eidlab-identity-federation-playground.openses.org/index_iframe.html")'  [width]="mobileQuery.matches ? 1 * width : 1 * 1200" [height]="mobileQuery.matches ? height - 130 : height - 90" frameBorder="0"></iframe>
+          <iframe *ngIf="selectedToolbarTabId == 'tab00' && iframeVisible == 'true'" #iframe_not_tab00 id='iframe_tab00'  [src]='sanitizer.bypassSecurityTrustResourceUrl("https://eidlab-identity-federation-playground.openses.org/index_iframe.html")'  [width]="mobileQuery.matches ? 1 * width : 1 * 1200" [height]="mobileQuery.matches ? height - 130 : height - 90" frameBorder="0"></iframe>
           <!-- <iframe *ngIf="selectedToolbarTabId !== 'tab00' && globals.isLoading!=='true'" [src]='sanitizer.bypassSecurityTrustResourceUrl(globals.selectedWpPath + globals.selectedWpPage)' [width]="mobileQuery.matches ? 1 * width : 1 * 1200" [height]="mobileQuery.matches ? height - 90 : height - 90" frameBorder="0"></iframe> -->
           <!-- <app-not-tab00-iframe></app-not-tab00-iframe> -->
-          <iframe *ngIf="selectedToolbarTabId !== 'tab00'" #iframe_not_tab00 id='iframe_not_tab00' [src]='sanitizer.bypassSecurityTrustResourceUrl(globals.selectedWpPath + globals.selectedWpPage)' (loaded)="iframeLoadCheck($event);" [width]="mobileQuery.matches ? 1 * width : 1 * 1200" [height]="mobileQuery.matches ? height - 90 : height - 90" frameBorder="0"></iframe>
+          <iframe *ngIf="selectedToolbarTabId !== 'tab00' && iframeVisible == 'true'" #iframe_not_tab00 id='iframe_not_tab00' [src]='sanitizer.bypassSecurityTrustResourceUrl(globals.selectedWpPath + globals.selectedWpPage)' (loaded)="iframeLoadCheck($event);" [width]="mobileQuery.matches ? 1 * width : 1 * 1200" [height]="mobileQuery.matches ? height - 90 : height - 90" frameBorder="0"></iframe>
+          <iframe *ngIf="selectedToolbarTabId == 'isLOading' && iframeVisible == 'false'" #iframe_not_visible id='iframe_not_visible' [src]='sanitizer.bypassSecurityTrustResourceUrl("https://eidlab-identity-federation-playground.openses.org/index_iframe.html")' (loaded)="iframeLoadCheck($event);" [width]="mobileQuery.matches ? 1 * width : 1 * 1200" [height]="mobileQuery.matches ? height - 90 : height - 90" frameBorder="0"></iframe>
 
       </span>
     </mat-sidenav-content>
