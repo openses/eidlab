@@ -47,13 +47,13 @@
               &nbsp;Info zum Projekt<br>
               <mat-expansion-panel [expanded]='false'>
                 <mat-expansion-panel-header><mat-panel-title>
-                  <button mat-button (click)="selectedWpPage ='info-zum-projekt-de'; changeSelection()">I1 Inspiration durch Lehrpläne und Spiralcurriculum</button>
+                  <button mat-button (click)="selectedWpPage ='info-zum-projekt-de'; changeSelection(); timeoutTest()">I1 Inspiration durch Lehrpläne und Spiralcurriculum</button>
                   </mat-panel-title><mat-panel-description></mat-panel-description></ mat-expansion-panel-header>
-                      <button mat-button (click)="selectedWpPage ='lehrplan21'; changeSelection()">I1.1 Lehrplan21</button><br>
-                      <button mat-button (click)="selectedWpPage ='lebens-und-berufsweltperspektiven'; changeSelection()">&nbsp;&nbsp;&nbsp;I1.1.1 Lebens- und Berufsweltperspektiven</button><br>
-                      <button mat-button (click)="selectedWpPage ='selbstaendiges-entdecken-und-be-greifen'; changeSelection()">&nbsp;&nbsp;&nbsp;I1.1.2 Selbständiges Entdecken und Be-greifen</button><br>
-                      <button mat-button (click)="selectedWpPage ='systematisches-erwerben-von-anwendungskompetenzen'; changeSelection()">&nbsp;&nbsp;&nbsp;I1.1.3 Systematisches Erwerben von Anwendungskompetenzen</button><br>
-                      <button mat-button (click)="selectedWpPage ='lehrplan-gymnasium'; changeSelection()">I1.2 Lehrplan Gymnasium</button><br>
+                      <button mat-button (click)="selectedWpPage ='lehrplan21'; changeSelection(); timeoutTest()">I1.1 Lehrplan21</button><br>
+                      <button mat-button (click)="selectedWpPage ='lebens-und-berufsweltperspektiven'; changeSelection(); timeoutTest()">&nbsp;&nbsp;&nbsp;I1.1.1 Lebens- und Berufsweltperspektiven</button><br>
+                      <button mat-button (click)="selectedWpPage ='selbstaendiges-entdecken-und-be-greifen'; changeSelection(); timeoutTest()">&nbsp;&nbsp;&nbsp;I1.1.2 Selbständiges Entdecken und Be-greifen</button><br>
+                      <button mat-button (click)="selectedWpPage ='systematisches-erwerben-von-anwendungskompetenzen'; changeSelection(); timeoutTest()">&nbsp;&nbsp;&nbsp;I1.1.3 Systematisches Erwerben von Anwendungskompetenzen</button><br>
+                      <button mat-button (click)="selectedWpPage ='lehrplan-gymnasium'; changeSelection(); timeoutTest()">I1.2 Lehrplan Gymnasium</button><br>
                       <button mat-button (click)="selectedWpPage =''; changeSelection()">&nbsp;&nbsp;&nbsp;B1.2.1 Erfoschung von Informationsabläufen in Beruf und Alltag</button><br>
                       <button mat-button (click)="selectedWpPage =''; changeSelection()">&nbsp;&nbsp;&nbsp;B1.2.2 Greifbar machen von abstrakten Prinzipien und Modellen</button><br>
                       <button mat-button (click)="selectedWpPage =''; changeSelection()">I1.3 Lehrpläne Berufsbildung</button><br>
@@ -163,18 +163,18 @@
         <span *ngIf="selectedToolbarTabId == 'tab06'">
           <br><div style="color: red; font-size:20pt"> Under Construction! </div>
           <br>
-            &nbsp;<button mat-button (click)="selectedToolbarTabId='tab00'; sidenavLeftPanel.close(); selectedMainContentId ='Start'; changeSelection()">Start</button><br>
+            &nbsp;<button mat-button (click)="selectedToolbarTabId='tab00'; sidenavLeftPanel.close(); selectedMainContentId ='Start'; changeSelection(); timeoutTest()">Start</button><br>
             <br>
             &nbsp;Info zum Projekt<br>
             <mat-expansion-panel [expanded]='false'>
               <mat-expansion-panel-header><mat-panel-title>
-                <button mat-button (click)="sidenavLeftPanel.close(); selectedWpPage ='info-zum-projekt-de'; changeSelection()">I1 Inspiration durch Lehrpläne & Spiralcurriculum<mat-icon>keyboard_arrow_down</mat-icon></button>
+                <button mat-button (click)="sidenavLeftPanel.close(); selectedWpPage ='info-zum-projekt-de'; changeSelection(); timeoutTest()">I1 Inspiration durch Lehrpläne & Spiralcurriculum<mat-icon>keyboard_arrow_down</mat-icon></button>
                 </mat-panel-title><mat-panel-description></mat-panel-description></ mat-expansion-panel-header>
-                    <button mat-button (click)="sidenavLeftPanel.close(); selectedWpPage ='lehrplan21'; changeSelection()">I1.1 Lehrplan21</button><br>
-                    <button mat-button (click)="sidenavLeftPanel.close(); selectedWpPage ='lebens-und-berufsweltperspektiven'; changeSelection()">&nbsp;&nbsp;&nbsp;I1.1.1 Lebens- und Berufsweltperspektiven</button><br>
-                    <button mat-button (click)="sidenavLeftPanel.close(); selectedWpPage ='selbstaendiges-entdecken-und-be-greifen'; changeSelection()">&nbsp;&nbsp;&nbsp;I1.1.2 Selbständiges Entdecken und Be-greifen</button><br>
-                    <button mat-button (click)="sidenavLeftPanel.close(); selectedWpPage ='systematisches-erwerben-von-anwendungskompetenzen'; changeSelection()">&nbsp;&nbsp;&nbsp;I1.1.3 Systematisches Erwerben von <br>Anwendungskompetenzen</button><br>
-                    <button mat-button (click)="sidenavLeftPanel.close(); selectedWpPage ='lehrplan-gymnasium'; changeSelection()">I1.2 Lehrplan Gymnasium</button><br>
+                    <button mat-button (click)="sidenavLeftPanel.close(); selectedWpPage ='lehrplan21'; changeSelection(); timeoutTest()">I1.1 Lehrplan21</button><br>
+                    <button mat-button (click)="sidenavLeftPanel.close(); selectedWpPage ='lebens-und-berufsweltperspektiven'; changeSelection(); timeoutTest()">&nbsp;&nbsp;&nbsp;I1.1.1 Lebens- und Berufsweltperspektiven</button><br>
+                    <button mat-button (click)="sidenavLeftPanel.close(); selectedWpPage ='selbstaendiges-entdecken-und-be-greifen'; changeSelection(); timeoutTest()">&nbsp;&nbsp;&nbsp;I1.1.2 Selbständiges Entdecken und Be-greifen</button><br>
+                    <button mat-button (click)="sidenavLeftPanel.close(); selectedWpPage ='systematisches-erwerben-von-anwendungskompetenzen'; changeSelection(); timeoutTest()">&nbsp;&nbsp;&nbsp;I1.1.3 Systematisches Erwerben von <br>Anwendungskompetenzen</button><br>
+                    <button mat-button (click)="sidenavLeftPanel.close(); selectedWpPage ='lehrplan-gymnasium'; changeSelection(); timeoutTest()">I1.2 Lehrplan Gymnasium</button><br>
                     <button mat-button (click)="sidenavLeftPanel.close(); selectedWpPage =''; changeSelection()">&nbsp;&nbsp;&nbsp;B1.2.1 Erfoschung von Informationsabläufen in <br>Beruf und Alltag</button><br>
                     <button mat-button (click)="sidenavLeftPanel.close(); selectedWpPage =''; changeSelection()">&nbsp;&nbsp;&nbsp;B1.2.2 Greifbar machen von abstrakten <br>Prinzipien und Modellen</button><br>
                     <button mat-button (click)="sidenavLeftPanel.close(); selectedWpPage =''; changeSelection()">I1.3 Lehrpläne Berufsbildung</button><br>
@@ -279,19 +279,9 @@
     </mat-sidenav>
     <mat-sidenav-content fixedTopGap="40" [style.marginTop.px]="mobileQuery.matches ? 80 : 0">
       <span *ngIf="globals.selectedLanguageId == 'de'">
-          <!-- <iframe *ngIf="selectedToolbarTabId == 'tab00'" [src]='sanitizer.bypassSecurityTrustResourceUrl(globals.myhtmlpath + globals.selectedLanguage + "/" + globals.myhtmlfile)' [width]="mobileQuery.matches ? 1 * width : 1 * width_max" [height]="mobileQuery.matches ? height - 220 : height - 100" frameBorder="0"></iframe> -->
-          <span *ngIf="globals.isLoading=='5s_left'">...is loading...<br><!-- <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> --></span>
-          <span *ngIf="globals.isLoading=='4s_left'">...is loading...4 sec  left ...<br></span>
-          <span *ngIf="globals.isLoading=='3s_left'">...is loading...3 sec  left ...<br></span>
-          <span *ngIf="globals.isLoading=='2s_left'">...is loading...2 sec  left ...<br></span>
-          <span *ngIf="globals.isLoading=='1s_left'">...is loading...1 sec  left ...<br></span>
-          <!-- <span *ngIf="globals.isLoading=='true'">...is loading...<br><br></span> -->
-          <iframe *ngIf="selectedToolbarTabId == 'tab00' && iframeVisible == 'true'" #iframe_not_tab00 id='iframe_tab00'  [src]='sanitizer.bypassSecurityTrustResourceUrl("https://eidlab-identity-federation-playground.openses.org/index_iframe.html")'  [width]="mobileQuery.matches ? 1 * width : 1 * 1200" [height]="mobileQuery.matches ? height - 130 : height - 90" frameBorder="0"></iframe>
-          <!-- <iframe *ngIf="selectedToolbarTabId !== 'tab00' && globals.isLoading!=='true'" [src]='sanitizer.bypassSecurityTrustResourceUrl(globals.selectedWpPath + globals.selectedWpPage)' [width]="mobileQuery.matches ? 1 * width : 1 * 1200" [height]="mobileQuery.matches ? height - 90 : height - 90" frameBorder="0"></iframe> -->
-          <!-- <app-not-tab00-iframe></app-not-tab00-iframe> -->
-          <iframe *ngIf="selectedToolbarTabId !== 'tab00' && iframeVisible == 'true'" #iframe_not_tab00 id='iframe_not_tab00' [src]='sanitizer.bypassSecurityTrustResourceUrl(globals.selectedWpPath + globals.selectedWpPage)' (loaded)="iframeLoadCheck($event);" [width]="mobileQuery.matches ? 1 * width : 1 * 1200" [height]="mobileQuery.matches ? height - 90 : height - 90" frameBorder="0"></iframe>
-          <iframe *ngIf="selectedToolbarTabId == 'isLOading' && iframeVisible == 'false'" #iframe_not_visible id='iframe_not_visible' [src]='sanitizer.bypassSecurityTrustResourceUrl("https://eidlab-identity-federation-playground.openses.org/index_iframe.html")' (loaded)="iframeLoadCheck($event);" [width]="mobileQuery.matches ? 1 * width : 1 * 1200" [height]="mobileQuery.matches ? height - 90 : height - 90" frameBorder="0"></iframe>
-
+          <span *ngIf="globals.isLoading=='5s_left'">...is loading...<br></span>
+          <iframe *ngIf="selectedToolbarTabId == 'tab00'" #iframe_not_tab00 id='iframe_tab00'  [src]='sanitizer.bypassSecurityTrustResourceUrl("https://eidlab-identity-federation-playground.openses.org/index_iframe.html")'  [width]="mobileQuery.matches ? 1 * width : 1 * 1200" [height]="mobileQuery.matches ? height - 130 : height - 90" frameBorder="0"></iframe>
+          <iframe *ngIf="selectedToolbarTabId !== 'tab00'" #iframe_not_tab00 id='iframe_not_tab00' [src]='sanitizer.bypassSecurityTrustResourceUrl(globals.selectedWpPath + globals.selectedWpPage)' (loaded)="iframeLoadCheck($event);" [width]="mobileQuery.matches ? 1 * width : 1 * 1200" [height]="mobileQuery.matches ? height - 90 : height - 90" frameBorder="0"></iframe>
       </span>
     </mat-sidenav-content>
   </mat-sidenav-container>

@@ -33,6 +33,7 @@ export class AppComponent implements OnInit, OnDestroy/* , AfterViewInit, AfterV
   cookieValue = 'UNKNOWN';
   cookieCheck = false;
   public varIsLoading: any;
+  // public iframeVisible: any;
     @ViewChild('iframe_not_tab00') iframe_not_tab00: ElementRef;
       /* ngAfterViewInit() {
         console.log('Test2 iframe_not_tab00');
@@ -81,6 +82,7 @@ export class AppComponent implements OnInit, OnDestroy/* , AfterViewInit, AfterV
     this.selectedCommunityId = globals.selectedCommunityId;
     this.selectedMainContentId = globals.selectedMainContentId;
     this.selectedWpPage = globals.selectedWpPage;
+    // this.iframeVisible = globals.iframeVisible;
   }
 
   onResized(event: ResizedEvent): void {
@@ -99,48 +101,28 @@ export class AppComponent implements OnInit, OnDestroy/* , AfterViewInit, AfterV
 
     }
 
+    private timeoutTest() {
+      // ...is loading...' wird eingeblendet'
+      setTimeout(() => {
+        this.globals.isLoading = '0s_left';
+        console.log('isLoading : ' + this.globals.isLoading);
+        console.log('End Time Out 5s: 5000');
+          }, 5000);
+    }
+
     private changeSelection() {
+      this.globals.isLoading = '5s_left';
+      console.log('isLoading: ' + this.globals.isLoading);
       this.globals.selectedToolbarTabId = this.selectedToolbarTabId;
       console.log('selectedToolbarTabId: ' + this.globals.selectedToolbarTabId);
-      this.globals.selectedMainContentId = this.selectedMainContentId;
-      console.log('selectedMainContentId: ' + this.globals.selectedMainContentId);
       this.globals.selectedLanguageId = this.selectedLanguageId;
       console.log('selectedLanguageId: ' + this.globals.selectedLanguageId);
       this.globals.selectedCommunityId = this.selectedCommunityId;
       console.log('selectedCommunityId: ' + this.globals.selectedCommunityId);
       this.globals.selectedWpPage = this.selectedWpPage;
       console.log('selectedWpPage: ' + this.globals.selectedWpPage);
-      this.globals.isLoading = 'true';
-      console.log('this.globals.isLoading: ' + this.globals.isLoading);
-      console.log('Start Time Out 10000');
-      setTimeout(() => {
-        console.log('End Time Out 10000 / 1');
-        console.log(this.iframe_not_tab00.nativeElement.offsetHeight);
-        console.log(this.iframe_not_tab00.nativeElement.src);
-       this.globals.isLoading = 'false';
-       // console.log('setTimeout 1000 /  1');
-        // console.log('this.globals.isLoading: ' + this.globals.isLoading);
-        /* setTimeout(() => {
-          console.log('End Time Out 1000 / 2');
-          console.log(this.iframe_not_tab00.nativeElement.offsetHeight);
-          setTimeout(() => {
-            console.log('End Time Out 1000 / 3');
-            setTimeout(() => {
-              console.log('End Time Out 1000 / 4');
-              setTimeout(() => {
-                console.log('End Time Out 1000 / 5');
-                setTimeout(() => {
-                  console.log('End Time Out 1000 / 6');
-                    setTimeout(() => {
-                      this.globals.isLoading = 'false';
-                      console.log('End Time Out 1000 / 7');
-                      }, 1000);
-                  }, 1000);
-                }, 1000);
-              }, 1000);
-            }, 1000);
-          }, 1000);*/
-        }, 10000);
+      // im die changeSelection() Prozedur aufrufenden click() Ereignis wird am Schluss die ttimeoutTest() Prozedur aufgerufen
+      // welche this.globals.isLoading = '0s_left' setzt -> '...is loading...' wird ausgeblendet
     }
 
     private iframeLoadCheck(event) {
