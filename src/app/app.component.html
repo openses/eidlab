@@ -4,13 +4,13 @@
         <img src="https://eidlab-identity-federation-playground.openses.org/eidlab-content/images/toolbar_logo.png" alt="Identity Federation Playground / eIdLab.ch" (click)="selectedToolbarTabId='tab00'; sidenavLeftPanel.close(); selectedMainContentId ='Start'; changeSelection()"/>
         <span *ngIf="!mobileQuery.matches">
           &nbsp;&nbsp;&nbsp;
-          <button mat-stroked-button *ngIf="globals.selectedLanguageId == 'de'" (click)="selectedToolbarTabId='tab00'; sidenavLeftPanel.close(); selectedMainContentId ='Start'; changeSelection()" >Start</button>
+          <button mat-stroked-button *ngIf="globals.selectedLanguageId == 'de'" (click)="selectedToolbarTabId='tab00'; sidenavLeftPanel.close(); selectedMainContentId ='Start'; changeSelection(); timeoutTest()" >Start</button>
           &nbsp;&nbsp;&nbsp;
-          <button mat-stroked-button *ngIf="globals.selectedLanguageId == 'de'" (click)="selectedToolbarTabId='tab01'; selectedWpPage ='info-zum-projekt-de'; changeSelection()" >Info zum Projekt</button>
+          <button mat-stroked-button *ngIf="globals.selectedLanguageId == 'de'" (click)="selectedToolbarTabId='tab01'; selectedWpPage ='info-zum-projekt-de'; changeSelection(); timeoutTest()" >Info zum Projekt</button>
           &nbsp;&nbsp;&nbsp;
-          <button mat-stroked-button *ngIf="globals.selectedLanguageId == 'de'" (click)="selectedToolbarTabId='tab02'; selectedMainContentId ='XXX'; changeSelection()" >Bezug zu Lehrplänen</button>
+          <button mat-stroked-button *ngIf="globals.selectedLanguageId == 'de'" (click)="selectedToolbarTabId='tab02'; selectedMainContentId ='XXX'; changeSelection(); timeoutTest()" >Bezug zu Lehrplänen</button>
           &nbsp;&nbsp;&nbsp;
-          <button mat-stroked-button *ngIf="globals.selectedLanguageId == 'de'" (click)="selectedToolbarTabId='tab03'; selectedMainContentId ='XXX'; changeSelection()" >Umsetzung von Lehrplänen</button>
+          <button mat-stroked-button *ngIf="globals.selectedLanguageId == 'de'" (click)="selectedToolbarTabId='tab03'; selectedMainContentId ='XXX'; changeSelection(); timeoutTest()" >Umsetzung von Lehrplänen</button>
         </span>
         <!-- This fills the remaining space of the current row -->
         <span class="example-spacer"></span>
@@ -54,13 +54,13 @@
                       <button mat-button (click)="selectedWpPage ='selbstaendiges-entdecken-und-be-greifen'; changeSelection(); timeoutTest()">&nbsp;&nbsp;&nbsp;I1.1.2 Selbständiges Entdecken und Be-greifen</button><br>
                       <button mat-button (click)="selectedWpPage ='systematisches-erwerben-von-anwendungskompetenzen'; changeSelection(); timeoutTest()">&nbsp;&nbsp;&nbsp;I1.1.3 Systematisches Erwerben von Anwendungskompetenzen</button><br>
                       <button mat-button (click)="selectedWpPage ='lehrplan-gymnasium'; changeSelection(); timeoutTest()">I1.2 Lehrplan Gymnasium</button><br>
-                      <button mat-button (click)="selectedWpPage =''; changeSelection()">&nbsp;&nbsp;&nbsp;B1.2.1 Erfoschung von Informationsabläufen in Beruf und Alltag</button><br>
-                      <button mat-button (click)="selectedWpPage =''; changeSelection()">&nbsp;&nbsp;&nbsp;B1.2.2 Greifbar machen von abstrakten Prinzipien und Modellen</button><br>
-                      <button mat-button (click)="selectedWpPage =''; changeSelection()">I1.3 Lehrpläne Berufsbildung</button><br>
-                      <button mat-button (click)="selectedWpPage =''; changeSelection()">&nbsp;&nbsp;&nbsp;I1.3.1 ICT Competence Framework</button><br>
-                      <button mat-button (click)="selectedWpPage =''; changeSelection()">&nbsp;&nbsp;&nbsp;I1.3.2 Modul 114 Codierung, Kompressions, Verschlüsselung</button><br>
-                      <button mat-button (click)="selectedWpPage =''; changeSelection()">&nbsp;&nbsp;&nbsp;I1.3.3 Modul 117 Netzinfrastruktur für kleines Unternehmen</button><br>
-                      <button mat-button (click)="selectedWpPage =''; changeSelection()">I1.4 Spiralcurriculum</button><br>
+                      <button mat-button (click)="selectedWpPage ='erforschen-von-informationsablaeufen'; changeSelection(); timeoutTest()">&nbsp;&nbsp;&nbsp;I1.2.1 Erfoschung von Informationsabläufen in Beruf und Alltag</button><br>
+                      <button mat-button (click)="selectedWpPage ='greifbar-machen-von-abstrakten-prinzipien-modellen'; changeSelection(); timeoutTest()">&nbsp;&nbsp;&nbsp;I1.2.2 Greifbar machen von abstrakten Prinzipien und Modellen</button><br>
+                      <button mat-button (click)="selectedWpPage ='lehrplaene_berufsbildung'; changeSelection(); timeoutTest()">I1.3 Lehrpläne Berufsbildung</button><br>
+                      <button mat-button (click)="selectedWpPage ='ict-competence-framework'; changeSelection(); timeoutTest()">&nbsp;&nbsp;&nbsp;I1.3.1 ICT Competence Framework</button><br>
+                      <button mat-button (click)="selectedWpPage ='modul-114'; changeSelection(); timeoutTest()">&nbsp;&nbsp;&nbsp;I1.3.2 Modul 114 Codierung, Kompressions, Verschlüsselung</button><br>
+                      <button mat-button (click)="selectedWpPage ='modul-117'; changeSelection(); timeoutTest()">&nbsp;&nbsp;&nbsp;I1.3.3 Modul 117 Netzinfrastruktur für kleines Unternehmen</button><br>
+                      <button mat-button (click)="selectedWpPage ='spiralcurriculum'; changeSelection(); timeoutTest()">I1.4 Spiralcurriculum</button><br>
             </mat-expansion-panel>
             <mat-expansion-panel [expanded]='false'>
               <mat-expansion-panel-header><mat-panel-title>
@@ -175,13 +175,13 @@
                     <button mat-button (click)="sidenavLeftPanel.close(); selectedWpPage ='selbstaendiges-entdecken-und-be-greifen'; changeSelection(); timeoutTest()">&nbsp;&nbsp;&nbsp;I1.1.2 Selbständiges Entdecken und Be-greifen</button><br>
                     <button mat-button (click)="sidenavLeftPanel.close(); selectedWpPage ='systematisches-erwerben-von-anwendungskompetenzen'; changeSelection(); timeoutTest()">&nbsp;&nbsp;&nbsp;I1.1.3 Systematisches Erwerben von <br>Anwendungskompetenzen</button><br>
                     <button mat-button (click)="sidenavLeftPanel.close(); selectedWpPage ='lehrplan-gymnasium'; changeSelection(); timeoutTest()">I1.2 Lehrplan Gymnasium</button><br>
-                    <button mat-button (click)="sidenavLeftPanel.close(); selectedWpPage =''; changeSelection()">&nbsp;&nbsp;&nbsp;B1.2.1 Erfoschung von Informationsabläufen in <br>Beruf und Alltag</button><br>
-                    <button mat-button (click)="sidenavLeftPanel.close(); selectedWpPage =''; changeSelection()">&nbsp;&nbsp;&nbsp;B1.2.2 Greifbar machen von abstrakten <br>Prinzipien und Modellen</button><br>
-                    <button mat-button (click)="sidenavLeftPanel.close(); selectedWpPage =''; changeSelection()">I1.3 Lehrpläne Berufsbildung</button><br>
-                    <button mat-button (click)="sidenavLeftPanel.close(); selectedWpPage =''; changeSelection()">&nbsp;&nbsp;&nbsp;I1.3.1 ICT Competence Framework</button><br>
-                    <button mat-button (click)="sidenavLeftPanel.close(); selectedWpPage =''; changeSelection()">&nbsp;&nbsp;&nbsp;I1.3.2 Modul 114 Codierung, Kompression, <br>Verschlüsselung</button><br>
-                    <button mat-button (click)="sidenavLeftPanel.close(); selectedWpPage =''; changeSelection()">&nbsp;&nbsp;&nbsp;I1.3.3 Modul 117 Netzinfrastruktur für kleines <br>Unternehmen</button><br>
-                    <button mat-button (click)="sidenavLeftPanel.close(); selectedWpPage =''; changeSelection()">I1.4 Spiralcurriculum</button><br>
+                    <button mat-button (click)="sidenavLeftPanel.close(); selectedWpPage ='erforschen-von-informationsablaeufen'; changeSelection(); timeoutTest()">&nbsp;&nbsp;&nbsp;I1.2.1 Erfoschung von Informationsabläufen in <br>Beruf und Alltag</button><br>
+                    <button mat-button (click)="sidenavLeftPanel.close(); selectedWpPage ='greifbar-machen-von-abstrakten-prinzipien-modellen'; changeSelection(); timeoutTest()">&nbsp;&nbsp;&nbsp;I1.2.2 Greifbar machen von abstrakten <br>Prinzipien und Modellen</button><br>
+                    <button mat-button (click)="sidenavLeftPanel.close(); selectedWpPage ='lehrplaene_berufsbildung'; changeSelection(); timeoutTest()">I1.3 Lehrpläne Berufsbildung</button><br>
+                    <button mat-button (click)="sidenavLeftPanel.close(); selectedWpPage ='ict-competence-framework'; changeSelection(); timeoutTest()">&nbsp;&nbsp;&nbsp;I1.3.1 ICT Competence Framework</button><br>
+                    <button mat-button (click)="sidenavLeftPanel.close(); selectedWpPage ='modul-114'; changeSelection(); timeoutTest()">&nbsp;&nbsp;&nbsp;I1.3.2 Modul 114 Codierung, Kompression, <br>Verschlüsselung</button><br>
+                    <button mat-button (click)="sidenavLeftPanel.close(); selectedWpPage ='modul-117'; changeSelection(); timeoutTest()">&nbsp;&nbsp;&nbsp;I1.3.3 Modul 117 Netzinfrastruktur für kleines <br>Unternehmen</button><br>
+                    <button mat-button (click)="sidenavLeftPanel.close(); selectedWpPage ='spiralcurriculum'; changeSelection(); timeoutTest()">I1.4 Spiralcurriculum</button><br>
           </mat-expansion-panel>
          <mat-expansion-panel [expanded]='false'>
             <mat-expansion-panel-header><mat-panel-title>
