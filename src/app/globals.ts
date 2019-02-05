@@ -12,4 +12,6 @@ export class Globals {
   selectedWpPath: any = 'https://eidlab-identity-federation-playground.openses.org/eidlab-wp/';
   selectedWpPage: any = 'testseite';
   isLoading: any = 'false';
+  isNotWpPage: any = 'false';
+  selectedNotWpPage: any = 'https://eidlab.ch';
 }
