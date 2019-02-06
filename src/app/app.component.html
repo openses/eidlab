@@ -73,10 +73,10 @@
             </mat-expansion-panel>
             <mat-expansion-panel [expanded]='false'>
               <mat-expansion-panel-header><mat-panel-title>
-              <button mat-button (click)="selectedWpPage =''; changeSelection(); timeoutTest()">I3 Projektrahmen</button>
+              <button mat-button (click)="selectedWpPage ='projektrahmen'; changeSelection(); timeoutTest()">I3 Projektrahmen</button>
               </mat-panel-title><mat-panel-description></mat-panel-description></ mat-expansion-panel-header>
-              <button mat-button (click)="selectedWpPage =''; changeSelection(); timeoutTest()">I3.1 Ziele und Zeitplan</button><br>
-              <button mat-button (click)="selectedWpPage =''; changeSelection(); timeoutTest()">I3.2 Community</button><br>
+              <button mat-button (click)="selectedWpPage ='ziele-und-zeitplan'; changeSelection(); timeoutTest()">I3.1 Ziele und Zeitplan</button><br>
+              <button mat-button (click)="selectedWpPage ='community'; changeSelection(); timeoutTest()">I3.2 Online-Community</button><br>
             </mat-expansion-panel>
           </span>
         <span *ngIf="selectedToolbarTabId == 'tab02'">
@@ -195,10 +195,10 @@
           </mat-expansion-panel>
         <mat-expansion-panel [expanded]='false'>
             <mat-expansion-panel-header><mat-panel-title>
-            <button mat-button (click)="sidenavLeftPanel.close(); selectedWpPage =''; changeSelection(); timeoutTest()">I3 Projektrahmen<mat-icon>keyboard_arrow_down</mat-icon></button>
+            <button mat-button (click)="sidenavLeftPanel.close(); selectedWpPage ='projektrahmen'; changeSelection(); timeoutTest()">I3 Projektrahmen<mat-icon>keyboard_arrow_down</mat-icon></button>
             </mat-panel-title><mat-panel-description></mat-panel-description></ mat-expansion-panel-header>
-            <button mat-button (click)="sidenavLeftPanel.close(); selectedWpPage =''; changeSelection(); timeoutTest()">I3.1 Ziele und Zeitplan</button><br>
-            <button mat-button (click)="sidenavLeftPanel.close(); selectedWpPage =''; changeSelection(); timeoutTest()">I3.2 Community</button><br>
+            <button mat-button (click)="sidenavLeftPanel.close(); selectedWpPage ='ziele-und-zeitplan'; changeSelection(); timeoutTest()">I3.1 Ziele und Zeitplan</button><br>
+            <button mat-button (click)="sidenavLeftPanel.close(); selectedWpPage ='community'; changeSelection(); timeoutTest()">I3.2 Online-Community</button><br>
           </mat-expansion-panel>
           <br>
           &nbsp;Bezug zu Lehrplänen<br>
