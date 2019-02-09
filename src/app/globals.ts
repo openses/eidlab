@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class Globals {
+  specialRoute: any = 'false';
   selectedToolbarTabId: any = 'tab00';
   selectedLanguageId: any = 'de';
   selectedCommunityId: any = 'local';
@@ -13,5 +14,5 @@ export class Globals {
   selectedWpPage: any = 'testseite';
   isLoading: any = 'false';
   isNotWpPage: any = 'false';
-  selectedNotWpPage: any = 'https://eidlab.ch';
+  selectedNotWpPage: any = 'http://eidlab.ch';
 }

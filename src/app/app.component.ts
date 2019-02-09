@@ -87,6 +87,10 @@ export class AppComponent implements OnInit, OnDestroy/* , AfterViewInit, AfterV
     // this.iframeVisible = globals.iframeVisible;
   }
 
+  public onNavigate() {
+    window.location.href = 'http://localhost:4200';
+  }
+
   onResized(event: ResizedEvent): void {
     this.width = event.newWidth;
     this.height = event.newHeight;
@@ -103,16 +107,18 @@ export class AppComponent implements OnInit, OnDestroy/* , AfterViewInit, AfterV
 
     }
 
-    private timeoutTest() {
+    public timeoutTest() {
       // ...is loading...' wird eingeblendet'
       setTimeout(() => {
         this.globals.isLoading = '0s_left';
+        console.log(this.globals.selectedToolbarTabId);
+        console.log(this.globals.selectedWpPage);
         console.log('isLoading : ' + this.globals.isLoading);
         console.log('End Time Out 5s: 5000');
           }, 5000);
     }
 
-    private changeSelection() {
+    public changeSelection() {
       this.globals.isLoading = '5s_left';
       console.log('isLoading: ' + this.globals.isLoading);
       this.globals.selectedToolbarTabId = this.selectedToolbarTabId;
@@ -127,7 +133,7 @@ export class AppComponent implements OnInit, OnDestroy/* , AfterViewInit, AfterV
       console.log('isNotWpPage: ' + this.globals.isNotWpPage);
       this.globals.selectedNotWpPage = this.selectedNotWpPage;
       console.log('selectedNotWpPage: ' + this.globals.selectedNotWpPage);
-      // im die changeSelection() Prozedur aufrufenden click() Ereignis wird am Schluss die ttimeoutTest() Prozedur aufgerufen
+      // im die changeSelection() Prozedur aufrufenden click() Ereignis wird am Schluss die timeoutTest() Prozedur aufgerufen
       // welche this.globals.isLoading = '0s_left' setzt -> '...is loading...' wird ausgeblendet
     }
 
@@ -169,7 +175,10 @@ export class AppComponent implements OnInit, OnDestroy/* , AfterViewInit, AfterV
   ngOnInit() {
     // https://angular.io/api/common/formatDate
     this.jstoday = formatDate(this.today, 'dd.MM.yyyy', 'en', '' );
-    this.isNotWpPage =  'false';
+    // this.isNotWpPage =  'false';
+    this.isNotWpPage = this.globals.isNotWpPage;
+    this.selectedToolbarTabId = this.globals.selectedToolbarTabId;
+    this.selectedWpPage = this.globals.selectedNotWpPage;
    }
 
    ngOnDestroy(): void {

@@ -1,0 +1,18 @@
+<!-- <span *ngIf="selectedToolbarTabId == 'tab00X'">
+  app-routing works! tab00 {{selectedToolbarTabId}}
+</span>
+<span *ngIf="selectedToolbarTabId == 'tab01'">
+    app-routing works! tab01 {{selectedLanguageId}} {{selectedToolbarTabId}} / {{selectedWpPath}} / {{selectedWpPage}}
+</span> -->
+<!-- <span *ngIf="globals.isLoading=='5s_left'">...is loading...<br></span> -->
+<iframe *ngIf="selectedToolbarTabId == 'tab00' && isNotWpPage == 'false' && globals.specialRoute == 'true'" #iframe_tab00 id='iframe_tab00'  [src]='sanitizer.bypassSecurityTrustResourceUrl("https://eidlab-identity-federation-playground.openses.org/index_iframe.html")'  [width]="this.mobileQuery.matches ? 1 * width : 1 * 1200" [height]="mobileQuery.matches ? height - 130 : height - 90" frameBorder="0"></iframe>
+<iframe *ngIf="selectedToolbarTabId !== 'tab00' && isNotWpPage == 'false'&& globals.specialRoute == 'true'" #iframe_not_tab00 id='iframe_not_tab00' [src]='sanitizer.bypassSecurityTrustResourceUrl(globals.selectedWpPath + globals.selectedWpPage)'  [width]="mobileQuery.matches ? 1 * width : 1 * 1200" [height]="1000" frameBorder="0"></iframe>
+ <!-- <iframe *ngIf="selectedToolbarTabId == 'tab00'" #iframe_tab00 id='iframe_tab00'  [src]='sanitizer.bypassSecurityTrustResourceUrl("https://eidlab-identity-federation-playground.openses.org/index_iframe.html")'  [width]="mobileQuery.matches ? 1 * width : 1 * 1200" [height]="mobileQuery.matches ? height - 130 : height - 90" frameBorder="0"></iframe>
+<iframe *ngIf="selectedToolbarTabId !== 'tab00'" #iframe_not_tab00 id='iframe_not_tab00' [src]='sanitizer.bypassSecurityTrustResourceUrl(globals.selectedWpPath + globals.selectedWpPage)' (loaded)="iframeLoadCheck($event);" [width]="mobileQuery.matches ? 1 * width : 1 * 1200" [height]="mobileQuery.matches ? height - 90 : height - 90" frameBorder="0"></iframe>
+ -->
+<!-- <iframe *ngIf="isNotWpPage == 'true'" #iframe_is_not_wp_page id='iframe_is_not_wp_page' [src]='sanitizer.bypassSecurityTrustResourceUrl(globals.selectedNotWpPage)' (loaded)="iframeLoadCheck($event);" [width]="mobileQuery.matches ? 1 * width : 1 * 1200" [height]="mobileQuery.matches ? height - 90 : height - 90" frameBorder="0"></iframe> -->
+
+<!-- The <router-outlet> tells the router where to display routed views.
+    https://angular.io/tutorial/toh-pt5#add-routeroutlet -->
+    <!-- <router-outlet></router-outlet> -->
+
