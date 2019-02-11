@@ -7,11 +7,11 @@
           <!-- <button mat-stroked-button *ngIf="globals.selectedLanguageId == 'de'" (click)="selectedToolbarTabId='tab00'; sidenavLeftPanel.close(); isNotWpPage='false'; selectedMainContentId ='Start'; changeSelection(); timeoutTest()" >Start</button> -->
           <button mat-stroked-button *ngIf="globals.selectedLanguageId == 'de'" (click)="onNavigate()" >Start</button>
           &nbsp;&nbsp;&nbsp;
-          <button mat-stroked-button *ngIf="globals.selectedLanguageId == 'de'" (click)="selectedToolbarTabId='tab01'; isNotWpPage='false'; selectedWpPage ='info-zum-projekt-de'; changeSelection(); timeoutTest()" >Info zum Projekt</button>
+          <button mat-stroked-button *ngIf="globals.selectedLanguageId == 'de' && globals.specialRoute == 'false'" (click)="selectedToolbarTabId='tab01'; isNotWpPage='false'; selectedWpPage ='info-zum-projekt-de'; changeSelection(); timeoutTest()" >Info zum Projekt</button>
           &nbsp;&nbsp;&nbsp;
-          <button mat-stroked-button *ngIf="globals.selectedLanguageId == 'de'" (click)="selectedToolbarTabId='tab02'; isNotWpPage='false'; selectedMainContentId ='XXX'; changeSelection(); timeoutTest()" >Bezug zu Lehrplänen</button>
+          <button mat-stroked-button *ngIf="globals.selectedLanguageId == 'de' && globals.specialRoute == 'false'" (click)="selectedToolbarTabId='tab02'; isNotWpPage='false'; selectedMainContentId ='XXX'; changeSelection(); timeoutTest()" >Bezug zu Lehrplänen</button>
           &nbsp;&nbsp;&nbsp;
-          <button mat-stroked-button *ngIf="globals.selectedLanguageId == 'de'" (click)="selectedToolbarTabId='tab03'; isNotWpPage='false'; selectedMainContentId ='XXX'; changeSelection(); timeoutTest()" >Umsetzung von Lehrplänen</button>
+          <button mat-stroked-button *ngIf="globals.selectedLanguageId == 'de' && globals.specialRoute == 'false'" (click)="selectedToolbarTabId='tab03'; isNotWpPage='false'; selectedMainContentId ='XXX'; changeSelection(); timeoutTest()" >Umsetzung von Lehrplänen</button>
         </span>
         <!-- This fills the remaining space of the current row -->
         <span class="example-spacer"></span>
@@ -166,7 +166,9 @@
         <span *ngIf="selectedToolbarTabId == 'tab06'">
           <br><div style="color: red; font-size:20pt"> Under Construction! </div>
           <br>
-            &nbsp;<button mat-button (click)="selectedToolbarTabId='tab00'; sidenavLeftPanel.close(); isNotWpPage='false'; selectedMainContentId ='Start'; changeSelection(); timeoutTest()">Start</button><br>
+            <!-- &nbsp;<button mat-button (click)="selectedToolbarTabId='tab00'; sidenavLeftPanel.close(); isNotWpPage='false'; selectedMainContentId ='Start'; changeSelection(); timeoutTest()">Start</button><br> -->
+            &nbsp;<button mat-button (click)="onNavigate()">Start</button><br>
+            <span *ngIf="this.globals.specialRouteTab06Visible == 'true'"> <!-- this.globals.specialRouteTab06Visible: &nbsp;{{this.globals.specialRouteTab06Visible}}<br> -->
             <br>
             &nbsp;Info zum Projekt<br>
             <mat-expansion-panel [expanded]='false'>
@@ -280,6 +282,7 @@
           </mat-expansion-panel>
         </span>
       </span>
+      </span>
     </mat-sidenav>
     <mat-sidenav-content fixedTopGap="40" [style.marginTop.px]="mobileQuery.matches ? 80 : 0">
       <span *ngIf="globals.selectedLanguageId == 'de'">
@@ -291,6 +294,7 @@
         </span>
     </mat-sidenav-content>
   </mat-sidenav-container>
+
   <div *ngIf="selectedToolbarTabId == 'tab00'" style = "background-color: #546E7A; color: #ffffff; font: .7em/120% roboto; text-align:center">
     Code licensed under an MIT-style License<br>
     Documentation licensed under CC BY 4.0.<br>

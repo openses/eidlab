@@ -88,7 +88,9 @@ export class AppComponent implements OnInit, OnDestroy/* , AfterViewInit, AfterV
   }
 
   public onNavigate() {
-    window.location.href = 'http://localhost:4200';
+    // window.location.href = 'http://localhost:4200';
+    // window.location.href = 'https://eidlab-identity-federation-playground.openses.org';
+    window.open('https://eidlab-identity-federation-playground.openses.org');
   }
 
   onResized(event: ResizedEvent): void {
@@ -133,6 +135,7 @@ export class AppComponent implements OnInit, OnDestroy/* , AfterViewInit, AfterV
       console.log('isNotWpPage: ' + this.globals.isNotWpPage);
       this.globals.selectedNotWpPage = this.selectedNotWpPage;
       console.log('selectedNotWpPage: ' + this.globals.selectedNotWpPage);
+      this.globals.specialRoute = 'false';
       // im die changeSelection() Prozedur aufrufenden click() Ereignis wird am Schluss die timeoutTest() Prozedur aufgerufen
       // welche this.globals.isLoading = '0s_left' setzt -> '...is loading...' wird ausgeblendet
     }
@@ -179,6 +182,7 @@ export class AppComponent implements OnInit, OnDestroy/* , AfterViewInit, AfterV
     this.isNotWpPage = this.globals.isNotWpPage;
     this.selectedToolbarTabId = this.globals.selectedToolbarTabId;
     this.selectedWpPage = this.globals.selectedNotWpPage;
+    this.globals.selectedToolbarTabId = 'tab00';
    }
 
    ngOnDestroy(): void {

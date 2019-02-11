@@ -1,4 +1,4 @@
-import { Component, ChangeDetectorRef, OnInit } from '@angular/core';
+import { Component, ChangeDetectorRef, OnInit, OnDestroy} from '@angular/core';
 import { Globals } from '../globals';
 import { ActivatedRoute } from '@angular/router';
 import { AppComponent } from '../app.component';
@@ -11,7 +11,7 @@ import {MediaMatcher, BreakpointObserver, BreakpointState, Breakpoints} from '@a
   styleUrls: ['./app-routing.component.css']
 })
 
-export class AppRoutingComponent implements OnInit {
+export class AppRoutingComponent implements OnInit, OnDestroy {
   selectedToolbarTabId: string;
   selectedLanguageId: string;
   selectedWpPage: string;
@@ -25,6 +25,7 @@ export class AppRoutingComponent implements OnInit {
   mobileQuery: MediaQueryList;
   private _mobileQueryListener: () => void;
   specialRoute: any;
+  specialRouteTab06Visible: any;
 
   // tslint:disable-next-line:max-line-length
   constructor(public globals: Globals, public breakpointObserver: BreakpointObserver, changeDetectorRef: ChangeDetectorRef,  media: MediaMatcher, private route: ActivatedRoute, private test: AppComponent, public sanitizer: DomSanitizer) {
@@ -55,8 +56,8 @@ export class AppRoutingComponent implements OnInit {
     // https://openses.org/tabselect?selectedLanguage=de&selectedTab=Tab02&myID=T3.8
     if (this.route.snapshot.queryParams['selectedToolbarTabId'] == null) {
       console.log('ohne ? Parameter');
-      this.globals.selectedToolbarTabId = 'tab00X';
-      this.selectedToolbarTabId = 'tab00X';
+      this.globals.selectedToolbarTabId = 'tab00';
+      this.selectedToolbarTabId = 'tab00';
       this.globals.selectedLanguageId = 'de';
       this.selectedLanguageId = 'de';
       this.globals.selectedCommunityId = 'local';
@@ -71,6 +72,8 @@ export class AppRoutingComponent implements OnInit {
       this.globals.selectedNotWpPage = 'http://eidlab.ch';
       this.globals.specialRoute = 'false';
       this.specialRoute = 'false';
+      this.globals.specialRouteTab06Visible = 'true';
+      this.specialRouteTab06Visible = 'true';
       /* this.globals.selectedLanguageId = 'de';
       console.log(this.globals.selectedLanguageId);
       this.globals.selectedToolbarTabId = 'tab00';
@@ -80,6 +83,8 @@ export class AppRoutingComponent implements OnInit {
     } else {
       // tslint:disable-next-line:max-line-length
       // http://localhost:4200/pageselect?selectedLanguageId=de&selectedToolbarTabId=tab01&selectedWpPage=spiralcurriculum
+      // tslint:disable-next-line:max-line-length
+      // https://eidlab-identity-federation-playground.openses.org/pageselect?selectedLanguageId=de&selectedToolbarTabId=tab01&selectedWpPage=spiralcurriculum
       console.log('mit ? Parameter');
       this.globals.isLoading = '5s_left';
       this.isLoading = '5s_left';
@@ -111,10 +116,16 @@ export class AppRoutingComponent implements OnInit {
 
       this.globals.specialRoute = 'true';
       this.specialRoute = 'true';
+      this.globals.specialRouteTab06Visible = 'false';
+      this.specialRouteTab06Visible = 'false';
      // this.globals.isLoading = '0s_left';
 
       // this.test.changeSelection();
       this.test.timeoutTest();
     }
   }
+   ngOnDestroy(): void {
+    this.mobileQuery.removeListener(this._mobileQueryListener);
+  }
+
 }

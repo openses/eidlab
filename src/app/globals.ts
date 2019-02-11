@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class Globals {
   specialRoute: any = 'false';
+  specialRouteTab06Visible: any = 'true';
   selectedToolbarTabId: any = 'tab00';
   selectedLanguageId: any = 'de';
   selectedCommunityId: any = 'local';
