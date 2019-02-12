@@ -131,37 +131,40 @@
             <br><div style="color: red; font-size:20pt"> Under Construction! </div>
             <br>
             &nbsp;Umsetzung von Lehrplänen<br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button mat-button (click)="selectedMainContentId ='U0_de'; changeSelection()">U0 Infrastrukturanforderungen</button><br>
             <mat-expansion-panel [expanded]='false'>
                 <mat-expansion-panel-header><mat-panel-title>
-                <button mat-button (click)="selectedMainContentId ='U1_de'; changeSelection()">U1 Werkzeuge zum Entdecken und Be-greifen</button>
+                <button mat-button (click)="selectedMainContentId ='U1_de'; changeSelection()">U1 Login-Prozesse analysieren und verstehen</button><br>
                 </mat-panel-title><mat-panel-description></mat-panel-description></ mat-expansion-panel-header>
-                <button mat-button (click)="selectedMainContentId ='U1.1_de'; changeSelection()">U1.1 Chrome Browser DevTools</button><br>
-                <button mat-button (click)="selectedMainContentId ='U1.2_de'; changeSelection()">U1.2 EditThisCookie</button><br>
-                <button mat-button (click)="selectedMainContentId ='U1.3_de'; changeSelection()">U1.3 LocalStorage Manager</button><br>
-                <button mat-button (click)="selectedMainContentId ='U1.4_de'; changeSelection()">U1.4 Ghostery</button><br>
-                <button mat-button (click)="selectedMainContentId ='U1.5_de'; changeSelection()">U1.5 Insomnia REST Client</button><br>
-            </mat-expansion-panel>
-            <mat-expansion-panel [expanded]='false'>
-                <mat-expansion-panel-header><mat-panel-title>
-                <button mat-button (click)="selectedMainContentId ='U2_de'; changeSelection()">U2 Login-Prozesse analysieren und verstehen</button><br>
-                </mat-panel-title><mat-panel-description></mat-panel-description></ mat-expansion-panel-header>
-                    <button mat-button (click)="selectedMainContentId ='U2.1_de'; changeSelection()">U2.1 OpenID Connect Simulation</button><br>
-                    <button mat-button (click)="selectedMainContentId ='U2.1.1_de'; changeSelection()">&nbsp;&nbsp;&nbsp;U2.1.1 Vollständiger Login Flow</button><br>
-                    <button mat-button (click)="selectedMainContentId ='U2.1.2_de'; changeSelection()">&nbsp;&nbsp;&nbsp;U2.1.2 Login Flow Teilschritte</button><br>
-                    <button mat-button (click)="selectedMainContentId ='U2.2_de'; changeSelection()">U2.2 Facebook Login</button><br>
-                    <button mat-button (click)="selectedWpPage ='facebook-full-loginflow-de'; changeSelection()">&nbsp;&nbsp;&nbsp;U2.2.1 Vollständiger Login Flow</button><br>
-                    <button mat-button (click)="selectedMainContentId ='U2.2.2_de'; changeSelection()">&nbsp;&nbsp;&nbsp;U2.2.2 Login Flow Teilschritte</button><br>
-                    <button mat-button (click)="selectedMainContentId ='U2.2_de'; changeSelection()">U2.2 google Login</button><br>
-                    <button mat-button (click)="selectedMainContentId ='U2.2.1_de'; changeSelection()">&nbsp;&nbsp;&nbsp;U2.2.1 Vollständiger Login Flow</button><br>
-                    <button mat-button (click)="selectedMainContentId ='U2.2.2_de'; changeSelection()">&nbsp;&nbsp;&nbsp;U2.2.2 Login Flow Teilschritte</button><br>
-                    <button mat-button (click)="selectedMainContentId ='U2.2_de'; changeSelection()">U2.2 SWITCH edu-ID</button><br>
-                    <button mat-button (click)="selectedMainContentId ='U2.2.1_de'; changeSelection()">&nbsp;&nbsp;&nbsp;U2.2.1 Vollständiger Login Flow</button><br>
-                    <button mat-button (click)="selectedMainContentId ='U2.2.2_de'; changeSelection()">&nbsp;&nbsp;&nbsp;U2.2.2 Login Flow Teilschritte</button><br>
-                    <button mat-button (click)="selectedMainContentId ='U2.2_de'; changeSelection()">U2.2 swissID</button><br>
-                    <button mat-button (click)="selectedMainContentId ='U2.2.1_de'; changeSelection()">&nbsp;&nbsp;&nbsp;U2.2.1 Vollständiger Login Flow</button><br>
-                    <button mat-button (click)="selectedMainContentId ='U2.2.2_de'; changeSelection()">&nbsp;&nbsp;&nbsp;U2.2.2 Login Flow Teilschritte</button><br>
+                    <button mat-button (click)="selectedMainContentId ='U1.1_de'; changeSelection()">U1.1 Sek 1</button><br>
+                    <button mat-button (click)="selectedWpPage ='ziel-aus-lehrplan21'; changeSelection(); timeoutTest()">&nbsp;&nbsp;&nbsp;U1.1.1 Ziel aus Lehrplan 21</button><br>
+                    <button mat-button (click)="selectedMainContentId ='U1.1.1_de'; changeSelection()">&nbsp;&nbsp;&nbsp;U1.1.2 Didaktische Reduktion für Sek 1</button><br>
+                    <button mat-button (click)="selectedWpPage ='vorbereitende-themen-aus-lehrplan21'; changeSelection(); timeoutTest()">&nbsp;&nbsp;&nbsp;U1.1.3 Vorbereitende Themen/Ziele aus Lehrplan 21</button><br>
+                    <!-- Tabelle: Spalten -> Lehrplanthema -> Anwendungsbeispiel -> Links/Materialien u.a. Einfach Informatik -->
+                    <button mat-button (click)="selectedMainContentId ='U1.1.2_de'; changeSelection()">&nbsp;&nbsp;&nbsp;U1.1.4 Praxisexperimente mit Facebook Login</button><br>
+                    <button mat-button (click)="selectedMainContentId ='U1.1.2_de'; changeSelection()">&nbsp;&nbsp;&nbsp;U1.1.5 Praxisexperimente mit OpenId Connect Login</button><br>
+                    <button mat-button (click)="selectedMainContentId ='U1.1_de'; changeSelection()">U1.2 Sek 2</button><br>
+                    <button mat-button (click)="selectedMainContentId ='U1.1.1_de'; changeSelection()">&nbsp;&nbsp;&nbsp;U1.2.1 Ziele aus Rahmenlehrplan Maturitätsschulen</button><br>
+                    <button mat-button (click)="selectedMainContentId ='U1.1.1_de'; changeSelection()">&nbsp;&nbsp;&nbsp;U1.2.2 Didaktische Reduktion für Sek 2</button><br>
+                    <button mat-button (click)="selectedMainContentId ='U1.1.2_de'; changeSelection()">&nbsp;&nbsp;&nbsp;U1.2.3 Vorbereitende Themen/Ziele aus Rahmenlehrplan</button><br>
+                    <button mat-button (click)="selectedMainContentId ='U1.1.2_de'; changeSelection()">&nbsp;&nbsp;&nbsp;U1.2.4 Praxisexperimente mit Facebook Login</button><br>
+                    <button mat-button (click)="selectedMainContentId ='U1.1.2_de'; changeSelection()">&nbsp;&nbsp;&nbsp;U1.2.5 Praxisexperimente mit OpenId Connect Login</button><br>
               </mat-expansion-panel>
+              <mat-expansion-panel [expanded]='false'>
+                <mat-expansion-panel-header><mat-panel-title>
+                <button mat-button (click)="selectedMainContentId ='U1_de'; changeSelection()">U2 Werkzeuge zum Entdecken und Be-greifen</button>
+                </mat-panel-title><mat-panel-description></mat-panel-description></ mat-expansion-panel-header>
+                <button mat-button (click)="onNavigateVar('https://einfachinformatik.inf.ethz.ch/application/crypto')">U2.1 ETH Lernumgebung Einfach Informatik: Crypto</button><br>
+                <button mat-button (click)="onNavigateVar('https://www.cryptool.org/de/cto-kodierungen')">U2.2 CRYPTOOL-ONLINE</button><br>
+                <button mat-button (click)="selectedMainContentId ='U1.1_de'; changeSelection()">U2.3 Hashgenerator</button><br>
+                <!-- http://helmbold.de/artikel/passwoerter-sicher-speichern/ -->
+                <!-- https://www.datenschutzbeauftragter-info.de/hashwerte-und-hashfunktionen-einfach-erklaert/ -->
+                <button mat-button (click)="selectedMainContentId ='U1.1_de'; changeSelection()">U2.4 Chrome Browser DevTools</button><br>
+                <button mat-button (click)="selectedMainContentId ='U1.2_de'; changeSelection()">U2.5 EditThisCookie</button><br>
+                <button mat-button (click)="selectedMainContentId ='U1.3_de'; changeSelection()">U2.6 LocalStorage Manager</button><br>
+                <button mat-button (click)="selectedMainContentId ='U1.4_de'; changeSelection()">U2.7 Ghostery</button><br>
+                <button mat-button (click)="selectedMainContentId ='U1.5_de'; changeSelection()">U2.8 Insomnia REST Client</button><br>
+                <button mat-button (click)="onNavigateVar('https://www.chip.de/downloads/Wireshark-Portable_79182859.html')">U2.9 Wireshark Portable</button><br>
+            </mat-expansion-panel>
         </span>
         <span *ngIf="selectedToolbarTabId == 'tab06'">
           <br><div style="color: red; font-size:20pt"> Under Construction! </div>
@@ -249,37 +252,40 @@
         </mat-expansion-panel>
         <br>
         &nbsp;Umsetzung von Lehrplänen<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button mat-button (click)="selectedMainContentId ='U0_de'; changeSelection()">U0 Infrastrukturanforderungen</button><br>
         <mat-expansion-panel [expanded]='false'>
-            <mat-expansion-panel-header><mat-panel-title>
-            <button mat-button (click)="selectedMainContentId ='U1_de'; changeSelection()">U1 Werkzeuge zum Entdecken und Be-greifen<mat-icon>keyboard_arrow_down</mat-icon></button>
-            </mat-panel-title><mat-panel-description></mat-panel-description></ mat-expansion-panel-header>
-            <button mat-button (click)="selectedMainContentId ='U1.1_de'; changeSelection()">U1.1 Chrome Browser DevTools</button><br>
-            <button mat-button (click)="selectedMainContentId ='U1.2_de'; changeSelection()">U1.2 EditThisCookie</button><br>
-            <button mat-button (click)="selectedMainContentId ='U1.3_de'; changeSelection()">U1.3 LocalStorage Manager</button><br>
-            <button mat-button (click)="selectedMainContentId ='U1.4_de'; changeSelection()">U1.4 Ghostery</button><br>
-            <button mat-button (click)="selectedMainContentId ='U1.5_de'; changeSelection()">U1.5 Insomnia REST Client</button><br>
+          <mat-expansion-panel-header><mat-panel-title>
+          <button mat-button (click)="selectedMainContentId ='U1_de'; changeSelection()">U1 Login-Prozesse analysieren und verstehen<mat-icon>keyboard_arrow_down</mat-icon></button><br>
+          </mat-panel-title><mat-panel-description></mat-panel-description></ mat-expansion-panel-header>
+              <button mat-button (click)="selectedMainContentId ='U1.1_de'; changeSelection()">U1.1 Sek 1</button><br>
+              <button mat-button (click)="sidenavLeftPanel.close(); selectedWpPage ='ziel-aus-lehrplan21'; changeSelection(); timeoutTest()">&nbsp;&nbsp;&nbsp;U1.1.1 Ziel aus Lehrplan 21</button><br>
+              <button mat-button (click)="selectedMainContentId ='U1.1.1_de'; changeSelection()">&nbsp;&nbsp;&nbsp;U1.1.2 Didaktische Reduktion für Sek 1</button><br>
+              <button mat-button (click)="sidenavLeftPanel.close(); selectedWpPage ='vorbereitende-themen-aus-lehrplan21'; changeSelection(); timeoutTest()">&nbsp;&nbsp;&nbsp;U1.1.3 Vorbereitende Themen/Ziele<br> aus Lehrplan 21</button><br>
+              <!-- Tabelle: Spalten -> Lehrplanthema -> Anwendungsbeispiel -> Links/Materialien u.a. Einfach Informatik -->
+              <button mat-button (click)="selectedMainContentId ='U1.1.2_de'; changeSelection()">&nbsp;&nbsp;&nbsp;U1.1.4 Praxisexperimente mit Facebook Login</button><br>
+              <button mat-button (click)="selectedMainContentId ='U1.1.2_de'; changeSelection()">&nbsp;&nbsp;&nbsp;U1.1.5 Praxisexperimente mit<br> OpenId Connect Login</button><br>
+              <button mat-button (click)="selectedMainContentId ='U1.1_de'; changeSelection()">U1.2 Sek 2</button><br>
+              <button mat-button (click)="selectedMainContentId ='U1.1.1_de'; changeSelection()">&nbsp;&nbsp;&nbsp;U1.2.1 Ziele aus Rahmenlehrplan<br> Maturitätsschulen</button><br>
+              <button mat-button (click)="selectedMainContentId ='U1.1.1_de'; changeSelection()">&nbsp;&nbsp;&nbsp;U1.2.2 Didaktische Reduktion für Sek 2</button><br>
+              <button mat-button (click)="selectedMainContentId ='U1.1.2_de'; changeSelection()">&nbsp;&nbsp;&nbsp;U1.2.3 Vorbereitende Themen/Ziele<br> aus Rahmenlehrplan</button><br>
+              <button mat-button (click)="selectedMainContentId ='U1.1.2_de'; changeSelection()">&nbsp;&nbsp;&nbsp;U1.2.4 Praxisexperimente mit<br> Facebook Login</button><br>
+              <button mat-button (click)="selectedMainContentId ='U1.1.2_de'; changeSelection()">&nbsp;&nbsp;&nbsp;U1.2.5 Praxisexperimente mit<br> OpenId Connect Login</button><br>
         </mat-expansion-panel>
         <mat-expansion-panel [expanded]='false'>
-            <mat-expansion-panel-header><mat-panel-title>
-            <button mat-button (click)="selectedMainContentId ='U2_de'; changeSelection()">U2 Login-Prozesse analysieren und verstehen<mat-icon>keyboard_arrow_down</mat-icon></button><br>
-            </mat-panel-title><mat-panel-description></mat-panel-description></ mat-expansion-panel-header>
-                <button mat-button (click)="selectedMainContentId ='U2.1_de'; changeSelection()">U2.1 OpenID Connect Simulation</button><br>
-                <button mat-button (click)="selectedMainContentId ='U2.1.1_de'; changeSelection()">&nbsp;&nbsp;&nbsp;U2.1.1 Vollständiger Login Flow</button><br>
-                <button mat-button (click)="selectedMainContentId ='U2.1.2_de'; changeSelection()">&nbsp;&nbsp;&nbsp;U2.1.2 Login Flow Teilschritte</button><br>
-                <button mat-button (click)="selectedMainContentId ='U2.2_de'; changeSelection()">U2.2 Facebook Login</button><br>
-                <button mat-button (click)="sidenavLeftPanel.close(); selectedWpPage ='facebook-full-loginflow-de'; changeSelection()">&nbsp;&nbsp;&nbsp;U2.2.1 Vollständiger Login Flow</button><br>
-                <button mat-button (click)="selectedMainContentId ='U2.2.2_de'; changeSelection()">&nbsp;&nbsp;&nbsp;U2.2.2 Login Flow Teilschritte</button><br>
-                <button mat-button (click)="selectedMainContentId ='U2.2_de'; changeSelection()">U2.2 google Login</button><br>
-                <button mat-button (click)="selectedMainContentId ='U2.2.1_de'; changeSelection()">&nbsp;&nbsp;&nbsp;U2.2.1 Vollständiger Login Flow</button><br>
-                <button mat-button (click)="selectedMainContentId ='U2.2.2_de'; changeSelection()">&nbsp;&nbsp;&nbsp;U2.2.2 Login Flow Teilschritte</button><br>
-                <button mat-button (click)="selectedMainContentId ='U2.2_de'; changeSelection()">U2.2 SWITCH edu-ID</button><br>
-                <button mat-button (click)="selectedMainContentId ='U2.2.1_de'; changeSelection()">&nbsp;&nbsp;&nbsp;U2.2.1 Vollständiger Login Flow</button><br>
-                <button mat-button (click)="selectedMainContentId ='U2.2.2_de'; changeSelection()">&nbsp;&nbsp;&nbsp;U2.2.2 Login Flow Teilschritte</button><br>
-                <button mat-button (click)="selectedMainContentId ='U2.2_de'; changeSelection()">U2.2 swissID</button><br>
-                <button mat-button (click)="selectedMainContentId ='U2.2.1_de'; changeSelection()">&nbsp;&nbsp;&nbsp;U2.2.1 Vollständiger Login Flow</button><br>
-                <button mat-button (click)="selectedMainContentId ='U2.2.2_de'; changeSelection()">&nbsp;&nbsp;&nbsp;U2.2.2 Login Flow Teilschritte</button><br>
-          </mat-expansion-panel>
+          <mat-expansion-panel-header><mat-panel-title>
+          <button mat-button (click)="selectedMainContentId ='U1_de'; changeSelection()">U2 Werkzeuge zum Entdecken und Be-greifen<mat-icon>keyboard_arrow_down</mat-icon></button>
+          </mat-panel-title><mat-panel-description></mat-panel-description></ mat-expansion-panel-header>
+          <button mat-button (click)="onNavigateVar('https://einfachinformatik.inf.ethz.ch/application/crypto')">U2.1 ETH Lernumgebung Einfach Informatik:<br> Crypto</button><br>
+          <button mat-button (click)="onNavigateVar('https://www.cryptool.org/de/cto-kodierungen')">U2.2 CRYPTOOL-ONLINE</button><br>
+          <button mat-button (click)="selectedMainContentId ='U1.1_de'; changeSelection()">U2.3 Hashgenerator</button><br>
+          <!-- http://helmbold.de/artikel/passwoerter-sicher-speichern/ -->
+          <!-- https://www.datenschutzbeauftragter-info.de/hashwerte-und-hashfunktionen-einfach-erklaert/ -->
+          <button mat-button (click)="selectedMainContentId ='U1.1_de'; changeSelection()">U2.4 Chrome Browser DevTools</button><br>
+          <button mat-button (click)="selectedMainContentId ='U1.2_de'; changeSelection()">U2.5 EditThisCookie</button><br>
+          <button mat-button (click)="selectedMainContentId ='U1.3_de'; changeSelection()">U2.6 LocalStorage Manager</button><br>
+          <button mat-button (click)="selectedMainContentId ='U1.4_de'; changeSelection()">U2.7 Ghostery</button><br>
+          <button mat-button (click)="selectedMainContentId ='U1.5_de'; changeSelection()">U2.8 Insomnia REST Client</button><br>
+          <button mat-button (click)="onNavigateVar('https://www.chip.de/downloads/Wireshark-Portable_79182859.html')">U2.9 Wireshark Portable</button><br>
+      </mat-expansion-panel>
         </span>
       </span>
       </span>

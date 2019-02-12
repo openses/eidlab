@@ -93,6 +93,12 @@ export class AppComponent implements OnInit, OnDestroy/* , AfterViewInit, AfterV
     window.open('https://eidlab-identity-federation-playground.openses.org');
   }
 
+  public onNavigateVar(url) {
+    // window.location.href = 'http://localhost:4200';
+    // window.location.href = 'https://eidlab-identity-federation-playground.openses.org';
+    window.open(url);
+  }
+
   onResized(event: ResizedEvent): void {
     this.width = event.newWidth;
     this.height = event.newHeight;
