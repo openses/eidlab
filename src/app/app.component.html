@@ -11,7 +11,7 @@
           &nbsp;&nbsp;&nbsp;
           <button mat-stroked-button *ngIf="globals.selectedLanguageId == 'de' && globals.specialRoute == 'false'" (click)="selectedToolbarTabId='tab02'; isNotWpPage='false'; selectedMainContentId ='XXX'; changeSelection(); timeoutTest()" >Fach Info</button>
           &nbsp;&nbsp;&nbsp;
-          <button mat-stroked-button *ngIf="globals.selectedLanguageId == 'de' && globals.specialRoute == 'false'" (click)="selectedToolbarTabId='tab03'; isNotWpPage='false'; selectedMainContentId ='XXX'; changeSelection(); timeoutTest()" >Aufgaben/Werkzeuge</button>
+          <button mat-stroked-button *ngIf="globals.selectedLanguageId == 'de' && globals.specialRoute == 'false'" (click)="selectedToolbarTabId='tab03'; isNotWpPage='false'; selectedMainContentId ='XXX'; changeSelection(); timeoutTest()" >Arbeitsblätter/Werkzeuge</button>
         </span>
         <!-- This fills the remaining space of the current row -->
         <span class="example-spacer"></span>
@@ -149,7 +149,7 @@
         <span *ngIf="selectedToolbarTabId == 'tab03'">
             <br><div style="color: red; font-size:20pt"> Under Construction! </div>
             <br>
-            &nbsp;Aufgaben/Werkzeuge<br>
+            &nbsp;Arbeitsblätter/Werkzeuge<br>
             <mat-expansion-panel [expanded]='false'>
                 <mat-expansion-panel-header><mat-panel-title>
                 <button mat-button (click)="selectedMainContentId ='U1_de'; changeSelection()">A1 Sek 1, Maturitätsschulen, Berufsbildung</button><br>
@@ -235,80 +235,100 @@
           &nbsp;Fach Info<br>
         <mat-expansion-panel [expanded]='false'>
             <mat-expansion-panel-header><mat-panel-title>
-              <button mat-button (click)="selectedMainContentId ='B1_de'; changeSelection()">B1 Anwendungsbeispiele Lernendenperspektive<mat-icon>keyboard_arrow_down</mat-icon></button>
+              <button mat-button (click)="selectedMainContentId ='B1_de'; changeSelection()">F1 Anwendungsbeispiele 'Digitale Identität'<mat-icon>keyboard_arrow_down</mat-icon></button>
               </mat-panel-title><mat-panel-description></mat-panel-description></ mat-expansion-panel-header>
-                  <button mat-button (click)="selectedMainContentId ='B1.1_de'; changeSelection()">B1.1 Systemanmeldung/Login (Lehrplan21 MI.2.3.1.b)</button><br>
-                  <button mat-button (click)="selectedMainContentId ='B1.1.1_de'; changeSelection()">&nbsp;&nbsp;&nbsp;B1.1.1 Beispiel Social Media Logins</button><br>
-                  <button mat-button (click)="selectedMainContentId ='B1.1.2_de'; changeSelection()">&nbsp;&nbsp;&nbsp;B1.1.2 Beispiel Schulumgebung Logins</button><br>
-                  <button mat-button (click)="selectedMainContentId ='B1.2_de'; changeSelection()">B1.2 Anforderungen Systemanmeldeprozess</button><br>
-                  <button mat-button (click)="selectedMainContentId ='B1.2.1_de'; changeSelection()">&nbsp;&nbsp;&nbsp;B1.2.1 Hohe Sicherheit und Transparenz</button><br>
-                  <button mat-button (click)="selectedMainContentId ='B1.2.2_de'; changeSelection()">&nbsp;&nbsp;&nbsp;B1.2.2 Einfache Handhabung</button><br>
-                  <button mat-button (click)="selectedMainContentId ='B1.3_de'; changeSelection()">B1.3 Lösungsmuster Systemanmeldeprozess</button><br>
-                  <button mat-button (click)="selectedMainContentId ='B1.3.1_de'; changeSelection()">&nbsp;&nbsp;&nbsp;B1.3.1 Ungünstige Lösungsmuster (Anti-Pattern)</button><br>
-                  <button mat-button (click)="selectedMainContentId ='B1.3.2_de'; changeSelection()">&nbsp;&nbsp;&nbsp;B1.3.2 Gute Lösungsmuster (Standards)</button>
+                  <button mat-button (click)="selectedMainContentId ='B1.1_de'; changeSelection()">F1.1 Social Login</button><br>
+                  <button mat-button (click)="selectedMainContentId ='B1.3_de'; changeSelection()">F1.2 eEducation Login</button><br>
         </mat-expansion-panel>
         <mat-expansion-panel [expanded]='false'>
           <mat-expansion-panel-header><mat-panel-title>
-          <button mat-button (click)="selectedMainContentId ='B2_de'; changeSelection()">B2 Regeln und Standards Berufsperspektive<mat-icon>keyboard_arrow_down</mat-icon></button>
-          </mat-panel-title><mat-panel-description></mat-panel-description></ mat-expansion-panel-header>
-          <button mat-button (click)="selectedMainContentId ='B2.1_de'; changeSelection()">B2.1 Gremien/Verbände/Behörden <br>(W3C,IEEE,eCH,SBBK..)</button><br>
-          <button mat-button (click)="selectedMainContentId ='B2.2_de'; changeSelection()">B2.2 Protokolle/Modelle</button><br>
-          <button mat-button (click)="sidenavLeftPanel.close(); selectedWpPage ='oauth-autorisierung'; changeSelection()">B2.3 OAuth 2.0 Autorisierung</button><br>
-          <button mat-button (click)="sidenavLeftPanel.close(); selectedWpPage ='openid-connect-authentifizierung'; changeSelection()">B2.4 OpenID Connect Authentifizierung</button><br>
-          <button mat-button (click)="sidenavLeftPanel.close(); selectedWpPage ='rest-api-schnittstellen'; changeSelection()">B2.5 REST API Schnittstellen</button><br>
-          <button mat-button (click)="selectedMainContentId ='B2.6_de'; changeSelection()">B2.6 JSON Datenformat</button><br>
-          <button mat-button (click)="sidenavLeftPanel.close(); selectedWpPage ='kodierung'; changeSelection()">B2.7 Kodierung</button><br>
-          <button mat-button (click)="selectedMainContentId ='B2.7.1_de'; changeSelection()">&nbsp;&nbsp;&nbsp;B2.7.1 Hashing</button><br>
-          <button mat-button (click)="selectedMainContentId ='B2.7.2_de'; changeSelection()">&nbsp;&nbsp;&nbsp;B2.7.2 Verschlüsselung</button><br>
-          <button mat-button (click)="selectedMainContentId ='B2.7.3_de'; changeSelection()">&nbsp;&nbsp;&nbsp;B2.7.3 Signierung</button><br>
-        </mat-expansion-panel>
-        <mat-expansion-panel [expanded]='false'>
-          <mat-expansion-panel-header><mat-panel-title>
-            <button mat-button (click)="selectedMainContentId ='B3_de'; changeSelection()">B3 Digitale Identitäten Schweiz<mat-icon>keyboard_arrow_down</mat-icon></button>
+            <button mat-button (click)="selectedMainContentId ='B1_de'; changeSelection()">F2 Anforderungen<mat-icon>keyboard_arrow_down</mat-icon></button>
             </mat-panel-title><mat-panel-description></mat-panel-description></ mat-expansion-panel-header>
-            <button mat-button (click)="selectedMainContentId ='B3.1_de'; changeSelection()">B3.1 -> iFrame bundesrat</button><br>
-            <button mat-button (click)="selectedMainContentId ='B3.2_de'; changeSelection()">B3.2 -> iFrame Wikipedia</button><br>
-            <button mat-button (click)="selectedMainContentId ='B3.3_de'; changeSelection()">B3.3 -> iFrame FIDES</button><br>
-            <button mat-button (click)="selectedMainContentId ='B3.4_de'; changeSelection()">B3.4 -> iFrame Switch</button><br>
-            <button mat-button (click)="selectedMainContentId ='B3.5_de'; changeSelection()">B3.5 -> iFrame eCH</button><br>
-            <button mat-button (click)="selectedMainContentId ='B3.6_de'; changeSelection()">B3.6 -> iFrame swissID</button><br>
-            <button mat-button (click)="selectedMainContentId ='B3.7_de'; changeSelection()">B3.7 -> iFrame blockchainID</button><br>
+                <button mat-button (click)="selectedMainContentId ='B1.1_de'; changeSelection()">F2.1 Hohe Sicherheit und Transparenz</button><br>
+                <button mat-button (click)="selectedMainContentId ='B1.1_de'; changeSelection()">F2.2 Einfache Handhabung</button><br>
+        </mat-expansion-panel>
+        <mat-expansion-panel [expanded]='false'>
+          <mat-expansion-panel-header><mat-panel-title>
+            <button mat-button (click)="selectedMainContentId ='B1_de'; changeSelection()">F3 Lösungsmuster<mat-icon>keyboard_arrow_down</mat-icon></button>
+            </mat-panel-title><mat-panel-description></mat-panel-description></ mat-expansion-panel-header>
+                <button mat-button (click)="selectedMainContentId ='B1.1_de'; changeSelection()">F3.1 Ungünstige Lösungsmuster (Anti-Pattern)</button><br>
+                <button mat-button (click)="selectedMainContentId ='B1.1_de'; changeSelection()">F3.2 Gute Lösungsmuster (Standards)</button><br>
+        </mat-expansion-panel>
+        <mat-expansion-panel [expanded]='false'>
+          <mat-expansion-panel-header><mat-panel-title>
+          <button mat-button (click)="selectedMainContentId ='B2_de'; changeSelection()">F4 Standards<mat-icon>keyboard_arrow_down</mat-icon></button>
+          </mat-panel-title><mat-panel-description></mat-panel-description></ mat-expansion-panel-header>
+          <button mat-button (click)="selectedMainContentId ='B2.1_de'; changeSelection()">F4.1 Gremien/Verbände/Behörden (W3C,IEEE,eCH,SBBK..)</button><br>
+          <button mat-button (click)="selectedMainContentId ='B2.2_de'; changeSelection()">F4.2 Protokolle/Modelle</button><br>
+          <button mat-button (click)="selectedWpPage ='oauth-autorisierung'; changeSelection()">F4.3 OAuth 2.0 Autorisierung</button><br>
+          <button mat-button (click)="selectedWpPage ='openid-connect-authentifizierung'; changeSelection()">F4.4 OpenID Connect Authentifizierung</button><br>
+          <button mat-button (click)="selectedWpPage ='rest-api-schnittstellen'; changeSelection()">F4.5 REST API Schnittstellen</button><br>
+          <button mat-button (click)="selectedMainContentId ='B2.6_de'; changeSelection()">F4.6 JSON Datenformat</button><br>
+          <button mat-button (click)="selectedWpPage ='kodierung'; changeSelection()">F4.7 Kodierung</button><br>
+          <button mat-button (click)="selectedMainContentId ='B2.7.1_de'; changeSelection()">&nbsp;&nbsp;&nbsp;F4.7.1 Hashing</button><br>
+          <button mat-button (click)="selectedMainContentId ='B2.7.2_de'; changeSelection()">&nbsp;&nbsp;&nbsp;F4.7.2 Verschlüsselung</button><br>
+          <button mat-button (click)="selectedMainContentId ='B2.7.3_de'; changeSelection()">&nbsp;&nbsp;&nbsp;F4.7.3 Signierung</button><br>
+        </mat-expansion-panel>
+        <mat-expansion-panel [expanded]='false'>
+          <mat-expansion-panel-header><mat-panel-title>
+            <button mat-button (click)="selectedMainContentId ='B3_de'; changeSelection()">F5 Digitale Identitäten in der Schweiz<mat-icon>keyboard_arrow_down</mat-icon></button>
+            </mat-panel-title><mat-panel-description></mat-panel-description></ mat-expansion-panel-header>
+            <button mat-button (click)="selectedMainContentId ='B3.1_de'; changeSelection()">F5.1 -> iFrame bundesrat</button><br>
+            <button mat-button (click)="selectedMainContentId ='B3.2_de'; changeSelection()">F5.2 -> iFrame Wikipedia</button><br>
+            <button mat-button (click)="selectedMainContentId ='B3.3_de'; changeSelection()">F5.3 -> iFrame FIDES</button><br>
+            <button mat-button (click)="selectedMainContentId ='B3.4_de'; changeSelection()">F5.4 -> iFrame Switch</button><br>
+            <button mat-button (click)="selectedMainContentId ='B3.5_de'; changeSelection()">F5.5 -> iFrame eCH</button><br>
+            <button mat-button (click)="selectedMainContentId ='B3.6_de'; changeSelection()">F5.6 -> iFrame swissID</button><br>
+            <button mat-button (click)="selectedMainContentId ='B3.7_de'; changeSelection()">F5.7 -> iFrame blockchainID</button><br>
+        </mat-expansion-panel>
+        <mat-expansion-panel [expanded]='false'>
+          <mat-expansion-panel-header><mat-panel-title>
+            <button mat-button (click)="selectedMainContentId ='B3_de'; changeSelection()">F6 Didaktische Reduktion und Voraussetzungen<mat-icon>keyboard_arrow_down</mat-icon></button>
+            </mat-panel-title><mat-panel-description></mat-panel-description></ mat-expansion-panel-header>
+            <button mat-button (click)="selectedMainContentId ='B3.1_de'; changeSelection()">F6.1 Didaktische Reduktion für Sek 1</button><br>
+            <button mat-button (click)="selectedWpPage ='vorbereitende-themen-aus-lehrplan21'; changeSelection(); timeoutTest()">F6.2 Vorausgesetzte Themen/Ziele aus Lehrplan 21</button><br>
+            <button mat-button (click)="selectedMainContentId ='B3.3_de'; changeSelection()">F6.3 Didaktische Reduktion Maturitätsschulen</button><br>
+            <button mat-button (click)="selectedMainContentId ='B3.4_de'; changeSelection()">F6.4 Vorausgesetzte Themen/Ziele aus Rahmenlehrplan</button><br>
+            <button mat-button (click)="selectedMainContentId ='B3.5_de'; changeSelection()">F6.5 Vorausgesetzte Themen/Ziele Berufsbildung: Module 114,117,300</button><br>
         </mat-expansion-panel>
         <br>
-        &nbsp;Aufgaben<br>
+        &nbsp;Arbeitsblätter/Wekzeuge<br>
         <mat-expansion-panel [expanded]='false'>
           <mat-expansion-panel-header><mat-panel-title>
-          <button mat-button (click)="selectedMainContentId ='U1_de'; changeSelection()">U1 Login-Prozesse analysieren und verstehen<mat-icon>keyboard_arrow_down</mat-icon></button><br>
+          <button mat-button (click)="selectedMainContentId ='U1_de'; changeSelection()">A1 Sek 1, Maturitätsschulen, Berufsbildung<mat-icon>keyboard_arrow_down</mat-icon></button><br>
           </mat-panel-title><mat-panel-description></mat-panel-description></ mat-expansion-panel-header>
-              <button mat-button (click)="selectedMainContentId ='U1.1_de'; changeSelection()">U1.1 Sek 1</button><br>
-              <button mat-button (click)="sidenavLeftPanel.close(); selectedWpPage ='ziel-aus-lehrplan21'; changeSelection(); timeoutTest()">&nbsp;&nbsp;&nbsp;U1.1.1 Ziel aus Lehrplan 21</button><br>
-              <button mat-button (click)="selectedMainContentId ='U1.1.1_de'; changeSelection()">&nbsp;&nbsp;&nbsp;U1.1.2 Didaktische Reduktion für Sek 1</button><br>
-              <button mat-button (click)="sidenavLeftPanel.close(); selectedWpPage ='vorbereitende-themen-aus-lehrplan21'; changeSelection(); timeoutTest()">&nbsp;&nbsp;&nbsp;U1.1.3 Vorbereitende Themen/Ziele<br> aus Lehrplan 21</button><br>
-              <!-- Tabelle: Spalten -> Lehrplanthema -> Anwendungsbeispiel -> Links/Materialien u.a. Einfach Informatik -->
-              <button mat-button (click)="selectedMainContentId ='U1.1.2_de'; changeSelection()">&nbsp;&nbsp;&nbsp;U1.1.4 Praxisexperimente mit Facebook Login</button><br>
-              <button mat-button (click)="selectedMainContentId ='U1.1.2_de'; changeSelection()">&nbsp;&nbsp;&nbsp;U1.1.5 Praxisexperimente mit<br> OpenId Connect Login</button><br>
-              <button mat-button (click)="selectedMainContentId ='U1.1_de'; changeSelection()">U1.2 Sek 2</button><br>
-              <button mat-button (click)="selectedMainContentId ='U1.1.1_de'; changeSelection()">&nbsp;&nbsp;&nbsp;U1.2.1 Ziele aus Rahmenlehrplan<br> Maturitätsschulen</button><br>
-              <button mat-button (click)="selectedMainContentId ='U1.1.1_de'; changeSelection()">&nbsp;&nbsp;&nbsp;U1.2.2 Didaktische Reduktion für Sek 2</button><br>
-              <button mat-button (click)="selectedMainContentId ='U1.1.2_de'; changeSelection()">&nbsp;&nbsp;&nbsp;U1.2.3 Vorbereitende Themen/Ziele<br> aus Rahmenlehrplan</button><br>
-              <button mat-button (click)="selectedMainContentId ='U1.1.2_de'; changeSelection()">&nbsp;&nbsp;&nbsp;U1.2.4 Praxisexperimente mit<br> Facebook Login</button><br>
-              <button mat-button (click)="selectedMainContentId ='U1.1.2_de'; changeSelection()">&nbsp;&nbsp;&nbsp;U1.2.5 Praxisexperimente mit<br> OpenId Connect Login</button><br>
+              <button mat-button (click)="selectedMainContentId ='U1.1_de'; changeSelection()">A1.1 Diskussion Anwendungsbeispiele</button><br>
+              <button mat-button (click)="selectedMainContentId ='U1.1_de'; changeSelection()">A1.2 Basisexperimente Facebook Login</button><br>
+              <button mat-button (click)="selectedMainContentId ='U1.1_de'; changeSelection()">A1.3 Basisexperimente OpenId Connect Login</button><br>
         </mat-expansion-panel>
         <mat-expansion-panel [expanded]='false'>
           <mat-expansion-panel-header><mat-panel-title>
-          <button mat-button (click)="selectedMainContentId ='U1_de'; changeSelection()">U2 Werkzeuge zum Entdecken und Be-greifen<mat-icon>keyboard_arrow_down</mat-icon></button>
+          <button mat-button (click)="selectedMainContentId ='U1_de'; changeSelection()">A2 Maturitätsschulen, Berufsbildung<mat-icon>keyboard_arrow_down</mat-icon></button><br>
           </mat-panel-title><mat-panel-description></mat-panel-description></ mat-expansion-panel-header>
-          <button mat-button (click)="onNavigateVar('https://einfachinformatik.inf.ethz.ch/application/crypto')">U2.1 ETH Lernumgebung Einfach Informatik:<br> Crypto</button><br>
-          <button mat-button (click)="onNavigateVar('https://www.cryptool.org/de/cto-kodierungen')">U2.2 CRYPTOOL-ONLINE</button><br>
-          <button mat-button (click)="selectedMainContentId ='U1.1_de'; changeSelection()">U2.3 Hashgenerator</button><br>
+              <button mat-button (click)="selectedMainContentId ='U1.1_de'; changeSelection()">A2.1 Erweiterte Experimente Facebook Login</button><br>
+              <button mat-button (click)="selectedMainContentId ='U1.1_de'; changeSelection()">A2.2 Erweiterte Experimente OpenId Connect Login</button><br>
+        </mat-expansion-panel>
+        <mat-expansion-panel [expanded]='false'>
+          <mat-expansion-panel-header><mat-panel-title>
+          <button mat-button (click)="selectedMainContentId ='U1_de'; changeSelection()">A3 Berufsbildung<mat-icon>keyboard_arrow_down</mat-icon></button><br>
+          </mat-panel-title><mat-panel-description></mat-panel-description></ mat-expansion-panel-header>
+              <button mat-button (click)="selectedMainContentId ='U1.1_de'; changeSelection()">A3.1 Projekte mit passport.js</button><br>
+        </mat-expansion-panel>
+        <mat-expansion-panel [expanded]='false'>
+          <mat-expansion-panel-header><mat-panel-title>
+          <button mat-button (click)="selectedMainContentId ='U1_de'; changeSelection()">W Werkzeuge zum Entdecken und Be-greifen<mat-icon>keyboard_arrow_down</mat-icon></button>
+          </mat-panel-title><mat-panel-description></mat-panel-description></ mat-expansion-panel-header>
+          <button mat-button (click)="onNavigateVar('https://einfachinformatik.inf.ethz.ch/application/crypto')">W1 ETH Lernumgebung Einfach Informatik: Crypto</button><br>
+          <button mat-button (click)="onNavigateVar('https://www.cryptool.org/de/cto-kodierungen')">W2 CRYPTOOL-ONLINE</button><br>
+          <button mat-button (click)="selectedMainContentId ='U1.1_de'; changeSelection()">W3 Hashgenerator</button><br>
           <!-- http://helmbold.de/artikel/passwoerter-sicher-speichern/ -->
           <!-- https://www.datenschutzbeauftragter-info.de/hashwerte-und-hashfunktionen-einfach-erklaert/ -->
-          <button mat-button (click)="selectedMainContentId ='U1.1_de'; changeSelection()">U2.4 Chrome Browser DevTools</button><br>
-          <button mat-button (click)="selectedMainContentId ='U1.2_de'; changeSelection()">U2.5 EditThisCookie</button><br>
-          <button mat-button (click)="selectedMainContentId ='U1.3_de'; changeSelection()">U2.6 LocalStorage Manager</button><br>
-          <button mat-button (click)="selectedMainContentId ='U1.4_de'; changeSelection()">U2.7 Ghostery</button><br>
-          <button mat-button (click)="selectedMainContentId ='U1.5_de'; changeSelection()">U2.8 Insomnia REST Client</button><br>
-          <button mat-button (click)="onNavigateVar('https://www.chip.de/downloads/Wireshark-Portable_79182859.html')">U2.9 Wireshark Portable</button><br>
+          <button mat-button (click)="selectedMainContentId ='U1.1_de'; changeSelection()">W4 Chrome Browser DevTools</button><br>
+          <button mat-button (click)="selectedMainContentId ='U1.2_de'; changeSelection()">W5 EditThisCookie</button><br>
+          <button mat-button (click)="selectedMainContentId ='U1.3_de'; changeSelection()">W6 LocalStorage Manager</button><br>
+          <button mat-button (click)="selectedMainContentId ='U1.4_de'; changeSelection()">W7 Ghostery</button><br>
+          <button mat-button (click)="selectedMainContentId ='U1.5_de'; changeSelection()">W8 Insomnia REST Client</button><br>
+          <button mat-button (click)="onNavigateVar('https://www.chip.de/downloads/Wireshark-Portable_79182859.html')">W9 Wireshark Portable</button><br>
       </mat-expansion-panel>
         </span>
       </span>
