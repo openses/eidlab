@@ -35,6 +35,7 @@ export class AppComponent implements OnInit, OnDestroy/* , AfterViewInit, AfterV
   cookieCheck = false;
   public varIsLoading: any;
   public isNotWpPage: any;
+  public underConstruction: any;
   // public iframeVisible: any;
     @ViewChild('iframe_not_tab00') iframe_not_tab00: ElementRef;
       /* ngAfterViewInit() {
@@ -142,6 +143,7 @@ export class AppComponent implements OnInit, OnDestroy/* , AfterViewInit, AfterV
       this.globals.selectedNotWpPage = this.selectedNotWpPage;
       console.log('selectedNotWpPage: ' + this.globals.selectedNotWpPage);
       this.globals.specialRoute = 'false';
+      this.globals.underConstruction = 'false';
       // im die changeSelection() Prozedur aufrufenden click() Ereignis wird am Schluss die timeoutTest() Prozedur aufgerufen
       // welche this.globals.isLoading = '0s_left' setzt -> '...is loading...' wird ausgeblendet
     }

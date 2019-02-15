@@ -4,8 +4,9 @@ import { AppRoutingComponent } from './app-routing/app-routing.component';
 import { AppComponent } from './app.component';
 
 const routes: Routes = [
-  { path: '', component: AppComponent },
-  { path: 'pageselect', component: AppRoutingComponent }
+{ path: '', component: AppComponent },
+// { path: '/', component: AppComponent },
+{ path: 'pageselect', component: AppRoutingComponent }
 ];
 
 @NgModule({

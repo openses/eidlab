@@ -9,9 +9,9 @@
           &nbsp;&nbsp;&nbsp;
           <button mat-stroked-button *ngIf="globals.selectedLanguageId == 'de' && globals.specialRoute == 'false'" (click)="selectedToolbarTabId='tab01'; isNotWpPage='false'; selectedWpPage ='info-zum-projekt-de'; changeSelection(); timeoutTest()" >Projekt Info</button>
           &nbsp;&nbsp;&nbsp;
-          <button mat-stroked-button *ngIf="globals.selectedLanguageId == 'de' && globals.specialRoute == 'false'" (click)="selectedToolbarTabId='tab02'; isNotWpPage='false'; selectedMainContentId ='XXX'; changeSelection(); timeoutTest()" >Fach Info</button>
+          <button mat-stroked-button *ngIf="globals.selectedLanguageId == 'de' && globals.specialRoute == 'false'" (click)="selectedToolbarTabId='tab02'; isNotWpPage='false'; selectedWpPage ='info-zum-projekt-de'; changeSelection(); timeoutTest()" >Fach Info</button>
           &nbsp;&nbsp;&nbsp;
-          <button mat-stroked-button *ngIf="globals.selectedLanguageId == 'de' && globals.specialRoute == 'false'" (click)="selectedToolbarTabId='tab03'; isNotWpPage='false'; selectedMainContentId ='XXX'; changeSelection(); timeoutTest()" >Arbeitsblätter/Werkzeuge</button>
+          <button mat-stroked-button *ngIf="globals.selectedLanguageId == 'de' && globals.specialRoute == 'false'" (click)="selectedToolbarTabId='tab03'; isNotWpPage='false'; selectedWpPage ='info-zum-projekt-de'; changeSelection(); timeoutTest()" >Arbeitsblätter/Werkzeuge</button>
         </span>
         <!-- This fills the remaining space of the current row -->
         <span class="example-spacer"></span>
@@ -44,8 +44,6 @@
       fixedTopGap="40" [opened]="mobileQuery.matches ? 'false' : 'true' && globals.selectedToolbarTabId !== 'tab00' && globals.specialRoute == 'false'" [style.marginTop.px]="mobileQuery.matches ? 0 : 0">
       <span *ngIf="globals.selectedLanguageId == 'de'">
           <span *ngIf="selectedToolbarTabId == 'tab01'">
-              <br><div style="color: red; font-size:20pt"> Under Construction!</div>
-              <br>
               &nbsp;Projekt Info<br>
               <mat-expansion-panel [expanded]='false'>
                 <mat-expansion-panel-header><mat-panel-title>
@@ -84,66 +82,64 @@
             </mat-expansion-panel>
           </span>
         <span *ngIf="selectedToolbarTabId == 'tab02'">
-            <br><div style="color: red; font-size:20pt"> Under Construction!</div>
-            <br>
             &nbsp;Fach Info<br>
           <mat-expansion-panel [expanded]='false'>
               <mat-expansion-panel-header><mat-panel-title>
-                <button mat-button (click)="selectedMainContentId ='B1_de'; changeSelection()">F1 Anwendungsbeispiele 'Digitale Identität'</button>
+                <button mat-button (click)="this.globals.underConstruction='true'">F1 Anwendungsbeispiele 'Digitale Identität'</button>
                 </mat-panel-title><mat-panel-description></mat-panel-description></ mat-expansion-panel-header>
-                    <button mat-button (click)="selectedMainContentId ='B1.1_de'; changeSelection()">F1.1 Social Login</button><br>
-                    <button mat-button (click)="selectedMainContentId ='B1.1_de'; changeSelection()">F1.2 eEducation Login</button><br>
+                    <button mat-button (click)="this.globals.underConstruction='true'"><mat-icon>build</mat-icon>F1.1 Social Login</button><br>
+                    <button mat-button (click)="this.globals.underConstruction='true'"><mat-icon>build</mat-icon>F1.2 eEducation Login</button><br>
           </mat-expansion-panel>
           <mat-expansion-panel [expanded]='false'>
             <mat-expansion-panel-header><mat-panel-title>
-              <button mat-button (click)="selectedMainContentId ='B1_de'; changeSelection()">F2 Anforderungen</button>
+              <button mat-button (click)="this.globals.underConstruction='true'">F2 Anforderungen</button>
               </mat-panel-title><mat-panel-description></mat-panel-description></ mat-expansion-panel-header>
-                  <button mat-button (click)="selectedMainContentId ='B1.1_de'; changeSelection()">F2.1 Hohe Sicherheit und Transparenz</button><br>
-                  <button mat-button (click)="selectedMainContentId ='B1.1_de'; changeSelection()">F2.2 Einfache Handhabung</button><br>
+                  <button mat-button (click)="this.globals.underConstruction='true'"><mat-icon>build</mat-icon>F2.1 Hohe Sicherheit und Transparenz</button><br>
+                  <button mat-button (click)="this.globals.underConstruction='true'"><mat-icon>build</mat-icon>F2.2 Einfache Handhabung</button><br>
           </mat-expansion-panel>
           <mat-expansion-panel [expanded]='false'>
             <mat-expansion-panel-header><mat-panel-title>
-              <button mat-button (click)="selectedMainContentId ='B1_de'; changeSelection()">F3 Lösungsmuster</button>
+              <button mat-button (click)="this.globals.underConstruction='true'">F3 Lösungsmuster</button>
               </mat-panel-title><mat-panel-description></mat-panel-description></ mat-expansion-panel-header>
-                  <button mat-button (click)="selectedMainContentId ='B1.1_de'; changeSelection()">F3.1 Ungünstige Lösungsmuster (Anti-Pattern)</button><br>
-                  <button mat-button (click)="selectedMainContentId ='B1.1_de'; changeSelection()">F3.2 Gute Lösungsmuster (Standards)</button><br>
+                  <button mat-button (click)="this.globals.underConstruction='true'"><mat-icon>build</mat-icon>F3.1 Ungünstige Lösungsmuster (Anti-Pattern)</button><br>
+                  <button mat-button (click)="this.globals.underConstruction='true'"><mat-icon>build</mat-icon>F3.2 Gute Lösungsmuster (Standards)</button><br>
           </mat-expansion-panel>
           <mat-expansion-panel [expanded]='false'>
             <mat-expansion-panel-header><mat-panel-title>
-            <button mat-button (click)="selectedMainContentId ='B2_de'; changeSelection()">F4 Standards </button>
+            <button mat-button (click)="this.globals.underConstruction='true'">F4 Standards </button>
             </mat-panel-title><mat-panel-description></mat-panel-description></ mat-expansion-panel-header>
-            <button mat-button (click)="selectedMainContentId ='B2.1_de'; changeSelection()">F4.1 Gremien/Verbände/Behörden (W3C,IEEE,eCH,SBBK..)</button><br>
-            <button mat-button (click)="selectedMainContentId ='B2.2_de'; changeSelection()">F4.2 Protokolle/Modelle</button><br>
-            <button mat-button (click)="selectedWpPage ='oauth-autorisierung'; changeSelection()">F4.3 OAuth 2.0 Autorisierung</button><br>
-            <button mat-button (click)="selectedWpPage ='openid-connect-authentifizierung'; changeSelection()">F4.4 OpenID Connect Authentifizierung</button><br>
-            <button mat-button (click)="selectedWpPage ='rest-api-schnittstellen'; changeSelection()">F4.5 REST API Schnittstellen</button><br>
-            <button mat-button (click)="selectedMainContentId ='B2.6_de'; changeSelection()">F4.6 JSON Datenformat</button><br>
-            <button mat-button (click)="selectedWpPage ='kodierung'; changeSelection()">F4.7 Kodierung</button><br>
-            <button mat-button (click)="selectedMainContentId ='B2.7.1_de'; changeSelection()">&nbsp;&nbsp;&nbsp;F4.7.1 Hashing</button><br>
-            <button mat-button (click)="selectedMainContentId ='B2.7.2_de'; changeSelection()">&nbsp;&nbsp;&nbsp;F4.7.2 Verschlüsselung</button><br>
-            <button mat-button (click)="selectedMainContentId ='B2.7.3_de'; changeSelection()">&nbsp;&nbsp;&nbsp;F4.7.3 Signierung</button><br>
+            <button mat-button (click)="this.globals.underConstruction='true'"><mat-icon>build</mat-icon>F4.1 Gremien/Verbände/Behörden (W3C,IEEE,eCH,SBBK..)</button><br>
+            <button mat-button (click)="this.globals.underConstruction='true'"><mat-icon>build</mat-icon>F4.2 Protokolle/Modelle</button><br>
+            <button mat-button (click)="this.globals.underConstruction='true'"><mat-icon>build</mat-icon>F4.3 OAuth 2.0 Autorisierung</button><br>
+            <button mat-button (click)="this.globals.underConstruction='true'"><mat-icon>build</mat-icon>F4.4 OpenID Connect Authentifizierung</button><br>
+            <button mat-button (click)="this.globals.underConstruction='true'"><mat-icon>build</mat-icon>F4.5 REST API Schnittstellen</button><br>
+            <button mat-button (click)="this.globals.underConstruction='true'"><mat-icon>build</mat-icon>F4.6 JSON Datenformat</button><br>
+            <button mat-button (click)="this.globals.underConstruction='true'"><mat-icon>build</mat-icon>F4.7 Kodierung</button><br>
+            <button mat-button (click)="this.globals.underConstruction='true'">&nbsp;&nbsp;&nbsp;<mat-icon>build</mat-icon>F4.7.1 Hashing</button><br>
+            <button mat-button (click)="this.globals.underConstruction='true'">&nbsp;&nbsp;&nbsp;<mat-icon>build</mat-icon>F4.7.2 Verschlüsselung</button><br>
+            <button mat-button (click)="this.globals.underConstruction='true'">&nbsp;&nbsp;&nbsp;<mat-icon>build</mat-icon>F4.7.3 Signierung</button><br>
           </mat-expansion-panel>
           <mat-expansion-panel [expanded]='false'>
             <mat-expansion-panel-header><mat-panel-title>
-              <button mat-button (click)="selectedMainContentId ='B3_de'; changeSelection()">F5 Digitale Identitäten in der Schweiz</button>
+              <button mat-button (click)="this.globals.underConstruction='true'">F5 Digitale Identitäten in der Schweiz</button>
               </mat-panel-title><mat-panel-description></mat-panel-description></ mat-expansion-panel-header>
-              <button mat-button (click)="selectedMainContentId ='B3.1_de'; changeSelection()">F5.1 -> iFrame bundesrat</button><br>
-              <button mat-button (click)="selectedMainContentId ='B3.2_de'; changeSelection()">F5.2 -> iFrame Wikipedia</button><br>
-              <button mat-button (click)="selectedMainContentId ='B3.3_de'; changeSelection()">F5.3 -> iFrame FIDES</button><br>
-              <button mat-button (click)="selectedMainContentId ='B3.4_de'; changeSelection()">F5.4 -> iFrame Switch</button><br>
-              <button mat-button (click)="selectedMainContentId ='B3.5_de'; changeSelection()">F5.5 -> iFrame eCH</button><br>
-              <button mat-button (click)="selectedMainContentId ='B3.6_de'; changeSelection()">F5.6 -> iFrame swissID</button><br>
-              <button mat-button (click)="selectedMainContentId ='B3.7_de'; changeSelection()">F5.7 -> iFrame blockchainID</button><br>
+              <button mat-button (click)="this.globals.underConstruction='true'"><mat-icon>build</mat-icon>F5.1 Bundesrat</button><br>
+              <button mat-button (click)="this.globals.underConstruction='true'"><mat-icon>build</mat-icon>F5.2 Wikipedia</button><br>
+              <button mat-button (click)="this.globals.underConstruction='true'"><mat-icon>build</mat-icon>F5.3 FIDES</button><br>
+              <button mat-button (click)="this.globals.underConstruction='true'"><mat-icon>build</mat-icon>F5.4 Switch</button><br>
+              <button mat-button (click)="this.globals.underConstruction='true'"><mat-icon>build</mat-icon>F5.5 eCH</button><br>
+              <button mat-button (click)="this.globals.underConstruction='true'"><mat-icon>build</mat-icon>F5.6 swissID</button><br>
+              <button mat-button (click)="this.globals.underConstruction='true'"><mat-icon>build</mat-icon>F5.7 blockchainID</button><br>
           </mat-expansion-panel>
           <mat-expansion-panel [expanded]='false'>
             <mat-expansion-panel-header><mat-panel-title>
-              <button mat-button (click)="selectedMainContentId ='B3_de'; changeSelection()">F6 Didaktische Reduktion und Voraussetzungen</button>
+              <button mat-button (click)="this.globals.underConstruction='true'">F6 Didaktische Reduktion und Voraussetzungen</button>
               </mat-panel-title><mat-panel-description></mat-panel-description></ mat-expansion-panel-header>
-              <button mat-button (click)="selectedMainContentId ='B3.1_de'; changeSelection()">F6.1 Didaktische Reduktion für Sek 1</button><br>
+              <button mat-button (click)="this.globals.underConstruction='true'"><mat-icon>build</mat-icon>F6.1 Didaktische Reduktion für Sek 1</button><br>
               <button mat-button (click)="selectedWpPage ='vorbereitende-themen-aus-lehrplan21'; changeSelection(); timeoutTest()">F6.2 Vorausgesetzte Themen/Ziele aus Lehrplan 21</button><br>
-              <button mat-button (click)="selectedMainContentId ='B3.3_de'; changeSelection()">F6.3 Didaktische Reduktion Maturitätsschulen</button><br>
-              <button mat-button (click)="selectedMainContentId ='B3.4_de'; changeSelection()">F6.4 Vorausgesetzte Themen/Ziele aus Rahmenlehrplan</button><br>
-              <button mat-button (click)="selectedMainContentId ='B3.5_de'; changeSelection()">F6.5 Vorausgesetzte Themen/Ziele Berufsbildung: Module 114,117,300</button><br>
+              <button mat-button (click)="this.globals.underConstruction='true'"><mat-icon>build</mat-icon>F6.3 Didaktische Reduktion für Maturitätsschulen</button><br>
+              <button mat-button (click)="this.globals.underConstruction='true'"><mat-icon>build</mat-icon>F6.4 Vorausgesetzte Themen/Ziele aus Rahmenlehrplan</button><br>
+              <button mat-button (click)="this.globals.underConstruction='true'"><mat-icon>build</mat-icon>F6.5 Vorausgesetzte Themen/Ziele Berufsbildung: <br>Module 114,117,300</button><br>
           </mat-expansion-panel>
         </span>
         <span *ngIf="selectedToolbarTabId == 'tab03'">
@@ -287,7 +283,7 @@
             </mat-panel-title><mat-panel-description></mat-panel-description></ mat-expansion-panel-header>
             <button mat-button (click)="selectedMainContentId ='B3.1_de'; changeSelection()">F6.1 Didaktische Reduktion für Sek 1</button><br>
             <button mat-button (click)="selectedWpPage ='vorbereitende-themen-aus-lehrplan21'; changeSelection(); timeoutTest()">F6.2 Vorausgesetzte Themen/Ziele aus Lehrplan 21</button><br>
-            <button mat-button (click)="selectedMainContentId ='B3.3_de'; changeSelection()">F6.3 Didaktische Reduktion Maturitätsschulen</button><br>
+            <button mat-button (click)="selectedMainContentId ='B3.3_de'; changeSelection()">F6.3 Didaktische Reduktion für Maturitätsschulen</button><br>
             <button mat-button (click)="selectedMainContentId ='B3.4_de'; changeSelection()">F6.4 Vorausgesetzte Themen/Ziele aus Rahmenlehrplan</button><br>
             <button mat-button (click)="selectedMainContentId ='B3.5_de'; changeSelection()">F6.5 Vorausgesetzte Themen/Ziele Berufsbildung: Module 114,117,300</button><br>
         </mat-expansion-panel>
@@ -336,11 +332,12 @@
     </mat-sidenav>
     <mat-sidenav-content fixedTopGap="40" [style.marginTop.px]="mobileQuery.matches ? 80 : 0">
       <span *ngIf="globals.selectedLanguageId == 'de'">
-          <span *ngIf="globals.isLoading=='5s_left'">...is loading...<br></span>
+          <span *ngIf="globals.isLoading == '5s_left' && globals.underConstruction == 'false'">...is loading...<br></span>
+          <span *ngIf="globals.underConstruction == 'true'">...under Construction...<br></span>
           <app-routing></app-routing>
-          <iframe *ngIf="selectedToolbarTabId == 'tab00' && isNotWpPage == 'false' && globals.specialRoute == 'false'" #iframe_tab00 id='iframe_tab00'  [src]='sanitizer.bypassSecurityTrustResourceUrl("https://eidlab-identity-federation-playground.openses.org/index_iframe.html")'  [width]="mobileQuery.matches ? 1 * width : 1 * 1200" [height]="mobileQuery.matches ? height - 130 : height - 90" frameBorder="0"></iframe>
-          <iframe *ngIf="selectedToolbarTabId !== 'tab00' && isNotWpPage == 'false' && globals.specialRoute == 'false'" #iframe_not_tab00 id='iframe_not_tab00' [src]='sanitizer.bypassSecurityTrustResourceUrl(globals.selectedWpPath + globals.selectedWpPage)' (loaded)="iframeLoadCheck($event);" [width]="mobileQuery.matches ? 1 * width : 1 * 1200" [height]="mobileQuery.matches ? height - 90 : height - 90" frameBorder="0"></iframe>
-          <iframe *ngIf="isNotWpPage == 'true' && globals.specialRoute == 'false'" #iframe_is_not_wp_page id='iframe_is_not_wp_page' [src]='sanitizer.bypassSecurityTrustResourceUrl(globals.selectedNotWpPage)' (loaded)="iframeLoadCheck($event);" [width]="mobileQuery.matches ? 1 * width : 1 * 1200" [height]="mobileQuery.matches ? height - 90 : height - 90" frameBorder="0"></iframe>
+          <iframe *ngIf="selectedToolbarTabId == 'tab00' && isNotWpPage == 'false' && globals.specialRoute == 'false' && globals.underConstruction == 'false'" #iframe_tab00 id='iframe_tab00'  [src]='sanitizer.bypassSecurityTrustResourceUrl("https://eidlab-identity-federation-playground.openses.org/index_iframe.html")'  [width]="mobileQuery.matches ? 1 * width : 1 * 1200" [height]="mobileQuery.matches ? height - 130 : height - 90" frameBorder="0"></iframe>
+          <iframe *ngIf="selectedToolbarTabId !== 'tab00' && isNotWpPage == 'false' && globals.specialRoute == 'false' && globals.underConstruction == 'false'" #iframe_not_tab00 id='iframe_not_tab00' [src]='sanitizer.bypassSecurityTrustResourceUrl(globals.selectedWpPath + globals.selectedWpPage)' (loaded)="iframeLoadCheck($event);" [width]="mobileQuery.matches ? 1 * width : 1 * 1200" [height]="mobileQuery.matches ? height - 90 : height - 90" frameBorder="0"></iframe>
+          <iframe *ngIf="isNotWpPage == 'true' && globals.specialRoute == 'false' && globals.underConstruction == 'false'" #iframe_is_not_wp_page id='iframe_is_not_wp_page' [src]='sanitizer.bypassSecurityTrustResourceUrl(globals.selectedNotWpPage)' (loaded)="iframeLoadCheck($event);" [width]="mobileQuery.matches ? 1 * width : 1 * 1200" [height]="mobileQuery.matches ? height - 90 : height - 90" frameBorder="0"></iframe>
         </span>
     </mat-sidenav-content>
   </mat-sidenav-container>

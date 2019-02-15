@@ -16,4 +16,5 @@ export class Globals {
   isLoading: any = 'false';
   isNotWpPage: any = 'false';
   selectedNotWpPage: any = 'http://eidlab.ch';
+  underConstruction: any = 'false';
 }
