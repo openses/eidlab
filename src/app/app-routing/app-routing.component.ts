@@ -39,7 +39,7 @@ export class AppRoutingComponent implements OnInit, OnDestroy {
      // this.getParams();
      setTimeout(() => {
       this.getParams();
-        }, 2000);
+        }, 500);
   }
 
   getParams(): void {
