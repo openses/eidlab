@@ -12,6 +12,8 @@
           <button mat-stroked-button *ngIf="globals.selectedLanguageId == 'de' && globals.specialRoute == 'false'" (click)="selectedToolbarTabId='tab02'; isNotWpPage='false'; selectedWpPage ='info-zum-projekt-de'; changeSelection(); timeoutTest()" >Fach Info</button>
           &nbsp;&nbsp;&nbsp;
           <button mat-stroked-button *ngIf="globals.selectedLanguageId == 'de' && globals.specialRoute == 'false'" (click)="selectedToolbarTabId='tab03'; isNotWpPage='false'; selectedWpPage ='info-zum-projekt-de'; changeSelection(); timeoutTest()" >Arbeitsblätter/Werkzeuge</button>
+          &nbsp;&nbsp;&nbsp;
+          <button mat-stroked-button *ngIf="globals.selectedLanguageId == 'de' && globals.specialRoute == 'false'" (click)="selectedToolbarTabId='tab07'; isNotWpPage='false'; selectedWpPage ='info-zum-projekt-de'; changeSelection(); timeoutTest()" >Labor</button>
         </span>
         <!-- This fills the remaining space of the current row -->
         <span class="example-spacer"></span>
@@ -87,8 +89,8 @@
               <mat-expansion-panel-header><mat-panel-title>
                 <button mat-button (click)="this.globals.underConstruction='true'">F1 Anwendungsbeispiele 'Digitale Identitäten'</button>
                 </mat-panel-title><mat-panel-description></mat-panel-description></mat-expansion-panel-header>
-                    <button mat-button (click)="this.globals.underConstruction='true'"><mat-icon>build</mat-icon>F1.1 Social Login</button><br>
-                    <button mat-button (click)="this.globals.underConstruction='true'"><mat-icon>build</mat-icon>F1.2 eEducation Login</button><br>
+                    <button mat-button (click)="selectedWpPage ='anwendungsbeispiel-social-login'; changeSelection(); timeoutTest()">F1.1 Social Login</button><br>
+                    <button mat-button (click)="selectedWpPage ='anwendungsbeispiel-education-login'; changeSelection(); timeoutTest()">F1.2 E-Education Login</button><br>
           </mat-expansion-panel>
           <mat-expansion-panel [expanded]='false'>
             <mat-expansion-panel-header><mat-panel-title>
@@ -137,21 +139,22 @@
                 <button mat-button (click)="this.globals.underConstruction='true'">A1 Sek 1, Maturitätsschulen, Berufsbildung</button><br>
                 </mat-panel-title><mat-panel-description></mat-panel-description></mat-expansion-panel-header>
                     <button mat-button (click)="this.globals.underConstruction='true'"><mat-icon>build</mat-icon>A1.1 Diskussion Anwendungsbeispiele</button><br>
-                    <button mat-button (click)="this.globals.underConstruction='true'"><mat-icon>build</mat-icon>A1.2 Basisexperimente Facebook Login</button><br>
+                    <button mat-button (click)="selectedWpPage ='basisexperimente-facebook-login'; changeSelection(); timeoutTest()"><mat-icon>build</mat-icon>A1.2 Basisexperimente Facebook Login</button><br>
                     <button mat-button (click)="this.globals.underConstruction='true'"><mat-icon>build</mat-icon>A1.3 Basisexperimente OpenId Connect Login</button><br>
               </mat-expansion-panel>
               <mat-expansion-panel [expanded]='false'>
                 <mat-expansion-panel-header><mat-panel-title>
-                <button mat-button (click)="selectedMainContentId ='U1_de'; changeSelection()">A2 Maturitätsschulen (MS), Berufsbildung (BB)</button><br>
+                <button mat-button (click)="this.globals.underConstruction='true'">A2 Maturitätsschulen (MS), Berufsbildung (BB)</button><br>
                 </mat-panel-title><mat-panel-description></mat-panel-description></mat-expansion-panel-header>
                     <button mat-button (click)="this.globals.underConstruction='true'"><mat-icon>build</mat-icon>A2.1 Erweiterte Experimente Facebook Login</button><br>
                     <button mat-button (click)="this.globals.underConstruction='true'"><mat-icon>build</mat-icon>A2.2 Erweiterte Experimente OpenId Connect Login</button><br>
               </mat-expansion-panel>
               <mat-expansion-panel [expanded]='false'>
                 <mat-expansion-panel-header><mat-panel-title>
-                <button mat-button (click)="selectedMainContentId ='U1_de'; changeSelection()">A3 Berufsbildung (BB)</button><br>
+                <button mat-button (click)="this.globals.underConstruction='true'">A3 Berufsbildung (BB)</button><br>
                 </mat-panel-title><mat-panel-description></mat-panel-description></mat-expansion-panel-header>
-                    <button mat-button (click)="this.globals.underConstruction='true'"><mat-icon>build</mat-icon>A3.1 Projekte mit passport.js</button><br>
+                    <button mat-button (click)="selectedWpPage ='projekte-mit-passport-js'; changeSelection(); timeoutTest()">A3.1 Projekte mit passport.js</button><br>
+                    <button mat-button (click)="selectedWpPage ='projekte-mit-univention-corporate-server'; changeSelection(); timeoutTest()">A3.2 Projekte mit Univention Corporate Server</button><br>
               </mat-expansion-panel>
               <mat-expansion-panel [expanded]='false'>
                 <mat-expansion-panel-header><mat-panel-title>
@@ -170,6 +173,31 @@
                 <button mat-button (click)="onNavigateVar('https://www.chip.de/downloads/Wireshark-Portable_79182859.html')">W9 Wireshark Portable</button><br>
             </mat-expansion-panel>
         </span>
+        <span *ngIf="selectedToolbarTabId == 'tab07'">
+          &nbsp;Labor<br>
+          <mat-expansion-panel [expanded]='false'>
+            <mat-expansion-panel-header><mat-panel-title>
+              <button mat-button (click)="this.globals.underConstruction='true'">Facebook Experimente</button>
+              </mat-panel-title><mat-panel-description></mat-panel-description></mat-expansion-panel-header>
+                  <button mat-button (click)="this.globals.underConstruction='true'"><mat-icon>build</mat-icon>eIdLab Facebook App</button><br>
+                  <button mat-button (click)="onNavigateVar('https://developers.facebook.com/tools/explorer/?locale=de_DE')">Facebook Graph Explorer</button><br>
+        </mat-expansion-panel>
+                  <mat-expansion-panel [expanded]='false'>
+          <mat-expansion-panel-header><mat-panel-title>
+          <button mat-button (click)="this.globals.underConstruction='true'">OpenID Connect Experimente</button>
+          </mat-panel-title><mat-panel-description></mat-panel-description></mat-expansion-panel-header>
+          <button mat-button (click)="onNavigateVar('http://auth-openses.westeurope.azurecontainer.io:9000/')">Client Simulation</button><br>
+          <button mat-button (click)="onNavigateVar('http://auth-openses.westeurope.azurecontainer.io:9001/')">Authorisierungs Simulation</button><br>
+          <button mat-button (click)="onNavigateVar('http://auth-openses.westeurope.azurecontainer.io:9002/')">Geschützte Ressourcen Simulation</button><br>
+        </mat-expansion-panel>
+        <mat-expansion-panel [expanded]='false'>
+          <mat-expansion-panel-header><mat-panel-title>
+          <button mat-button (click)="this.globals.underConstruction='true'">OAuth/OpenID Connect Debugging</button>
+          </mat-panel-title><mat-panel-description></mat-panel-description></mat-expansion-panel-header>
+          <button mat-button (click)="onNavigateVar('https://oauthdebugger.com/')">OAuth Debugger</button><br>
+          <button mat-button (click)="onNavigateVar('https://oidcdebugger.com/')">OpenID Connect Debugger</button><br>
+        </mat-expansion-panel>
+      </span>
         <span *ngIf="selectedToolbarTabId == 'tab06'">
           <br>
             <!-- &nbsp;<button mat-button (click)="selectedToolbarTabId='tab00'; sidenavLeftPanel.close(); isNotWpPage='false'; selectedMainContentId ='Start'; changeSelection(); timeoutTest()">Start</button><br> -->
@@ -219,8 +247,8 @@
             <mat-expansion-panel-header><mat-panel-title>
               <button mat-button (click)="this.globals.underConstruction='true'">F1 Anwendungsbeispiele 'Digitale Identitäten'<mat-icon>keyboard_arrow_down</mat-icon></button>
               </mat-panel-title><mat-panel-description></mat-panel-description></mat-expansion-panel-header>
-                  <button mat-button (click)="sidenavLeftPanel.close(); this.globals.underConstruction='true'"><mat-icon>build</mat-icon>F1.1 Social Login</button><br>
-                  <button mat-button (click)="sidenavLeftPanel.close(); this.globals.underConstruction='true'"><mat-icon>build</mat-icon>F1.2 eEducation Login</button><br>
+                  <button mat-button (click)="sidenavLeftPanel.close(); selectedWpPage ='anwendungsbeispiel-social-login'; changeSelection(); timeoutTest()">F1.1 Social Login</button><br>
+                  <button mat-button (click)="sidenavLeftPanel.close(); selectedWpPage ='anwendungsbeispiel-education-login'; changeSelection(); timeoutTest()">F1.2 E-Education Login</button><br>
         </mat-expansion-panel>
         <mat-expansion-panel [expanded]='false'>
           <mat-expansion-panel-header><mat-panel-title>
@@ -268,7 +296,7 @@
           <button mat-button (click)="this.globals.underConstruction='true'">A1 Sek 1, Maturitätsschulen, Berufsbildung<mat-icon>keyboard_arrow_down</mat-icon></button><br>
           </mat-panel-title><mat-panel-description></mat-panel-description></mat-expansion-panel-header>
               <button mat-button (click)="sidenavLeftPanel.close(); this.globals.underConstruction='true'"><mat-icon>build</mat-icon>A1.1 Diskussion Anwendungsbeispiele</button><br>
-              <button mat-button (click)="sidenavLeftPanel.close(); this.globals.underConstruction='true'"><mat-icon>build</mat-icon>A1.2 Basisexperimente Facebook Login</button><br>
+              <button mat-button (click)="sidenavLeftPanel.close(); selectedWpPage ='basisexperimente-facebook-login'; changeSelection(); timeoutTest()"><mat-icon>build</mat-icon>A1.2 Basisexperimente Facebook Login</button><br>
               <button mat-button (click)="sidenavLeftPanel.close(); this.globals.underConstruction='true'"><mat-icon>build</mat-icon>A1.3 Basisexperimente OpenId Connect Login</button><br>
         </mat-expansion-panel>
         <mat-expansion-panel [expanded]='false'>
@@ -282,7 +310,8 @@
           <mat-expansion-panel-header><mat-panel-title>
           <button mat-button (click)="this.globals.underConstruction='true'">A3 Berufsbildung<mat-icon>keyboard_arrow_down</mat-icon></button><br>
           </mat-panel-title><mat-panel-description></mat-panel-description></mat-expansion-panel-header>
-              <button mat-button (click)="sidenavLeftPanel.close(); this.globals.underConstruction='true'"><mat-icon>build</mat-icon>A3.1 Projekte mit passport.js</button><br>
+              <button mat-button (click)="sidenavLeftPanel.close(); selectedWpPage ='projekte-mit-passport-js'; changeSelection(); timeoutTest()">A3.1 Projekte mit passport.js</button><br>
+              <button mat-button (click)="sidenavLeftPanel.close(); selectedWpPage ='projekte-mit-univention-corporate-server'; changeSelection(); timeoutTest()">A3.2 Projekte mit Univention Corporate Server</button><br>
         </mat-expansion-panel>
         <mat-expansion-panel [expanded]='false'>
           <mat-expansion-panel-header><mat-panel-title>
@@ -300,6 +329,30 @@
           <button mat-button (click)="sidenavLeftPanel.close(); this.globals.underConstruction='true'"><mat-icon>build</mat-icon>W8 Insomnia REST Client</button><br>
           <button mat-button (click)="onNavigateVar('https://www.chip.de/downloads/Wireshark-Portable_79182859.html')">W9 Wireshark Portable</button><br>
       </mat-expansion-panel>
+      <br>
+      &nbsp;Labor<br>
+          <mat-expansion-panel [expanded]='false'>
+            <mat-expansion-panel-header><mat-panel-title>
+              <button mat-button (click)="this.globals.underConstruction='true'">Facebook Experimente<mat-icon>keyboard_arrow_down</mat-icon></button>
+              </mat-panel-title><mat-panel-description></mat-panel-description></mat-expansion-panel-header>
+                  <button mat-button (click)="sidenavLeftPanel.close(); this.globals.underConstruction='true'"><mat-icon>build</mat-icon>eIdLab Facebook App</button><br>
+                  <button mat-button (click)="onNavigateVar('https://developers.facebook.com/tools/explorer/?locale=de_DE')">Facebook Graph Explorer</button><br>
+        </mat-expansion-panel>
+                  <mat-expansion-panel [expanded]='false'>
+          <mat-expansion-panel-header><mat-panel-title>
+          <button mat-button (click)="this.globals.underConstruction='true'">OpenID Connect Experimente<mat-icon>keyboard_arrow_down</mat-icon></button>
+          </mat-panel-title><mat-panel-description></mat-panel-description></mat-expansion-panel-header>
+          <button mat-button (click)="onNavigateVar('http://auth-openses.westeurope.azurecontainer.io:9000/')">Client Simulation</button><br>
+          <button mat-button (click)="onNavigateVar('http://auth-openses.westeurope.azurecontainer.io:9001/')">Authorisierungs Simulation</button><br>
+          <button mat-button (click)="onNavigateVar('http://auth-openses.westeurope.azurecontainer.io:9002/')">Geschützte Ressourcen Simulation</button><br>
+        </mat-expansion-panel>
+        <mat-expansion-panel [expanded]='false'>
+          <mat-expansion-panel-header><mat-panel-title>
+          <button mat-button (click)="this.globals.underConstruction='true'">OAuth/OpenID Connect Debugging<mat-icon>keyboard_arrow_down</mat-icon></button>
+          </mat-panel-title><mat-panel-description></mat-panel-description></mat-expansion-panel-header>
+          <button mat-button (click)="onNavigateVar('https://oauthdebugger.com/')">OAuth Debugger</button><br>
+          <button mat-button (click)="onNavigateVar('https://oidcdebugger.com/')">OpenID Connect Debugger</button><br>
+        </mat-expansion-panel>
         </span>
       </span>
       </span>
