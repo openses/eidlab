@@ -115,7 +115,7 @@
             <button mat-button (click)="this.globals.underConstruction='true'"><mat-icon>build</mat-icon>F4.3 OAuth 2.0 Autorisierung</button><br>
             <button mat-button (click)="this.globals.underConstruction='true'"><mat-icon>build</mat-icon>F4.4 OpenID Connect Authentifizierung</button><br>
             <button mat-button (click)="this.globals.underConstruction='true'"><mat-icon>build</mat-icon>F4.5 REST API Schnittstellen</button><br>
-            <button mat-button (click)="this.globals.underConstruction='true'"><mat-icon>build</mat-icon>F4.6 JSON Datenformat</button><br>
+            <button mat-button (click)="selectedWpPage ='json-datenformat-web-token'; changeSelection(); timeoutTest()">F4.6 JSON Datenformat/Web Token</button><br>
             <button mat-button (click)="this.globals.underConstruction='true'"><mat-icon>build</mat-icon>F4.7 Kodierung</button><br>
             <button mat-button (click)="this.globals.underConstruction='true'">&nbsp;&nbsp;&nbsp;<mat-icon>build</mat-icon>F4.7.1 Hashing</button><br>
             <button mat-button (click)="this.globals.underConstruction='true'">&nbsp;&nbsp;&nbsp;<mat-icon>build</mat-icon>F4.7.2 Verschlüsselung</button><br>
@@ -171,10 +171,15 @@
                 <button mat-button (click)="this.globals.underConstruction='true'"><mat-icon>build</mat-icon>W7 Ghostery</button><br>
                 <button mat-button (click)="this.globals.underConstruction='true'"><mat-icon>build</mat-icon>W8 Insomnia REST Client</button><br>
                 <button mat-button (click)="onNavigateVar('https://www.chip.de/downloads/Wireshark-Portable_79182859.html')">W9 Wireshark Portable</button><br>
+                <button mat-button (click)="onNavigateVar('http://collabedit.com/')">W10 collabedit</button><br>
+                <button mat-button (click)="onNavigateVar('https://stackblitz.com/')">W11 StackBlitz</button><br>
+                <button mat-button (click)="onNavigateVar('https://codepen.io/')">W12 CodePen</button><br>
+                <button mat-button (click)="onNavigateVar('https://jsfiddle.net/')">W13 JSFiddle</button><br>
             </mat-expansion-panel>
         </span>
         <span *ngIf="selectedToolbarTabId == 'tab07'">
           &nbsp;Labor<br>
+          <button mat-button (click)="onNavigateVar('https://www.innoedu.ch:9000/')">eIdLab.ch Playground</button><br><br>
           <mat-expansion-panel [expanded]='false'>
             <mat-expansion-panel-header><mat-panel-title>
               <button mat-button (click)="this.globals.underConstruction='true'">Facebook Experimente</button>
@@ -182,13 +187,17 @@
                   <button mat-button (click)="this.globals.underConstruction='true'"><mat-icon>build</mat-icon>eIdLab Facebook App</button><br>
                   <button mat-button (click)="onNavigateVar('https://developers.facebook.com/tools/explorer/?locale=de_DE')">Facebook Graph Explorer</button><br>
         </mat-expansion-panel>
-                  <mat-expansion-panel [expanded]='false'>
+        <mat-expansion-panel [expanded]='false'>
           <mat-expansion-panel-header><mat-panel-title>
-          <button mat-button (click)="this.globals.underConstruction='true'">OpenID Connect Experimente</button>
+            <button mat-button (click)="this.globals.underConstruction='true'">Google Experimente</button>
+            </mat-panel-title><mat-panel-description></mat-panel-description></mat-expansion-panel-header>
+                <button mat-button (click)="onNavigateVar('https://developers.google.com/oauthplayground/')">Google Developers OAuth2 Playground</button><br>
+      </mat-expansion-panel>
+        <mat-expansion-panel [expanded]='false'>
+          <mat-expansion-panel-header><mat-panel-title>
+          <button mat-button (click)="this.globals.underConstruction='true'">eIdLab.ch Experimente</button>
           </mat-panel-title><mat-panel-description></mat-panel-description></mat-expansion-panel-header>
-          <button mat-button (click)="onNavigateVar('http://auth-openses.westeurope.azurecontainer.io:9000/')">Client Simulation</button><br>
-          <button mat-button (click)="onNavigateVar('http://auth-openses.westeurope.azurecontainer.io:9001/')">Authorisierungs Simulation</button><br>
-          <button mat-button (click)="onNavigateVar('http://auth-openses.westeurope.azurecontainer.io:9002/')">Geschützte Ressourcen Simulation</button><br>
+          <button mat-button (click)="onNavigateVar('https://www.innoedu.ch:9000/')">eIdLab.ch Playground</button><br><br>
         </mat-expansion-panel>
         <mat-expansion-panel [expanded]='false'>
           <mat-expansion-panel-header><mat-panel-title>
@@ -273,7 +282,7 @@
           <button mat-button (click)="sidenavLeftPanel.close(); this.globals.underConstruction='true'"><mat-icon>build</mat-icon>F4.3 OAuth 2.0 Autorisierung</button><br>
           <button mat-button (click)="sidenavLeftPanel.close(); this.globals.underConstruction='true'"><mat-icon>build</mat-icon>F4.4 OpenID Connect Authentifizierung</button><br>
           <button mat-button (click)="sidenavLeftPanel.close(); this.globals.underConstruction='true'"><mat-icon>build</mat-icon>F4.5 REST API Schnittstellen</button><br>
-          <button mat-button (click)="sidenavLeftPanel.close(); this.globals.underConstruction='true'"><mat-icon>build</mat-icon>F4.6 JSON Datenformat</button><br>
+          <button mat-button (click)="sidenavLeftPanel.close(); selectedWpPage ='json-datenformat-web-token'; changeSelection(); timeoutTest()">F4.6 JSON Datenformat/Web Token</button><br>
           <button mat-button (click)="sidenavLeftPanel.close(); this.globals.underConstruction='true'"><mat-icon>build</mat-icon>F4.7 Kodierung</button><br>
           <button mat-button (click)="sidenavLeftPanel.close(); this.globals.underConstruction='true'">&nbsp;&nbsp;&nbsp;<mat-icon>build</mat-icon>F4.7.1 Hashing</button><br>
           <button mat-button (click)="sidenavLeftPanel.close(); this.globals.underConstruction='true'">&nbsp;&nbsp;&nbsp;<mat-icon>build</mat-icon>F4.7.2 Verschlüsselung</button><br>
@@ -328,9 +337,14 @@
           <button mat-button (click)="sidenavLeftPanel.close(); this.globals.underConstruction='true'"><mat-icon>build</mat-icon>W7 Ghostery</button><br>
           <button mat-button (click)="sidenavLeftPanel.close(); this.globals.underConstruction='true'"><mat-icon>build</mat-icon>W8 Insomnia REST Client</button><br>
           <button mat-button (click)="onNavigateVar('https://www.chip.de/downloads/Wireshark-Portable_79182859.html')">W9 Wireshark Portable</button><br>
+          <button mat-button (click)="onNavigateVar('http://collabedit.com/')">W10 collabedit</button><br>
+          <button mat-button (click)="onNavigateVar('https://stackblitz.com/')">W11 StackBlitz</button><br>
+          <button mat-button (click)="onNavigateVar('https://codepen.io/')">W12 CodePen</button><br>
+          <button mat-button (click)="onNavigateVar('https://jsfiddle.net/')">W13 JSFiddle</button><br>
       </mat-expansion-panel>
       <br>
       &nbsp;Labor<br>
+      <button mat-button (click)="onNavigateVar('https://www.innoedu.ch:9000/')">eIdLab.ch Playground</button><br><br>
           <mat-expansion-panel [expanded]='false'>
             <mat-expansion-panel-header><mat-panel-title>
               <button mat-button (click)="this.globals.underConstruction='true'">Facebook Experimente<mat-icon>keyboard_arrow_down</mat-icon></button>
@@ -338,13 +352,17 @@
                   <button mat-button (click)="sidenavLeftPanel.close(); this.globals.underConstruction='true'"><mat-icon>build</mat-icon>eIdLab Facebook App</button><br>
                   <button mat-button (click)="onNavigateVar('https://developers.facebook.com/tools/explorer/?locale=de_DE')">Facebook Graph Explorer</button><br>
         </mat-expansion-panel>
+        <mat-expansion-panel [expanded]='false'>
+          <mat-expansion-panel-header><mat-panel-title>
+            <button mat-button (click)="this.globals.underConstruction='true'">Google Experimente</button>
+            </mat-panel-title><mat-panel-description></mat-panel-description></mat-expansion-panel-header>
+                <button mat-button (click)="onNavigateVar('https://developers.google.com/oauthplayground/')">Google Developers OAuth2 Playground</button><br>
+      </mat-expansion-panel>
                   <mat-expansion-panel [expanded]='false'>
           <mat-expansion-panel-header><mat-panel-title>
-          <button mat-button (click)="this.globals.underConstruction='true'">OpenID Connect Experimente<mat-icon>keyboard_arrow_down</mat-icon></button>
+          <button mat-button (click)="this.globals.underConstruction='true'">eIdLab.ch Experimente<mat-icon>keyboard_arrow_down</mat-icon></button>
           </mat-panel-title><mat-panel-description></mat-panel-description></mat-expansion-panel-header>
-          <button mat-button (click)="onNavigateVar('http://auth-openses.westeurope.azurecontainer.io:9000/')">Client Simulation</button><br>
-          <button mat-button (click)="onNavigateVar('http://auth-openses.westeurope.azurecontainer.io:9001/')">Authorisierungs Simulation</button><br>
-          <button mat-button (click)="onNavigateVar('http://auth-openses.westeurope.azurecontainer.io:9002/')">Geschützte Ressourcen Simulation</button><br>
+          <button mat-button (click)="onNavigateVar('https://www.innoedu.ch:9000/')">eIdLab.ch Playground</button><br><br>
         </mat-expansion-panel>
         <mat-expansion-panel [expanded]='false'>
           <mat-expansion-panel-header><mat-panel-title>
